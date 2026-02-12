@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 ---
 
 <Base title="Take Action" description="The manifesto is a demand. Your action makes it real. Sign the pledge, endorse as an organisation, write to your MP, and share the Black Mental Health Manifesto.">

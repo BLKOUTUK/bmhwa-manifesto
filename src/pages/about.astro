@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 ---
 
 <Base title="About the Alliance" description="The Black Mental Health and Wellbeing Alliance is a coalition of individuals with lived experience and grassroots organisations demanding structural change for Black mental health in England.">

@@ -12,7 +12,7 @@ const {
 } = Astro.props;
 
 const siteTitle = `${title} | Black Mental Health Manifesto`;
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 ---
 
 <!DOCTYPE html>

@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 ---
 
 <Base title="Learning & Capacity Building" description="The Alliance doesn't just advocate — it acts. Assess & Align, toolkits, shared learning, and the Burke Platform vision for equitable research and practice.">

@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 ---
 
 <Base title="The Case for Change" description="The evidence is clear. Racism — not race — drives mental health inequalities for Black people in England. Key statistics and the systemic context behind the Black Mental Health Manifesto.">
