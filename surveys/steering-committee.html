@@ -840,36 +840,31 @@
         <div class="question__number">Question 5</div>
         <fieldset>
           <legend class="sr-only">What is the current status of Assess & Align, and how should it feature on the site?</legend>
-          <span class="question__label" id="q5-label">What is the current status of Assess &amp; Align, and how should it feature on the site?</span>
+          <span class="question__label" id="q5-label">The Alliance is developing a tool called Assess &amp; Align &mdash; it helps Black voluntary sector leaders evaluate research requests for equity and cultural sensitivity. How prominent should it be on the new site?</span>
+          <p class="question__hint">Don't worry if this is new to you &mdash; just tell us what feels right</p>
           <ul class="option-list" role="radiogroup" aria-labelledby="q5-label">
             <li>
               <label>
-                <input type="radio" name="q5" value="embed-directly">
-                <span>Embed it directly on the site</span>
+                <input type="radio" name="q5" value="feature-prominently">
+                <span>Feature it prominently &mdash; it shows the Alliance is building solutions, not just demanding them</span>
               </label>
             </li>
             <li>
               <label>
-                <input type="radio" name="q5" value="link-separate">
-                <span>Link to it (separate tool)</span>
+                <input type="radio" name="q5" value="mention-briefly">
+                <span>Mention it briefly &mdash; keep the focus on the manifesto itself</span>
               </label>
             </li>
             <li>
               <label>
-                <input type="radio" name="q5" value="feature-concept">
-                <span>Feature the concept, link when ready</span>
-              </label>
-            </li>
-            <li>
-              <label>
-                <input type="radio" name="q5" value="not-priority">
-                <span>Not a priority right now</span>
+                <input type="radio" name="q5" value="not-sure">
+                <span>Not sure &mdash; I'd need to know more about it first</span>
               </label>
             </li>
           </ul>
         </fieldset>
         <div class="follow-up">
-          <label class="follow-up__label" for="q5-followup">Any details on its current status?</label>
+          <label class="follow-up__label" for="q5-followup">Any thoughts on this?</label>
           <textarea id="q5-followup" name="q5_followup" placeholder="Optional..." rows="2"></textarea>
         </div>
       </div>
@@ -886,33 +881,30 @@
       <div class="question" id="q6">
         <div class="question__number">Question 6</div>
         <fieldset>
-          <legend class="sr-only">Who will update the site after launch, and how comfortable are they with technology?</legend>
-          <span class="question__label" id="q6-label">Who will update the site after launch, and how comfortable are they with technology?</span>
+          <legend class="sr-only">How important is it that non-technical people can update the site themselves?</legend>
+          <span class="question__label" id="q6-label">How important is it that non-technical people can update the site themselves?</span>
+          <p class="question__hint">We'll work out the details with Kadra &mdash; this just helps us choose the right platform</p>
           <ul class="option-list" role="radiogroup" aria-labelledby="q6-label">
             <li>
               <label>
-                <input type="radio" name="q6" value="comfortable-visual">
-                <span>Someone comfortable with visual editors (like editing a document)</span>
+                <input type="radio" name="q6" value="essential">
+                <span>Essential &mdash; several of us should be able to add news, events, etc.</span>
               </label>
             </li>
             <li>
               <label>
-                <input type="radio" name="q6" value="extremely-simple">
-                <span>Someone who'd need it to be extremely simple</span>
+                <input type="radio" name="q6" value="nice-to-have">
+                <span>Nice to have, but one person managing it would be fine</span>
               </label>
             </li>
             <li>
               <label>
-                <input type="radio" name="q6" value="figure-out-later">
-                <span>We'll figure this out later</span>
+                <input type="radio" name="q6" value="not-sure">
+                <span>Not sure yet</span>
               </label>
             </li>
           </ul>
         </fieldset>
-        <div class="follow-up">
-          <label class="follow-up__label" for="q6-followup">Name/role if known:</label>
-          <input type="text" class="follow-up-input" id="q6-followup" name="q6_followup" placeholder="Optional..." aria-label="Name or role of person who will update the site">
-        </div>
       </div>
 
       <!-- Q7 -->
@@ -1007,7 +999,6 @@ form.addEventListener('submit', async (e) => {
     assess_align_status: getRadio('q5'),
     assess_align_details: getText('q5_followup'),
     who_updates: getRadio('q6'),
-    who_updates_name: getText('q6_followup'),
     site_examples: getText('q7'),
     anything_else: getText('q8')
   };
