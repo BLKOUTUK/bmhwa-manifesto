@@ -1,0 +1,1500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMHWA Technical Survey — Web/Comms Lead</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ===== Reset & Base ===== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: #2D2D2D;
+      background-color: #FBF8F3;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ===== Typography ===== */
+    h1, h2, h3 {
+      font-family: 'DM Serif Display', 'Georgia', serif;
+      line-height: 1.25;
+    }
+
+    /* ===== Layout ===== */
+    .survey-wrapper {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+    }
+
+    /* ===== Header ===== */
+    .survey-header {
+      background-color: #1B1B3A;
+      color: #FBF8F3;
+      padding: 3rem 1.25rem 2.5rem;
+      text-align: center;
+    }
+
+    .survey-header__badge {
+      display: inline-block;
+      font-family: 'Work Sans', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #E8A838;
+      border: 1.5px solid #E8A838;
+      border-radius: 2rem;
+      padding: 0.35rem 1.1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .survey-header h1 {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      color: #FFFFFF;
+      margin-bottom: 0.5rem;
+    }
+
+    .survey-header__subtitle {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: rgba(251, 248, 243, 0.8);
+      max-width: 540px;
+      margin: 0 auto;
+    }
+
+    /* ===== Intro ===== */
+    .survey-intro {
+      background-color: #FFFFFF;
+      border: 1px solid rgba(27, 27, 58, 0.08);
+      border-left: 4px solid #E8A838;
+      border-radius: 0.5rem;
+      padding: 1.75rem 2rem;
+      margin: 2rem auto 0;
+      max-width: 740px;
+      font-size: 1.02rem;
+      line-height: 1.75;
+      color: #3a3a3a;
+    }
+
+    .survey-intro strong {
+      color: #1B1B3A;
+    }
+
+    /* ===== Progress / Section Headers ===== */
+    .section {
+      margin-top: 3rem;
+    }
+
+    .section__progress {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .section__progress-label {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #E8A838;
+      white-space: nowrap;
+    }
+
+    .section__progress-bar {
+      flex: 1;
+      height: 3px;
+      background-color: rgba(27, 27, 58, 0.1);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .section__progress-fill {
+      height: 100%;
+      background-color: #E8A838;
+      border-radius: 3px;
+      transition: width 0.3s ease;
+    }
+
+    .section__heading {
+      font-size: clamp(1.35rem, 3vw, 1.65rem);
+      color: #1B1B3A;
+      margin-bottom: 0.35rem;
+    }
+
+    .section__description {
+      font-size: 0.92rem;
+      color: #666;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    /* ===== Question Cards ===== */
+    .question {
+      background-color: #FFFFFF;
+      border: 1px solid rgba(27, 27, 58, 0.07);
+      border-radius: 0.625rem;
+      padding: 1.75rem 2rem;
+      margin-bottom: 1.25rem;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .question:focus-within {
+      border-color: rgba(232, 168, 56, 0.4);
+      box-shadow: 0 0 0 3px rgba(232, 168, 56, 0.1);
+    }
+
+    .question__number {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #E8A838;
+      margin-bottom: 0.5rem;
+    }
+
+    .question__label {
+      display: block;
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.15rem;
+      color: #1B1B3A;
+      margin-bottom: 0.4rem;
+      line-height: 1.4;
+    }
+
+    .question__hint {
+      font-size: 0.82rem;
+      color: #888;
+      margin-bottom: 1.1rem;
+      font-style: italic;
+    }
+
+    /* ===== Follow-up Input ===== */
+    .follow-up {
+      margin-top: 1rem;
+      padding-top: 0.85rem;
+      border-top: 1px solid rgba(27, 27, 58, 0.06);
+    }
+
+    .follow-up label {
+      display: block;
+      font-size: 0.88rem;
+      color: #666;
+      margin-bottom: 0.35rem;
+      font-weight: 500;
+    }
+
+    .follow-up input[type="text"] {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 0.92rem;
+      color: #2D2D2D;
+      width: 100%;
+      padding: 0.6rem 0.85rem;
+      border: 1.5px solid #ddd;
+      border-radius: 0.4rem;
+      background-color: #FAFAFA;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .follow-up input[type="text"]:focus {
+      outline: none;
+      border-color: #E8A838;
+      box-shadow: 0 0 0 3px rgba(232, 168, 56, 0.12);
+      background-color: #FFFFFF;
+    }
+
+    .follow-up input[type="text"]::placeholder {
+      color: #aaa;
+    }
+
+    .follow-up + .follow-up {
+      margin-top: 0.75rem;
+      padding-top: 0;
+      border-top: none;
+    }
+
+    /* ===== Form Elements: Radio & Checkbox ===== */
+    fieldset {
+      border: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    legend {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .option-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .option-list li {
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .option-list label {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+      cursor: pointer;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      padding: 0.55rem 0.85rem;
+      border-radius: 0.4rem;
+      width: 100%;
+      transition: background-color 0.15s ease;
+    }
+
+    .option-list label:hover {
+      background-color: rgba(232, 168, 56, 0.06);
+    }
+
+    .option-list input[type="radio"],
+    .option-list input[type="checkbox"] {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 1.2rem;
+      height: 1.2rem;
+      min-width: 1.2rem;
+      border: 2px solid #bbb;
+      background-color: #FFFFFF;
+      margin-top: 0.15rem;
+      cursor: pointer;
+      transition: border-color 0.15s ease, background-color 0.15s ease;
+    }
+
+    .option-list input[type="radio"] {
+      border-radius: 50%;
+    }
+
+    .option-list input[type="checkbox"] {
+      border-radius: 0.25rem;
+    }
+
+    .option-list input[type="radio"]:checked {
+      border-color: #E8A838;
+      background-color: #E8A838;
+      box-shadow: inset 0 0 0 3px #FFFFFF;
+    }
+
+    .option-list input[type="checkbox"]:checked {
+      border-color: #E8A838;
+      background-color: #E8A838;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2.5-2.5a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3E%3C/svg%3E");
+      background-size: 0.85rem;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .option-list input[type="radio"]:focus-visible,
+    .option-list input[type="checkbox"]:focus-visible {
+      outline: 2px solid #E8A838;
+      outline-offset: 2px;
+    }
+
+    /* Other text input inline with checkbox */
+    .option-other-input {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 0.9rem;
+      border: none;
+      border-bottom: 1.5px solid #ccc;
+      padding: 0.15rem 0.25rem;
+      background: transparent;
+      color: #2D2D2D;
+      width: 200px;
+      max-width: 60vw;
+      transition: border-color 0.2s ease;
+    }
+
+    .option-other-input:focus {
+      outline: none;
+      border-bottom-color: #E8A838;
+    }
+
+    /* ===== Textarea ===== */
+    textarea {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 0.95rem;
+      color: #2D2D2D;
+      width: 100%;
+      min-height: 100px;
+      padding: 0.85rem 1rem;
+      border: 1.5px solid #ddd;
+      border-radius: 0.4rem;
+      background-color: #FAFAFA;
+      resize: vertical;
+      line-height: 1.6;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    textarea:focus {
+      outline: none;
+      border-color: #E8A838;
+      box-shadow: 0 0 0 3px rgba(232, 168, 56, 0.12);
+      background-color: #FFFFFF;
+    }
+
+    textarea::placeholder {
+      color: #aaa;
+    }
+
+    /* ===== Submit Area ===== */
+    .submit-area {
+      margin-top: 3rem;
+      text-align: center;
+    }
+
+    .submit-button {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #1B1B3A;
+      background-color: #E8A838;
+      border: none;
+      border-radius: 0.5rem;
+      padding: 1rem 3rem;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+      letter-spacing: 0.01em;
+    }
+
+    .submit-button:hover {
+      background-color: #d9982e;
+      box-shadow: 0 4px 14px rgba(232, 168, 56, 0.3);
+    }
+
+    .submit-button:active {
+      transform: scale(0.98);
+    }
+
+    .submit-button:focus-visible {
+      outline: 3px solid #1B1B3A;
+      outline-offset: 3px;
+    }
+
+    .submit-note {
+      margin-top: 1.25rem;
+      font-size: 0.85rem;
+      color: #888;
+      line-height: 1.6;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .submit-note a {
+      color: #E8A838;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    /* ===== Thank You ===== */
+    .thank-you {
+      background-color: #1B1B3A;
+      color: #FBF8F3;
+      border-radius: 0.625rem;
+      padding: 2rem 2.25rem;
+      margin-top: 2.5rem;
+      text-align: center;
+    }
+
+    .thank-you h2 {
+      font-size: 1.4rem;
+      color: #E8A838;
+      margin-bottom: 0.75rem;
+    }
+
+    .thank-you p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: rgba(251, 248, 243, 0.85);
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    /* ===== Footer ===== */
+    .survey-footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(27, 27, 58, 0.08);
+      font-size: 0.8rem;
+      color: #aaa;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 600px) {
+      .survey-header {
+        padding: 2rem 1rem 1.75rem;
+      }
+
+      .survey-intro {
+        padding: 1.25rem 1.25rem;
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .survey-wrapper {
+        padding: 1.25rem 1rem 3rem;
+      }
+
+      .question {
+        padding: 1.25rem 1.15rem;
+      }
+
+      .option-list label {
+        padding: 0.45rem 0.5rem;
+      }
+
+      .option-other-input {
+        width: 140px;
+      }
+
+      .submit-button {
+        width: 100%;
+        padding: 1rem 1.5rem;
+      }
+    }
+
+    /* ===== Print Styles ===== */
+    @media print {
+      body {
+        background: #FFFFFF;
+        color: #000000;
+        font-size: 11pt;
+      }
+
+      .survey-header {
+        background-color: #FFFFFF !important;
+        color: #000000 !important;
+        border-bottom: 3pt solid #1B1B3A;
+        padding: 1rem 0;
+      }
+
+      .survey-header h1 {
+        color: #1B1B3A !important;
+      }
+
+      .survey-header__subtitle {
+        color: #555 !important;
+      }
+
+      .survey-header__badge {
+        color: #1B1B3A !important;
+        border-color: #1B1B3A !important;
+      }
+
+      .survey-intro {
+        border-left-color: #1B1B3A;
+        background: #f5f5f5 !important;
+      }
+
+      .question {
+        border: 1pt solid #ccc;
+        page-break-inside: avoid;
+        box-shadow: none !important;
+      }
+
+      .question:focus-within {
+        border-color: #ccc;
+        box-shadow: none;
+      }
+
+      .option-list input[type="radio"],
+      .option-list input[type="checkbox"] {
+        appearance: auto !important;
+        -webkit-appearance: auto !important;
+        width: auto;
+        height: auto;
+        min-width: auto;
+        border: none;
+      }
+
+      textarea {
+        border: 1pt solid #999;
+        min-height: 60pt;
+        background: #FFFFFF !important;
+      }
+
+      .follow-up input[type="text"] {
+        border: 1pt solid #999;
+        background: #FFFFFF !important;
+      }
+
+      .option-other-input {
+        border-bottom: 1pt solid #999;
+      }
+
+      .submit-area {
+        display: none;
+      }
+
+      .thank-you {
+        background-color: #f5f5f5 !important;
+        color: #1B1B3A !important;
+        border: 1pt solid #ccc;
+      }
+
+      .thank-you h2 {
+        color: #1B1B3A !important;
+      }
+
+      .thank-you p {
+        color: #333 !important;
+      }
+
+      .section__progress-bar {
+        display: none;
+      }
+
+      .survey-footer {
+        font-size: 9pt;
+      }
+    }
+
+    /* ===== Skip-to-content (a11y) ===== */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    a.skip-link {
+      position: absolute;
+      top: -100%;
+      left: 0;
+      background: #E8A838;
+      color: #1B1B3A;
+      padding: 0.5rem 1rem;
+      z-index: 100;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 0 0 0.25rem 0;
+    }
+
+    a.skip-link:focus {
+      top: 0;
+    }
+  </style>
+</head>
+<body>
+
+<a class="skip-link" href="#survey-form">Skip to survey</a>
+
+<!-- ===== Header ===== -->
+<header class="survey-header" role="banner">
+  <div class="survey-header__badge">Web / Comms Lead</div>
+  <h1>Technical Survey</h1>
+  <p class="survey-header__subtitle">Black Mental Health &amp; Wellbeing Alliance</p>
+</header>
+
+<!-- ===== Introduction ===== -->
+<div class="survey-intro" role="note" aria-label="Survey introduction">
+  <p>
+    This survey is for whoever currently manages the BMHWA website and/or communications. It'll help us
+    understand the technical landscape so we can build something that genuinely makes your life easier.
+    <strong>Should take 10&ndash;15 minutes.</strong> Be honest &mdash; we need to know what's actually
+    happening, not what should be happening.
+  </p>
+</div>
+
+<!-- ===== Form ===== -->
+<div class="survey-wrapper">
+  <form id="survey-form" action="#" method="POST" novalidate>
+
+    <!-- =============================================== -->
+    <!-- SECTION 1: Current Setup (Q1-Q5)                -->
+    <!-- =============================================== -->
+    <div class="section" id="section-1">
+      <div class="section__progress">
+        <span class="section__progress-label">Section 1 of 4</span>
+        <div class="section__progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" aria-label="Survey progress: section 1 of 4">
+          <div class="section__progress-fill" style="width: 25%"></div>
+        </div>
+      </div>
+      <h2 class="section__heading">Current setup</h2>
+      <p class="section__description">Let's get a picture of where things stand right now.</p>
+
+      <!-- Q1 -->
+      <div class="question" id="q1">
+        <div class="question__number">Question 1</div>
+        <fieldset>
+          <legend class="sr-only">Who has login access to the current Wix site, and who actively edits it?</legend>
+          <span class="question__label" id="q1-label">Who has login access to the current Wix site, and who actively edits it?</span>
+          <ul class="option-list" role="radiogroup" aria-labelledby="q1-label">
+            <li>
+              <label>
+                <input type="radio" name="q1" value="just-me">
+                <span>Just me</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="radio" name="q1" value="me-and-one-other">
+                <span>Me and one other person</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="radio" name="q1" value="multiple-people">
+                <span>Multiple people (3+)</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="radio" name="q1" value="not-sure">
+                <span>I'm not sure who has access</span>
+              </label>
+            </li>
+          </ul>
+        </fieldset>
+        <div class="follow-up">
+          <label for="q1-followup">Names/roles of active editors:</label>
+          <input type="text" id="q1-followup" name="q1_editors" placeholder="e.g. &quot;Sarah (chair), me (comms lead)&quot;" aria-label="Names and roles of active editors">
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="question" id="q2">
+        <div class="question__number">Question 2</div>
+        <fieldset>
+          <legend class="sr-only">How often is the site currently updated?</legend>
+          <span class="question__label" id="q2-label">How often is the site currently updated?</span>
+          <ul class="option-list" role="radiogroup" aria-labelledby="q2-label">
+            <li>
+              <label>
+                <input type="radio" name="q2" value="weekly">
+                <span>Weekly or more</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="radio" name="q2" value="monthly">
+                <span>Monthly</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="radio" name="q2" value="every-few-months">
+                <span>Every few months</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="radio" name="q2" value="rarely">
+                <span>Rarely / almost never</span>
+              </label>
+            </li>
+          </ul>
+        </fieldset>
+        <div class="follow-up">
+          <label for="q2-followup">What kind of updates?</label>
+          <input type="text" id="q2-followup" name="q2_update_types" placeholder="e.g. &quot;Adding news posts, updating events&quot;" aria-label="What kind of updates are made">
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="question" id="q3">
+        <div class="question__number">Question 3</div>
+        <fieldset>
+          <legend class="sr-only">What's the current Wix plan and cost?</legend>
+          <span class="question__label" id="q3-label">What's the current Wix plan and cost?</span>
+          <ul class="option-list" role="radiogroup" aria-labelledby="q3-label">
+            <li>
+              <label>
+                <input type="radio" name="q3" value="free">
+                <span>Free plan (Wix branding visible)</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="radio" name="q3" value="premium-combo">
+                <span>Wix Premium / Combo (~&pound;8&ndash;13/mo)</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="radio" name="q3" value="business">
+                <span>Wix Business (~&pound;17/mo)</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="radio" name="q3" value="not-sure">
+                <span>Not sure</span>
+              </label>
+            </li>
+          </ul>
+        </fieldset>
+        <div class="follow-up">
+          <label for="q3-followup">Who pays for it?</label>
+          <input type="text" id="q3-followup" name="q3_who_pays" placeholder="e.g. &quot;The Alliance, from core funding&quot;" aria-label="Who pays for the current Wix plan">
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="question" id="q4">
+        <div class="question__number">Question 4</div>
+        <fieldset>
+          <legend class="sr-only">Where is the bmhwa.co.uk domain registered?</legend>
+          <span class="question__label" id="q4-label">Where is the bmhwa.co.uk domain registered?</span>
+          <ul class="option-list" role="radiogroup" aria-labelledby="q4-label">
+            <li>
+              <label>
+                <input type="radio" name="q4" value="through-wix">
+                <span>Through Wix</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="radio" name="q4" value="another-provider">
+                <span>Through another provider</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="radio" name="q4" value="not-sure">
+                <span>Not sure</span>
+              </label>
+            </li>
+          </ul>
+        </fieldset>
+        <div class="follow-up">
+          <label for="q4-provider">If another provider, which one?</label>
+          <input type="text" id="q4-provider" name="q4_provider" placeholder="e.g. &quot;GoDaddy, 123 Reg, Namecheap&quot;" aria-label="Domain provider name">
+        </div>
+        <div class="follow-up">
+          <label for="q4-access">Who has access to the domain settings?</label>
+          <input type="text" id="q4-access" name="q4_domain_access" placeholder="e.g. &quot;The chair has the login&quot;" aria-label="Who has access to domain settings">
+        </div>
+      </div>
+
+      <!-- Q5 -->
+      <div class="question" id="q5">
+        <div class="question__number">Question 5</div>
+        <fieldset>
+          <legend class="sr-only">What email addresses does the Alliance use?</legend>
+          <span class="question__label" id="q5-label">What email addresses does the Alliance use?</span>
+          <p class="question__hint">Select all that apply</p>
+          <ul class="option-list" aria-labelledby="q5-label">
+            <li>
+              <label>
+                <input type="checkbox" name="q5" value="bmhwa-addresses">
+                <span>@bmhwa.co.uk addresses</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="q5" value="personal-email">
+                <span>Personal email addresses (Gmail, Outlook, etc.)</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="q5" value="shared-email">
+                <span>A shared email (e.g. info@bmhwa.co.uk)</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="q5" value="other">
+                <span>Other: <input type="text" class="option-other-input" name="q5_other" aria-label="Other email arrangement" placeholder="Please specify"></span>
+              </label>
+            </li>
+          </ul>
+        </fieldset>
+      </div>
+    </div>
+
+    <!-- =============================================== -->
+    <!-- SECTION 2: Communications & Tools (Q6-Q10)      -->
+    <!-- =============================================== -->
+    <div class="section" id="section-2">
+      <div class="section__progress">
+        <span class="section__progress-label">Section 2 of 4</span>
+        <div class="section__progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" aria-label="Survey progress: section 2 of 4">
+          <div class="section__progress-fill" style="width: 50%"></div>
+        </div>
+      </div>
+      <h2 class="section__heading">Communications &amp; tools</h2>
+      <p class="section__description">What you're currently working with &mdash; and what's not working.</p>
+
+      <!-- Q6 -->
+      <div class="question" id="q6">
+        <div class="question__number">Question 6</div>
+        <fieldset>
+          <legend class="sr-only">What tools/platforms do you currently use for Alliance communications?</legend>
+          <span class="question__label" id="q6-label">What tools/platforms do you currently use for Alliance communications?</span>
+          <p class="question__hint">Select all that apply</p>
+          <ul class="option-list" aria-labelledby="q6-label">
+            <li>
+              <label>
+                <input type="checkbox" name="q6" value="mailchimp">
+                <span>Mailchimp</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="q6" value="other-email-platform">
+                <span>Other email platform: <input type="text" class="option-other-input" name="q6_email_platform" aria-label="Which email platform" placeholder="Which?"></span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="q6" value="social-scheduling">
+                <span>Social media scheduling tool: <input type="text" class="option-other-input" name="q6_social_tool" aria-label="Which social scheduling tool" placeholder="Which?"></span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="q6" value="google-workspace">
+                <span>Google Workspace</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="q6" value="google-docs">
+                <span>Google Docs</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="q6" value="microsoft-365">
+                <span>Microsoft 365</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="q6" value="slack">
+                <span>Slack</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="q6" value="teams">
+                <span>Teams</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="q6" value="whatsapp">
+                <span>WhatsApp group</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="q6" value="canva">
+                <span>Canva or similar design tool</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="q6" value="none">
+                <span>None of the above</span>
+              </label>
+            </li>
+          </ul>
+        </fieldset>
+      </div>
+
+      <!-- Q7 -->
+      <div class="question" id="q7">
+        <div class="question__number">Question 7</div>
+        <fieldset>
+          <legend class="sr-only">How is the mailing list / newsletter currently managed?</legend>
+          <span class="question__label" id="q7-label">How is the mailing list / newsletter currently managed?</span>
+          <ul class="option-list" role="radiogroup" aria-labelledby="q7-label">
+            <li>
+              <label>
+                <input type="radio" name="q7" value="newsletter-platform">
+                <span>We have a newsletter through Mailchimp or similar</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="radio" name="q7" value="manual-updates">
+                <span>We collect emails but send updates manually</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="radio" name="q7" value="contact-form">
+                <span>We use a contact form on the site</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="radio" name="q7" value="no-mailing-list">
+                <span>We don't have a mailing list</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="radio" name="q7" value="other">
+                <span>Other: <input type="text" class="option-other-input" name="q7_other" aria-label="Other mailing list arrangement" placeholder="Please specify"></span>
+              </label>
+            </li>
+          </ul>
+        </fieldset>
+        <div class="follow-up">
+          <label for="q7-subscribers">Approximate number of subscribers/contacts:</label>
+          <input type="text" id="q7-subscribers" name="q7_subscribers" placeholder="e.g. &quot;About 200&quot; or &quot;No idea&quot;" aria-label="Approximate number of subscribers or contacts">
+        </div>
+      </div>
+
+      <!-- Q8 -->
+      <div class="question" id="q8">
+        <div class="question__number">Question 8</div>
+        <fieldset>
+          <legend class="sr-only">What social media accounts does the Alliance manage?</legend>
+          <span class="question__label" id="q8-label">What social media accounts does the Alliance manage?</span>
+          <p class="question__hint">Select all that apply</p>
+          <ul class="option-list" aria-labelledby="q8-label">
+            <li>
+              <label>
+                <input type="checkbox" name="q8" value="instagram">
+                <span>Instagram</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="q8" value="twitter-x">
+                <span>Twitter/X</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="q8" value="facebook">
+                <span>Facebook</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="q8" value="linkedin">
+                <span>LinkedIn</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="q8" value="youtube">
+                <span>YouTube</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="q8" value="other">
+                <span>Other: <input type="text" class="option-other-input" name="q8_other" aria-label="Other social media platform" placeholder="Which?"></span>
+              </label>
+            </li>
+          </ul>
+        </fieldset>
+        <div class="follow-up">
+          <label for="q8-manager">Who manages these?</label>
+          <input type="text" id="q8-manager" name="q8_manager" placeholder="e.g. &quot;I do, mostly&quot; or &quot;Shared between 3 of us&quot;" aria-label="Who manages social media accounts">
+        </div>
+      </div>
+
+      <!-- Q9 -->
+      <div class="question" id="q9">
+        <div class="question__number">Question 9</div>
+        <fieldset>
+          <legend class="sr-only">Where are Alliance files/documents currently stored?</legend>
+          <span class="question__label" id="q9-label">Where are Alliance files/documents currently stored?</span>
+          <ul class="option-list" role="radiogroup" aria-labelledby="q9-label">
+            <li>
+              <label>
+                <input type="radio" name="q9" value="google-drive">
+                <span>Google Drive</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="radio" name="q9" value="onedrive">
+                <span>OneDrive</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="radio" name="q9" value="sharepoint">
+                <span>SharePoint</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="radio" name="q9" value="dropbox">
+                <span>Dropbox</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="radio" name="q9" value="various">
+                <span>Various places (mixed)</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="radio" name="q9" value="other">
+                <span>Other: <input type="text" class="option-other-input" name="q9_other" aria-label="Other file storage location" placeholder="Please specify"></span>
+              </label>
+            </li>
+          </ul>
+        </fieldset>
+      </div>
+
+      <!-- Q10 -->
+      <div class="question" id="q10">
+        <div class="question__number">Question 10</div>
+        <fieldset>
+          <legend class="sr-only">What are your biggest pain points with the current digital setup?</legend>
+          <span class="question__label" id="q10-label">What are your biggest pain points with the current digital setup?</span>
+          <p class="question__hint">Select all that apply</p>
+          <ul class="option-list" aria-labelledby="q10-label">
+            <li>
+              <label>
+                <input type="checkbox" name="q10" value="hard-to-update">
+                <span>Website is hard to update</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="q10" value="no-visitor-tracking">
+                <span>Can't track who's visiting the site</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="q10" value="no-email-analytics">
+                <span>Don't have analytics on newsletter/email performance</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="q10" value="social-time-consuming">
+                <span>Social media is time-consuming to manage</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="q10" value="hard-to-coordinate">
+                <span>Hard to coordinate content across the steering committee</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="q10" value="no-workflow">
+                <span>No clear workflow for publishing content</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="q10" value="unprofessional-design">
+                <span>Design looks unprofessional</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="q10" value="hard-to-share-resources">
+                <span>Can't easily share resources/documents with supporters</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="q10" value="other">
+                <span>Other: <input type="text" class="option-other-input" name="q10_other" aria-label="Other pain point" placeholder="Please specify"></span>
+              </label>
+            </li>
+          </ul>
+        </fieldset>
+      </div>
+    </div>
+
+    <!-- =============================================== -->
+    <!-- SECTION 3: Assess & Align and Tools (Q11-Q13)   -->
+    <!-- =============================================== -->
+    <div class="section" id="section-3">
+      <div class="section__progress">
+        <span class="section__progress-label">Section 3 of 4</span>
+        <div class="section__progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="Survey progress: section 3 of 4">
+          <div class="section__progress-fill" style="width: 75%"></div>
+        </div>
+      </div>
+      <h2 class="section__heading">Assess &amp; Align and tools</h2>
+      <p class="section__description">Understanding the tools landscape so everything works together.</p>
+
+      <!-- Q11 -->
+      <div class="question" id="q11">
+        <div class="question__number">Question 11</div>
+        <fieldset>
+          <legend class="sr-only">What is the current status of the Assess &amp; Align tool?</legend>
+          <span class="question__label" id="q11-label">What is the current status of the Assess &amp; Align tool?</span>
+          <ul class="option-list" role="radiogroup" aria-labelledby="q11-label">
+            <li>
+              <label>
+                <input type="radio" name="q11" value="active-use">
+                <span>In active use</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="radio" name="q11" value="development">
+                <span>In development / prototype stage</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="radio" name="q11" value="paused">
+                <span>Paused / on hold</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="radio" name="q11" value="not-started">
+                <span>Not started yet</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="radio" name="q11" value="not-sure">
+                <span>Not sure</span>
+              </label>
+            </li>
+          </ul>
+        </fieldset>
+        <div class="follow-up">
+          <label for="q11-hosted">Where is it currently hosted?</label>
+          <input type="text" id="q11-hosted" name="q11_hosted" placeholder="e.g. &quot;On a separate site&quot;, &quot;Nowhere yet&quot;" aria-label="Where Assess and Align is currently hosted">
+        </div>
+      </div>
+
+      <!-- Q12 -->
+      <div class="question" id="q12">
+        <div class="question__number">Question 12</div>
+        <label class="question__label" for="q12-input">Are there other digital tools or platforms the Alliance uses or is developing?</label>
+        <p class="question__hint">List anything: dashboards, databases, forms, internal tools, etc.</p>
+        <textarea id="q12-input" name="q12" placeholder="e.g. &quot;We have a Typeform for event signups, a shared Notion for meeting notes, and someone built a Google Sheet tracker for...&quot;" rows="4"></textarea>
+      </div>
+
+      <!-- Q13 -->
+      <div class="question" id="q13">
+        <div class="question__number">Question 13</div>
+        <fieldset>
+          <legend class="sr-only">What level of integration would you want between the website and Assess &amp; Align?</legend>
+          <span class="question__label" id="q13-label">What level of integration would you want between the website and Assess &amp; Align?</span>
+          <ul class="option-list" role="radiogroup" aria-labelledby="q13-label">
+            <li>
+              <label>
+                <input type="radio" name="q13" value="embedded">
+                <span>Embedded directly in the website (users access it without leaving the site)</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="radio" name="q13" value="linked">
+                <span>Linked from the website (separate tool, opens in new tab)</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="radio" name="q13" value="featured">
+                <span>Featured but not yet functional (describe the vision, link when ready)</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="radio" name="q13" value="not-priority">
+                <span>Not a priority for the website</span>
+              </label>
+            </li>
+          </ul>
+        </fieldset>
+      </div>
+    </div>
+
+    <!-- =============================================== -->
+    <!-- SECTION 4: Migration & Handover (Q14-Q16)       -->
+    <!-- =============================================== -->
+    <div class="section" id="section-4">
+      <div class="section__progress">
+        <span class="section__progress-label">Section 4 of 4</span>
+        <div class="section__progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" aria-label="Survey progress: section 4 of 4">
+          <div class="section__progress-fill" style="width: 100%"></div>
+        </div>
+      </div>
+      <h2 class="section__heading">Migration &amp; handover</h2>
+      <p class="section__description">Planning the move from Wix to the new site &mdash; and making sure you're set up for success.</p>
+
+      <!-- Q14 -->
+      <div class="question" id="q14">
+        <div class="question__number">Question 14</div>
+        <label class="question__label" for="q14-input">Is there any content on the current Wix site that should NOT be carried over?</label>
+        <p class="question__hint">Anything outdated, wrong, or no longer relevant</p>
+        <textarea id="q14-input" name="q14" placeholder="e.g. &quot;The events page hasn't been updated since 2024, and the team bios are out of date...&quot;" rows="4"></textarea>
+      </div>
+
+      <!-- Q15 -->
+      <div class="question" id="q15">
+        <div class="question__number">Question 15</div>
+        <fieldset>
+          <legend class="sr-only">Are there any integrations on the current site we should know about?</legend>
+          <span class="question__label" id="q15-label">Are there any integrations on the current site we should know about?</span>
+          <p class="question__hint">Select all that apply</p>
+          <ul class="option-list" aria-labelledby="q15-label">
+            <li>
+              <label>
+                <input type="checkbox" name="q15" value="contact-forms">
+                <span>Contact forms that email somewhere specific</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="q15" value="analytics">
+                <span>Google Analytics or other tracking</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="q15" value="social-feeds">
+                <span>Embedded social media feeds</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="q15" value="third-party-widgets">
+                <span>Third-party widgets (donations, events, etc.)</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="q15" value="none">
+                <span>None that I know of</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="q15" value="other">
+                <span>Other: <input type="text" class="option-other-input" name="q15_other" aria-label="Other integration" placeholder="Please specify"></span>
+              </label>
+            </li>
+          </ul>
+        </fieldset>
+      </div>
+
+      <!-- Q16 -->
+      <div class="question" id="q16">
+        <div class="question__number">Question 16</div>
+        <fieldset>
+          <legend class="sr-only">After the new site launches, what training would be most useful for you?</legend>
+          <span class="question__label" id="q16-label">After the new site launches, what training would be most useful for you?</span>
+          <p class="question__hint">Select all that apply</p>
+          <ul class="option-list" aria-labelledby="q16-label">
+            <li>
+              <label>
+                <input type="checkbox" name="q16" value="live-walkthrough">
+                <span>Live walkthrough of the admin/editing interface</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="q16" value="video-tutorials">
+                <span>Recorded video tutorials I can rewatch</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="q16" value="written-guide">
+                <span>Written guide with screenshots</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="q16" value="ongoing-support">
+                <span>Ongoing support (monthly check-in for first 3 months)</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="q16" value="all-above">
+                <span>All of the above</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="q16" value="other">
+                <span>Other: <input type="text" class="option-other-input" name="q16_other" aria-label="Other training format" placeholder="Please specify"></span>
+              </label>
+            </li>
+          </ul>
+        </fieldset>
+      </div>
+    </div>
+
+    <!-- ===== Submit ===== -->
+    <div class="submit-area">
+      <button type="submit" class="submit-button">Submit Survey</button>
+      <p class="submit-note">
+        If the form doesn't work, email your responses to
+        <a href="mailto:BlackMHManifesto@gmail.com">BlackMHManifesto@gmail.com</a>.
+      </p>
+    </div>
+
+  </form>
+
+  <!-- ===== Thank You ===== -->
+  <div class="thank-you" role="status" aria-label="Thank you message">
+    <h2>Thank you for your time</h2>
+    <p>
+      Your answers will directly inform how we build the new site &mdash; and make sure it works
+      for you day-to-day, not just on launch day.
+    </p>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <footer class="survey-footer">
+    <p>Black Mental Health &amp; Wellbeing Alliance &mdash; Technical Survey 2026</p>
+  </footer>
+
+</div>
+
+<script>
+// ===== Supabase Configuration =====
+// REPLACE these with your actual Supabase project values
+const SUPABASE_URL = 'YOUR_SUPABASE_URL';   // e.g. https://xxxx.supabase.co
+const SUPABASE_ANON_KEY = 'YOUR_ANON_KEY';  // the public anon key
+
+const form = document.getElementById('survey-form');
+const thankYou = document.querySelector('.thank-you');
+const submitBtn = form.querySelector('.submit-button');
+const submitNote = form.querySelector('.submit-note');
+
+// Hide thank-you initially
+thankYou.style.display = 'none';
+
+function getChecked(name) {
+  return Array.from(form.querySelectorAll(`input[name="${name}"]:checked`)).map(el => el.value);
+}
+
+function getRadio(name) {
+  const el = form.querySelector(`input[name="${name}"]:checked`);
+  return el ? el.value : null;
+}
+
+function getText(name) {
+  const el = form.querySelector(`[name="${name}"]`);
+  return el ? el.value.trim() || null : null;
+}
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Submitting...';
+
+  const data = {
+    // Section 1: Current Setup
+    site_access: getRadio('q1'),
+    site_editors: getText('q1_editors'),
+    update_frequency: getRadio('q2'),
+    update_types: getText('q2_update_types'),
+    wix_plan: getRadio('q3'),
+    who_pays: getText('q3_who_pays'),
+    domain_registrar: getRadio('q4'),
+    domain_provider: getText('q4_provider'),
+    domain_access_person: getText('q4_domain_access'),
+    email_types: getChecked('q5'),
+    email_other: getText('q5_other'),
+
+    // Section 2: Communications & Tools
+    comms_tools: getChecked('q6'),
+    comms_email_platform: getText('q6_email_platform'),
+    comms_social_tool: getText('q6_social_tool'),
+    mailing_list: getRadio('q7'),
+    mailing_list_other: getText('q7_other'),
+    mailing_list_subscribers: getText('q7_subscribers'),
+    social_accounts: getChecked('q8'),
+    social_other: getText('q8_other'),
+    social_manager: getText('q8_manager'),
+    file_storage: getRadio('q9'),
+    file_storage_other: getText('q9_other'),
+    pain_points: getChecked('q10'),
+    pain_points_other: getText('q10_other'),
+
+    // Section 3: Assess & Align
+    assess_align_status: getRadio('q11'),
+    assess_align_hosted: getText('q11_hosted'),
+    other_tools: getText('q12'),
+    assess_align_integration: getRadio('q13'),
+
+    // Section 4: Migration & Handover
+    content_to_remove: getText('q14'),
+    existing_integrations: getChecked('q15'),
+    integrations_other: getText('q15_other'),
+    training_needs: getChecked('q16'),
+    training_other: getText('q16_other')
+  };
+
+  try {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/technical_responses`, {
+      method: 'POST',
+      headers: {
+        'apikey': SUPABASE_ANON_KEY,
+        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+        'Content-Type': 'application/json',
+        'Prefer': 'return=minimal'
+      },
+      body: JSON.stringify(data)
+    });
+
+    if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+
+    form.style.display = 'none';
+    thankYou.style.display = 'block';
+    window.scrollTo({ top: thankYou.offsetTop - 40, behavior: 'smooth' });
+  } catch (err) {
+    console.error('Submission error:', err);
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Submit Survey';
+    submitNote.innerHTML = `
+      <strong style="color: #C0392B;">Something went wrong.</strong> Please try again, or email your responses to
+      <a href="mailto:BlackMHManifesto@gmail.com">BlackMHManifesto@gmail.com</a>.
+    `;
+  }
+});
+</script>
+</body>
+</html>

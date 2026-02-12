@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Redesign — Black Mental Health Manifesto</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Work+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --primary: #1B1B3A;
+            --accent: #E8A838;
+            --urgent: #C0392B;
+            --text: #2D2D2D;
+            --light-bg: #FBF8F3;
+            --card-bg: #FFFFFF;
+            --muted: #6B7280;
+            --font-heading: 'DM Serif Display', Georgia, 'Times New Roman', serif;
+            --font-body: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-data: 'Space Grotesk', 'SF Mono', 'Fira Code', monospace;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text);
+            background-color: var(--light-bg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a:focus-visible, button:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        /* Skip link */
+        .skip-link {
+            position: absolute;
+            top: -100%;
+            left: 16px;
+            background: var(--accent);
+            color: var(--primary);
+            padding: 8px 16px;
+            font-weight: 600;
+            z-index: 100;
+            border-radius: 0 0 6px 6px;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* ── Header ── */
+        .header {
+            background: var(--primary);
+            color: #FFFFFF;
+            padding: 48px 24px 56px;
+            text-align: center;
+        }
+        .header-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .header-badge {
+            display: inline-block;
+            background: rgba(232, 168, 56, 0.15);
+            border: 1px solid rgba(232, 168, 56, 0.4);
+            color: var(--accent);
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 6px 16px;
+            border-radius: 4px;
+            margin-bottom: 24px;
+        }
+        .header h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        .header h1 em {
+            color: var(--accent);
+            font-style: normal;
+        }
+        .header p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* ── Main content ── */
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ── Section blocks ── */
+        .section {
+            margin: 48px 0;
+        }
+        .section-label {
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+        .section h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(1.5rem, 3.5vw, 2rem);
+            color: var(--primary);
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+        .section p {
+            color: var(--text);
+            margin-bottom: 16px;
+        }
+        .section p.muted {
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        /* ── Stat callout ── */
+        .stat-callout {
+            background: var(--primary);
+            color: #FFFFFF;
+            padding: 32px;
+            border-radius: 8px;
+            margin: 32px 0;
+            border-left: 4px solid var(--accent);
+        }
+        .stat-callout .stat-number {
+            font-family: var(--font-data);
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+        .stat-callout .stat-context {
+            font-size: 1.1rem;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        .stat-callout .stat-source {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 12px;
+        }
+
+        /* ── Problem/solution cards ── */
+        .problem-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 16px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+        }
+        .problem-card h3 {
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+        .problem-card p {
+            font-size: 0.95rem;
+            color: var(--muted);
+            margin-bottom: 0;
+        }
+        .problem-card .tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            padding: 3px 8px;
+            border-radius: 3px;
+            margin-bottom: 10px;
+        }
+        .tag-problem {
+            background: rgba(192, 57, 43, 0.1);
+            color: var(--urgent);
+        }
+        .tag-fix {
+            background: rgba(232, 168, 56, 0.15);
+            color: #b8860b;
+        }
+
+        /* ── Divider ── */
+        .divider {
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(27, 27, 58, 0.15), transparent);
+            margin: 48px 0;
+        }
+
+        /* ── Features grid ── */
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 24px 0;
+        }
+        .feature-item {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+        }
+        .feature-icon {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+        .feature-item h3 {
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+        .feature-item p {
+            font-size: 0.85rem;
+            color: var(--muted);
+            margin-bottom: 0;
+            line-height: 1.5;
+        }
+
+        /* ── Timeline ── */
+        .timeline {
+            position: relative;
+            margin: 32px 0;
+            padding-left: 32px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 11px;
+            top: 8px;
+            bottom: 8px;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--accent), rgba(27, 27, 58, 0.2));
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 20px;
+            padding-bottom: 4px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -25px;
+            top: 6px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(27, 27, 58, 0.2);
+            border: 2px solid var(--light-bg);
+        }
+        .timeline-item.active::before {
+            background: var(--accent);
+            box-shadow: 0 0 0 4px rgba(232, 168, 56, 0.2);
+        }
+        .timeline-item.active {
+            background: rgba(232, 168, 56, 0.06);
+            margin-left: -12px;
+            padding: 12px;
+            border-radius: 6px;
+        }
+        .timeline-item.active::before {
+            left: -13px;
+        }
+        .timeline-date {
+            font-family: var(--font-data);
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--muted);
+        }
+        .timeline-item.active .timeline-date {
+            color: var(--accent);
+            font-weight: 700;
+        }
+        .timeline-title {
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--primary);
+        }
+        .timeline-item.active .timeline-title {
+            color: var(--primary);
+        }
+        .timeline-here {
+            display: inline-block;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            background: var(--accent);
+            color: var(--primary);
+            padding: 2px 8px;
+            border-radius: 3px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+
+        /* ── Cost table ── */
+        .cost-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            font-size: 0.9rem;
+        }
+        .cost-table th {
+            text-align: left;
+            font-weight: 600;
+            color: var(--primary);
+            padding: 12px 16px;
+            border-bottom: 2px solid var(--primary);
+            font-family: var(--font-body);
+        }
+        .cost-table td {
+            padding: 10px 16px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            color: var(--text);
+        }
+        .cost-table tr:last-child td {
+            border-bottom: none;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        .cost-table .option-label {
+            font-weight: 600;
+        }
+        .cost-table .recommended {
+            background: rgba(232, 168, 56, 0.08);
+        }
+        .cost-table .recommended td:first-child::after {
+            content: ' (recommended)';
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--accent);
+        }
+
+        /* ── CTA section ── */
+        .cta-section {
+            background: var(--primary);
+            color: #FFFFFF;
+            border-radius: 8px;
+            padding: 40px 32px;
+            text-align: center;
+            margin: 48px 0;
+        }
+        .cta-section h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(1.4rem, 3vw, 1.8rem);
+            color: #FFFFFF;
+            margin-bottom: 12px;
+        }
+        .cta-section p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 24px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .cta-button {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--primary);
+            font-family: var(--font-body);
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            padding: 14px 32px;
+            border-radius: 6px;
+            transition: background 0.2s, transform 0.1s;
+        }
+        .cta-button:hover {
+            background: #d4972e;
+        }
+        .cta-button:active {
+            transform: scale(0.98);
+        }
+        .cta-secondary {
+            display: block;
+            margin-top: 12px;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        .cta-secondary a {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* ── Footer ── */
+        .footer {
+            text-align: center;
+            padding: 32px 24px 48px;
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+        .footer-solidarity {
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+        .footer-solidarity strong {
+            color: var(--primary);
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 640px) {
+            .header {
+                padding: 32px 20px 40px;
+            }
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            .stat-callout {
+                padding: 24px;
+            }
+            .stat-callout .stat-number {
+                font-size: 2.2rem;
+            }
+            .cta-section {
+                padding: 32px 24px;
+            }
+            .cost-table {
+                font-size: 0.82rem;
+            }
+            .cost-table th, .cost-table td {
+                padding: 8px 10px;
+            }
+        }
+
+        /* ── Print ── */
+        @media print {
+            body {
+                background: white;
+                color: #000;
+            }
+            .header {
+                background: white;
+                color: #000;
+                border-bottom: 3px solid #000;
+                padding: 24px 0;
+            }
+            .header-badge {
+                border-color: #000;
+                color: #000;
+            }
+            .header p {
+                color: #333;
+            }
+            .header h1 em {
+                color: #000;
+                text-decoration: underline;
+            }
+            .stat-callout {
+                background: #f5f5f5;
+                color: #000;
+                border-left-color: #000;
+            }
+            .stat-callout .stat-number {
+                color: #000;
+            }
+            .stat-callout .stat-context {
+                color: #333;
+            }
+            .cta-section {
+                background: #f5f5f5;
+                color: #000;
+                border: 2px solid #000;
+            }
+            .cta-section h2, .cta-section p {
+                color: #000;
+            }
+            .cta-button {
+                border: 2px solid #000;
+                color: #000;
+                background: white;
+            }
+            .timeline-item.active {
+                background: #f5f5f5;
+            }
+            a {
+                text-decoration: underline;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+
+    <header class="header">
+        <div class="header-inner">
+            <div class="header-badge">Website Redesign Proposal</div>
+            <h1>A New Home for the <em>Black Mental Health Manifesto</em></h1>
+            <p>We've audited the current site, mapped what's possible, and designed a path to launch by April. Here's what we found — and what we need from you.</p>
+        </div>
+    </header>
+
+    <main id="main">
+
+        <!-- ── WHY WE'RE DOING THIS ── -->
+        <section class="section" aria-labelledby="why-heading">
+            <div class="section-label">The Problem</div>
+            <h2 id="why-heading">The current site is working against the manifesto</h2>
+            <p>The manifesto demands structural change to close the inequality gap for Black people within mental health services. That demands authority, reach, and clarity. The current Wix site undermines all three.</p>
+
+            <div class="problem-card">
+                <span class="tag tag-problem">Search Engines</span>
+                <h3>The manifesto is invisible to Google</h3>
+                <p>Wix renders content with JavaScript. Search engines struggle to read it. Someone searching "Black mental health manifesto UK" may never find you.</p>
+            </div>
+
+            <div class="problem-card">
+                <span class="tag tag-problem">Shareability</span>
+                <h3>Shared links look generic</h3>
+                <p>When someone shares the site on LinkedIn or WhatsApp, there's no compelling preview — no image, no description. Every share is a missed opportunity.</p>
+            </div>
+
+            <div class="problem-card">
+                <span class="tag tag-problem">Design</span>
+                <h3>The design doesn't match the authority of the demands</h3>
+                <p>A national policy campaign needs to project weight. The current design is clean but generic — it doesn't convey the gravity of what's being demanded.</p>
+            </div>
+
+            <div class="problem-card">
+                <span class="tag tag-problem">Accessibility</span>
+                <h3>People using screen readers have a poor experience</h3>
+                <p>Wix outputs heavily nested code with limited accessibility support. For a health equity campaign, this is a contradiction.</p>
+            </div>
+        </section>
+
+        <div class="stat-callout" role="figure" aria-label="Key statistic">
+            <div class="stat-number">4x</div>
+            <div class="stat-context">Black people are detained under the Mental Health Act at four times the rate of white people. The manifesto demands this must end. The website should make this fact impossible to ignore.</div>
+            <div class="stat-source">NHS Digital, Mental Health Act Statistics</div>
+        </div>
+
+        <hr class="divider">
+
+        <!-- ── WHAT'S POSSIBLE ── -->
+        <section class="section" aria-labelledby="possible-heading">
+            <div class="section-label">What's Possible</div>
+            <h2 id="possible-heading">A site that matches the urgency of the demands</h2>
+            <p>Here's what the new site could include. Your survey responses will determine what we prioritise.</p>
+
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon" aria-hidden="true">&#9782;</div>
+                    <h3>The manifesto, beautifully presented</h3>
+                    <p>Full text with clear sections, downloadable PDF, and key statistics alongside each demand.</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon" aria-hidden="true">&#9776;</div>
+                    <h3>Data that makes the case</h3>
+                    <p>Accessible visualisations of the evidence — detention rates, treatment orders, workforce gaps — so the numbers land.</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon" aria-hidden="true">&#10003;</div>
+                    <h3>Endorsement wall</h3>
+                    <p>Every supporting organisation visible. Social proof that this isn't one voice — it's a movement.</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon" aria-hidden="true">&#9993;</div>
+                    <h3>Write to your MP</h3>
+                    <p>Supporters enter their postcode, find their MP, and get a template letter. Advocacy made easy.</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon" aria-hidden="true">&#9998;</div>
+                    <h3>Newsletter signup</h3>
+                    <p>Build a supporter base. Keep people informed. Drive action when it matters.</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon" aria-hidden="true">&#9881;</div>
+                    <h3>Press kit</h3>
+                    <p>Logos, key stats, press releases — everything a journalist needs to cover the campaign, in one download.</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon" aria-hidden="true">&#9733;</div>
+                    <h3>Learning &amp; Capacity Building</h3>
+                    <p>Featuring Assess &amp; Align and resources for the sector. The Alliance builds solutions, not just demands.</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon" aria-hidden="true">&#8644;</div>
+                    <h3>Optimised sharing</h3>
+                    <p>Every shared link shows a compelling preview. Key stats formatted as shareable social cards.</p>
+                </div>
+            </div>
+
+            <p class="muted">Plus: blog/news section for updates, event listings, pledge/endorsement forms, and proper SEO so the manifesto is findable.</p>
+        </section>
+
+        <hr class="divider">
+
+        <!-- ── TIMELINE ── -->
+        <section class="section" aria-labelledby="timeline-heading">
+            <div class="section-label">Timeline</div>
+            <h2 id="timeline-heading">Seven weeks to launch</h2>
+            <p>We're working towards your April anniversary. Here's the plan.</p>
+
+            <div class="timeline" role="list" aria-label="Project timeline">
+                <div class="timeline-item active" role="listitem">
+                    <div class="timeline-date">Feb 11–17</div>
+                    <div class="timeline-title">Discovery + Survey <span class="timeline-here">We are here</span></div>
+                </div>
+                <div class="timeline-item" role="listitem">
+                    <div class="timeline-date">Feb 18–24</div>
+                    <div class="timeline-title">Design</div>
+                </div>
+                <div class="timeline-item" role="listitem">
+                    <div class="timeline-date">Feb 25 – Mar 10</div>
+                    <div class="timeline-title">Build</div>
+                </div>
+                <div class="timeline-item" role="listitem">
+                    <div class="timeline-date">Mar 11–17</div>
+                    <div class="timeline-title">Content + Review</div>
+                </div>
+                <div class="timeline-item" role="listitem">
+                    <div class="timeline-date">Mar 18–24</div>
+                    <div class="timeline-title">Testing + Training</div>
+                </div>
+                <div class="timeline-item" role="listitem">
+                    <div class="timeline-date">Mar 25–31</div>
+                    <div class="timeline-title">Launch Prep</div>
+                </div>
+                <div class="timeline-item" role="listitem">
+                    <div class="timeline-date">Early April</div>
+                    <div class="timeline-title">Launch</div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- ── COST ── -->
+        <section class="section" aria-labelledby="cost-heading">
+            <div class="section-label">Transparency</div>
+            <h2 id="cost-heading">What it costs</h2>
+            <p>The design and build are pro bono. The only ongoing costs are hosting and domain renewal. Your survey responses will help us recommend the right option.</p>
+
+            <table class="cost-table" aria-label="Hosting cost comparison">
+                <thead>
+                    <tr>
+                        <th scope="col">Option</th>
+                        <th scope="col">Hosting</th>
+                        <th scope="col">Domain</th>
+                        <th scope="col">Total / year</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="recommended">
+                        <td class="option-label">Webflow</td>
+                        <td>~£20/mo</td>
+                        <td>~£10/yr</td>
+                        <td>~£250</td>
+                    </tr>
+                    <tr>
+                        <td class="option-label">Astro + Netlify</td>
+                        <td>£0</td>
+                        <td>~£10/yr</td>
+                        <td>~£10</td>
+                    </tr>
+                    <tr>
+                        <td class="option-label">WordPress</td>
+                        <td>~£10/mo</td>
+                        <td>~£10/yr</td>
+                        <td>~£130</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p class="muted">All options include SSL, CDN, and no Wix branding. The free option (Astro + Netlify) is technically excellent — the trade-off is a slightly less intuitive content editor. Newsletter platform (Mailchimp free tier) and analytics (Plausible or Google Analytics) are free regardless.</p>
+        </section>
+
+        <!-- ── CTA ── -->
+        <section class="cta-section" aria-labelledby="cta-heading">
+            <h2 id="cta-heading">Your priorities shape what we build first</h2>
+            <p>The survey takes 10–15 minutes. There are no wrong answers — we need your honest priorities to build this right.</p>
+            <a href="#survey-link" class="cta-button" role="link">Complete the Survey</a>
+            <span class="cta-secondary">Survey closes <strong>Sunday 16 February</strong></span>
+        </section>
+
+        <!-- ── WHO'S BUILDING IT ── -->
+        <section class="section" aria-labelledby="who-heading">
+            <div class="section-label">In Solidarity</div>
+            <h2 id="who-heading">Who's building it</h2>
+            <p>This website is being built pro bono by <strong>BLKOUT</strong> in solidarity with the Black Mental Health &amp; Wellbeing Alliance. We bring experience building digital platforms for Black communities and a commitment to making sure the manifesto has the online presence it deserves.</p>
+            <p>We're not an agency pitching for a contract. We're community, building for community.</p>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p class="footer-solidarity">Built with solidarity by <strong>BLKOUT</strong> for <strong>BMHWA</strong></p>
+        <p>February 2026</p>
+    </footer>
+</body>
+</html>
