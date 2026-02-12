@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+const base = import.meta.env.BASE_URL;
 
 const recommendations = {
   part1: [
@@ -130,7 +131,7 @@ const recommendations = {
       <h1 id="manifesto-heading">The Black Mental Health Manifesto</h1>
       <p class="manifesto-subtitle">A Manifesto for Radical Change</p>
       <p class="manifesto-hero-desc">23 recommendations for structural change across government, NHS, education, and civil society.</p>
-      <a href="/bmh-manifesto.pdf" class="btn btn-primary" download>Download PDF</a>
+      <a href={`${base}bmh-manifesto.pdf`} class="btn btn-primary" download>Download PDF</a>
     </div>
   </section>
 
@@ -218,7 +219,7 @@ const recommendations = {
     <div class="container narrow download-inner">
       <h2 id="download-heading">Download the full Manifesto</h2>
       <p>The Black Mental Health Manifesto is freely available to download, share, and reference. Distribute it to colleagues, elected representatives, commissioners, and anyone in a position to act.</p>
-      <a href="/bmh-manifesto.pdf" class="btn btn-primary btn-lg" download>Download PDF</a>
+      <a href={`${base}bmh-manifesto.pdf`} class="btn btn-primary btn-lg" download>Download PDF</a>
       <p class="muted small download-note">April 2024 &middot; Black Mental Health and Wellbeing Alliance</p>
     </div>
   </section>
@@ -228,7 +229,7 @@ const recommendations = {
     <div class="container narrow bridge-inner">
       <h2 id="bridge-heading">Now you&rsquo;ve read it &mdash; here&rsquo;s what you can do</h2>
       <p>Whether you are a policymaker, practitioner, commissioner, educator, funder, or community member, there are concrete steps you can take to advance these recommendations.</p>
-      <a href="/take-action" class="btn btn-primary">Take Action</a>
+      <a href={`${base}take-action`} class="btn btn-primary">Take Action</a>
     </div>
   </section>
 

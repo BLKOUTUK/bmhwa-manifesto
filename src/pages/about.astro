@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <Base title="About the Alliance" description="The Black Mental Health and Wellbeing Alliance is a coalition of individuals with lived experience and grassroots organisations demanding structural change for Black mental health in England.">
@@ -23,7 +24,7 @@ import Base from '../layouts/Base.astro';
 
       <p>We came together because decades of reports, recommendations, and reviews have failed to deliver meaningful change. Black people continue to face worse outcomes at every stage of the mental health system &mdash; from access to treatment, from detention to community care, from childhood to old age.</p>
 
-      <p>The Alliance is not just a campaign group. We are building practical tools, sharing knowledge, and creating frameworks that organisations can use to turn commitment into action. The Manifesto is our public demand. But behind it is ongoing work: capacity-building, research partnerships, and the development of resources like <a href="/learning#assess-align">Assess &amp; Align</a>.</p>
+      <p>The Alliance is not just a campaign group. We are building practical tools, sharing knowledge, and creating frameworks that organisations can use to turn commitment into action. The Manifesto is our public demand. But behind it is ongoing work: capacity-building, research partnerships, and the development of resources like <a href={`${base}learning#assess-align`}>Assess &amp; Align</a>.</p>
 
       <blockquote>
         <p>When community members speak, it&rsquo;s essential that we listen.</p>
@@ -104,7 +105,7 @@ import Base from '../layouts/Base.astro';
     <div class="container narrow join-inner">
       <h2 id="join-heading">Join the Alliance</h2>
       <p>The manifesto belongs to the community. If your organisation supports these demands and is willing to act on them, join us.</p>
-      <a href="/take-action#organisations" class="btn btn-primary">Endorse the Manifesto</a>
+      <a href={`${base}take-action#organisations`} class="btn btn-primary">Endorse the Manifesto</a>
     </div>
   </section>
 

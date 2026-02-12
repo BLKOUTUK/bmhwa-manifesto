@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <Base title="Learning & Capacity Building" description="The Alliance doesn't just advocate — it acts. Assess & Align, toolkits, shared learning, and the Burke Platform vision for equitable research and practice.">
@@ -22,7 +23,7 @@ import Base from '../layouts/Base.astro';
       <div class="card feature-card">
         <span class="feature-badge">In development</span>
         <p class="feature-desc">A tool built by the Alliance to help Black voluntary sector leaders evaluate research requests for equity, collaboration, and cultural sensitivity.</p>
-        <p>Born from the manifesto&rsquo;s demand for equitable research practices (<a href="/manifesto#rec-12">Recommendation 12</a>), Assess &amp; Align provides a structured framework for community organisations to assess whether a proposed research partnership genuinely serves their community &mdash; or simply extracts from it.</p>
+        <p>Born from the manifesto&rsquo;s demand for equitable research practices (<a href={`${base}manifesto#rec-12`}>Recommendation 12</a>), Assess &amp; Align provides a structured framework for community organisations to assess whether a proposed research partnership genuinely serves their community &mdash; or simply extracts from it.</p>
         <p>The tool helps organisations ask the right questions before committing to research relationships:</p>
         <ul class="feature-list">
           <li>Is the research question shaped by the community it affects?</li>
@@ -105,7 +106,7 @@ import Base from '../layouts/Base.astro';
       <h2 id="cta-heading">Get involved</h2>
       <p>Whether you want to contribute resources, collaborate on tool development, or implement manifesto recommendations in your organisation &mdash; we want to hear from you.</p>
       <div class="cta-buttons">
-        <a href="/take-action" class="btn btn-primary">Take Action</a>
+        <a href={`${base}take-action`} class="btn btn-primary">Take Action</a>
         <a href="mailto:BlackMHManifesto@gmail.com" class="btn btn-outline cta-btn-outline">Contact the Alliance</a>
       </div>
     </div>

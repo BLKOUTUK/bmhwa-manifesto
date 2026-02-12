@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <Base title="Home" description="The Black Mental Health Manifesto demands structural change. 23 recommendations across 3 areas of action to close the inequality gap for Black people within mental health services in England.">
@@ -11,8 +12,8 @@ import Base from '../layouts/Base.astro';
       <h1 id="hero-heading">This must end.</h1>
       <p class="hero-sub">The Black Mental Health Manifesto demands structural change. 23 recommendations. 3 areas of action. A coalition of people and organisations saying: <em>enough.</em></p>
       <div class="hero-ctas">
-        <a href="/manifesto" class="btn btn-primary">Read the Manifesto</a>
-        <a href="/take-action" class="btn btn-outline hero-btn-outline">Take Action</a>
+        <a href={`${base}manifesto`} class="btn btn-primary">Read the Manifesto</a>
+        <a href={`${base}take-action`} class="btn btn-outline hero-btn-outline">Take Action</a>
       </div>
     </div>
   </section>
@@ -54,19 +55,19 @@ import Base from '../layouts/Base.astro';
       <h2 id="areas-heading">3 Areas of Action</h2>
       <p class="areas-intro muted">23 recommendations structured around the systemic, institutional, and cultural changes needed to close the inequality gap.</p>
       <div class="grid-3 areas-cards">
-        <a href="/manifesto#part-1" class="card area-card">
+        <a href={`${base}manifesto#part-1`} class="card area-card">
           <span class="area-number">Part 1</span>
           <h3>Addressing Structural Drivers</h3>
           <p>8 recommendations targeting government, commissioners, and Integrated Care Systems. Tackle racism as a determinant of health.</p>
           <span class="area-link">Read recommendations 1&ndash;8 &rarr;</span>
         </a>
-        <a href="/manifesto#part-2" class="card area-card">
+        <a href={`${base}manifesto#part-2`} class="card area-card">
           <span class="area-number">Part 2</span>
           <h3>Improving Ways of Working</h3>
           <p>9 recommendations for the NHS, regulators, and practitioners. Reform systems from within through anti-racist frameworks and accountability.</p>
           <span class="area-link">Read recommendations 9&ndash;17 &rarr;</span>
         </a>
-        <a href="/manifesto#part-3" class="card area-card">
+        <a href={`${base}manifesto#part-3`} class="card area-card">
           <span class="area-number">Part 3</span>
           <h3>Reimagining Mental Health Support</h3>
           <p>6 recommendations to build new approaches rooted in community and lived experience, not Eurocentric norms.</p>
@@ -84,7 +85,7 @@ import Base from '../layouts/Base.astro';
       <div class="card solutions-card">
         <h3>Assess &amp; Align &middot; Learning</h3>
         <p>Through programmes like Assess &amp; Align and capacity-building resources, the Alliance equips organisations and practitioners to turn manifesto commitments into measurable progress.</p>
-        <a href="/learning" class="btn btn-secondary">Explore Learning &amp; Capacity Building</a>
+        <a href={`${base}learning`} class="btn btn-secondary">Explore Learning &amp; Capacity Building</a>
       </div>
     </div>
   </section>
@@ -106,8 +107,8 @@ import Base from '../layouts/Base.astro';
       <h2 id="cta-heading">Read the manifesto. Share it. Act on it.</h2>
       <p>23 recommendations. Backed by evidence. Demanding structural change for Black mental health in England.</p>
       <div class="cta-buttons">
-        <a href="/manifesto" class="btn btn-primary">Read the Manifesto</a>
-        <a href="/take-action" class="btn btn-outline hero-btn-outline">Take Action</a>
+        <a href={`${base}manifesto`} class="btn btn-primary">Read the Manifesto</a>
+        <a href={`${base}take-action`} class="btn btn-outline hero-btn-outline">Take Action</a>
       </div>
     </div>
   </section>

@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <Base title="The Case for Change" description="The evidence is clear. Racism — not race — drives mental health inequalities for Black people in England. Key statistics and the systemic context behind the Black Mental Health Manifesto.">
@@ -142,8 +143,8 @@ import Base from '../layouts/Base.astro';
       <h2 id="bridge-heading">These numbers demand action</h2>
       <p>The evidence is overwhelming. The disparities are documented. What happens next depends on all of us.</p>
       <div class="bridge-ctas">
-        <a href="/take-action" class="btn btn-primary">Take Action</a>
-        <a href="/manifesto" class="btn btn-outline bridge-btn-outline">Read the Manifesto</a>
+        <a href={`${base}take-action`} class="btn btn-primary">Take Action</a>
+        <a href={`${base}manifesto`} class="btn btn-outline bridge-btn-outline">Read the Manifesto</a>
       </div>
     </div>
   </section>
