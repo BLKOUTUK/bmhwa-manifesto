@@ -1,0 +1,403 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Take Action" description="The manifesto is a demand. Your action makes it real. Sign the pledge, endorse as an organisation, write to your MP, and share the Black Mental Health Manifesto.">
+
+  <!-- ── Hero ── -->
+  <section class="page-hero" aria-labelledby="action-heading">
+    <div class="container narrow">
+      <p class="section-label">Take Action</p>
+      <h1 id="action-heading">The manifesto is a demand. Your action makes it real.</h1>
+      <p class="page-hero-desc">Whether you are an individual, an organisation, a practitioner, or a researcher &mdash; there is something concrete you can do right now.</p>
+    </div>
+  </section>
+
+  <!-- ── For Individuals ── -->
+  <section class="section" id="individuals" aria-labelledby="individuals-heading">
+    <div class="container narrow">
+      <p class="section-label">For Individuals</p>
+      <h2 id="individuals-heading">Add your voice</h2>
+
+      <!-- Sign the Pledge -->
+      <div class="card action-card">
+        <h3>Sign the pledge</h3>
+        <p>Add your name to the growing list of people who support the Black Mental Health Manifesto and its 23 recommendations for structural change.</p>
+        <form class="pledge-form" aria-label="Sign the pledge">
+          <div class="form-group">
+            <label for="pledge-name">Your name</label>
+            <input type="text" id="pledge-name" name="name" required placeholder="Full name" />
+          </div>
+          <div class="form-group">
+            <label for="pledge-email">Your email</label>
+            <input type="email" id="pledge-email" name="email" required placeholder="you@example.com" />
+          </div>
+          <div class="form-check">
+            <input type="checkbox" id="pledge-consent" name="consent" required />
+            <label for="pledge-consent">I support the Black Mental Health Manifesto and its demands for structural change.</label>
+          </div>
+          <button type="submit" class="btn btn-primary" disabled>Coming soon</button>
+          <p class="muted small form-note">Pledge form launching soon. Your data will be handled in accordance with our <a href="/privacy">privacy policy</a>.</p>
+        </form>
+      </div>
+
+      <!-- Share Toolkit -->
+      <div class="card action-card">
+        <h3>Share the manifesto</h3>
+        <p>Use our toolkit to spread the word. Social media graphics, email templates, and key talking points are being prepared.</p>
+        <div class="toolkit-placeholder">
+          <p class="muted">Social media assets and email templates coming soon.</p>
+        </div>
+      </div>
+
+      <!-- Write to Your MP -->
+      <div class="card action-card">
+        <h3>Write to your MP</h3>
+        <p>Your elected representative needs to hear from you. Mental health reform, equitable funding for Black-led organisations, and the implementation of manifesto recommendations are all issues your MP can act on.</p>
+        <p>Use <a href="https://www.writetothem.com/" target="_blank" rel="noopener noreferrer">WriteToThem.com</a> to find and write to your MP. Here is a suggested opening:</p>
+        <blockquote>
+          <p>Dear [MP name],</p>
+          <p>I am writing to ask you to support the recommendations in the Black Mental Health Manifesto, published by the Black Mental Health and Wellbeing Alliance. Black people are detained under the Mental Health Act at nearly four times the rate of white people, yet only 6% receive treatment compared to 13% of White British adults. The Manifesto sets out 23 evidence-based recommendations to close this inequality gap. I urge you to read it and champion its demands in Parliament.</p>
+        </blockquote>
+        <a href="https://www.writetothem.com/" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Find your MP on WriteToThem &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── For Organisations ── -->
+  <section class="section" id="organisations" aria-labelledby="orgs-heading">
+    <div class="container narrow">
+      <p class="section-label">For Organisations</p>
+      <h2 id="orgs-heading">Endorse and implement</h2>
+
+      <div class="card action-card">
+        <h3>Endorse the manifesto</h3>
+        <p>If your organisation supports the demands of the Black Mental Health Manifesto, add your endorsement. Endorsed organisations will be listed on the website with their logo.</p>
+        <form class="endorse-form" aria-label="Endorse the manifesto">
+          <div class="form-group">
+            <label for="org-name">Organisation name</label>
+            <input type="text" id="org-name" name="org_name" required placeholder="Organisation name" />
+          </div>
+          <div class="form-group">
+            <label for="org-contact">Contact name</label>
+            <input type="text" id="org-contact" name="contact" required placeholder="Your name" />
+          </div>
+          <div class="form-group">
+            <label for="org-email">Contact email</label>
+            <input type="email" id="org-email" name="email" required placeholder="you@organisation.org" />
+          </div>
+          <div class="form-group">
+            <label for="org-logo">Organisation logo</label>
+            <input type="file" id="org-logo" name="logo" accept="image/*" />
+            <p class="muted small">PNG or SVG preferred. Minimum 200px wide.</p>
+          </div>
+          <button type="submit" class="btn btn-primary" disabled>Coming soon</button>
+          <p class="muted small form-note">Endorsement form launching soon. Contact <a href="mailto:BlackMHManifesto@gmail.com">BlackMHManifesto@gmail.com</a> to endorse in the meantime.</p>
+        </form>
+      </div>
+
+      <div class="card action-card">
+        <h3>Display the badge</h3>
+        <p>Show your support publicly. An embeddable endorsement badge for your website is being developed.</p>
+        <div class="toolkit-placeholder">
+          <p class="muted">Endorsement badge coming soon.</p>
+        </div>
+      </div>
+
+      <div class="card action-card">
+        <h3>Implement recommendations</h3>
+        <p>The manifesto is not just a statement &mdash; it is a practical framework. Use the 23 recommendations to audit your organisation&rsquo;s policies, commissioning practices, and service delivery. Start with the recommendations most relevant to your role:</p>
+        <ul class="action-list">
+          <li><strong>Commissioners &amp; funders:</strong> Recommendations 6, 7, 12 &mdash; equitable funding, ICS priorities, community research</li>
+          <li><strong>NHS Trusts:</strong> Recommendations 9, 14, 15 &mdash; PCREF, anti-racist practice, regulatory accountability</li>
+          <li><strong>Local authorities:</strong> Recommendations 2, 8, 22, 23 &mdash; social prescribing, advocacy, school curriculum, exclusions</li>
+          <li><strong>Voluntary sector:</strong> Recommendations 6, 13, 19 &mdash; sustainable funding, lived experience, culturally responsive interventions</li>
+        </ul>
+        <a href="/manifesto" class="btn btn-secondary">Read all 23 recommendations</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── For Practitioners ── -->
+  <section class="section" id="practitioners" aria-labelledby="practitioners-heading">
+    <div class="container narrow">
+      <p class="section-label">For Practitioners</p>
+      <h2 id="practitioners-heading">Embed in your practice</h2>
+
+      <div class="grid-2 action-grid">
+        <div class="card action-card">
+          <h3>Download resources</h3>
+          <p>Guides and toolkits for embedding anti-racist practice in mental health care are being developed by the Alliance.</p>
+          <a href="/learning" class="btn btn-outline">View Learning Resources</a>
+        </div>
+        <div class="card action-card">
+          <h3>Attend training</h3>
+          <p>The Alliance is developing training and capacity-building programmes. Sign up to be notified when sessions are available.</p>
+          <a href="/learning" class="btn btn-outline">Learning &amp; Capacity Building</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── For Researchers ── -->
+  <section class="section" id="researchers" aria-labelledby="researchers-heading">
+    <div class="container narrow">
+      <p class="section-label">For Researchers</p>
+      <h2 id="researchers-heading">Collaborate equitably</h2>
+
+      <div class="grid-2 action-grid">
+        <div class="card action-card">
+          <h3>Equitable research partnerships</h3>
+          <p>If you are working with Black communities, the Alliance&rsquo;s <strong>Assess &amp; Align</strong> tool will help you evaluate whether your research design meets standards of equity, collaboration, and cultural sensitivity.</p>
+          <a href="/learning#assess-align" class="btn btn-outline">Learn about Assess &amp; Align</a>
+        </div>
+        <div class="card action-card">
+          <h3>Access manifesto data</h3>
+          <p>The statistics and evidence cited in the manifesto are drawn from published sources including NHS Digital, CQC, and academic research. The full reference list is available in the manifesto PDF.</p>
+          <a href="/bmh-manifesto.pdf" class="btn btn-outline" download>Download Manifesto PDF</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Share the Manifesto ── -->
+  <section class="section" id="share" aria-labelledby="share-heading">
+    <div class="container narrow">
+      <p class="section-label">Spread the Word</p>
+      <h2 id="share-heading">Share the manifesto</h2>
+      <p class="muted">Copy the text below and share on your platform of choice.</p>
+
+      <div class="card share-card">
+        <p class="share-text" id="share-text">Black people are detained under the Mental Health Act at nearly 4x the rate of white people. The Black Mental Health Manifesto demands structural change. Read it: https://bmhmanifesto.org #ProtectBlackMentalHealth</p>
+        <button class="btn btn-secondary copy-btn" data-target="share-text" type="button">Copy to clipboard</button>
+      </div>
+
+      <div class="share-channels">
+        <h3>Share on</h3>
+        <div class="share-links">
+          <a href="https://twitter.com/intent/tweet?text=Black%20people%20are%20detained%20under%20the%20Mental%20Health%20Act%20at%20nearly%204x%20the%20rate%20of%20white%20people.%20The%20Black%20Mental%20Health%20Manifesto%20demands%20structural%20change.%20%23ProtectBlackMentalHealth&url=https%3A%2F%2Fbmhmanifesto.org" class="btn btn-outline share-link" target="_blank" rel="noopener noreferrer">X / Twitter</a>
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fbmhmanifesto.org&title=Black%20Mental%20Health%20Manifesto&summary=23%20recommendations%20for%20structural%20change" class="btn btn-outline share-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://wa.me/?text=Black%20people%20are%20detained%20under%20the%20Mental%20Health%20Act%20at%20nearly%204x%20the%20rate%20of%20white%20people.%20The%20Black%20Mental%20Health%20Manifesto%20demands%20structural%20change.%20Read%20it%3A%20https%3A%2F%2Fbmhmanifesto.org%20%23ProtectBlackMentalHealth" class="btn btn-outline share-link" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          <a href="mailto:?subject=Black%20Mental%20Health%20Manifesto&body=Black%20people%20are%20detained%20under%20the%20Mental%20Health%20Act%20at%20nearly%204x%20the%20rate%20of%20white%20people.%20The%20Black%20Mental%20Health%20Manifesto%20demands%20structural%20change.%20Read%20it%3A%20https%3A%2F%2Fbmhmanifesto.org%20%23ProtectBlackMentalHealth" class="btn btn-outline share-link">Email</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Base>
+
+<style>
+  /* ── Page Hero ── */
+  .page-hero {
+    background: var(--primary);
+    color: #FFFFFF;
+    padding: 5rem 0 4rem;
+    text-align: center;
+  }
+
+  .page-hero .section-label {
+    color: var(--accent);
+  }
+
+  .page-hero h1 {
+    color: #FFFFFF;
+    margin-bottom: 1rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .page-hero-desc {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.15rem;
+    max-width: 620px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  /* ── Action cards ── */
+  .action-card {
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .action-card h3 {
+    font-family: var(--font-body);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.75rem;
+  }
+
+  .action-card p {
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  .action-grid .action-card {
+    margin-bottom: 0;
+  }
+
+  /* ── Forms ── */
+  .form-group {
+    margin-bottom: 1.25rem;
+  }
+
+  .form-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 0.4rem;
+  }
+
+  .form-group input[type="text"],
+  .form-group input[type="email"] {
+    width: 100%;
+    padding: 0.65rem 0.85rem;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--light-bg);
+    color: var(--text);
+    transition: border-color 0.2s;
+  }
+
+  .form-group input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(232, 168, 56, 0.15);
+  }
+
+  .form-group input[type="file"] {
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+
+  .form-check {
+    display: flex;
+    gap: 0.65rem;
+    align-items: flex-start;
+    margin-bottom: 1.25rem;
+  }
+
+  .form-check input[type="checkbox"] {
+    margin-top: 0.25rem;
+    flex-shrink: 0;
+  }
+
+  .form-check label {
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+
+  .form-note {
+    margin-top: 0.75rem;
+  }
+
+  /* ── Action list ── */
+  .action-list {
+    list-style: none;
+    margin: 1rem 0 1.5rem;
+  }
+
+  .action-list li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text);
+  }
+
+  .action-list li:last-child {
+    border-bottom: none;
+  }
+
+  .action-list strong {
+    color: var(--primary);
+  }
+
+  /* ── Toolkit placeholder ── */
+  .toolkit-placeholder {
+    padding: 2rem;
+    border: 2px dashed var(--border);
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  /* ── Share section ── */
+  .share-card {
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .share-text {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--primary);
+    font-weight: 500;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: var(--light-bg);
+    border-radius: 6px;
+    border-left: 4px solid var(--accent);
+  }
+
+  .copy-btn {
+    font-size: 0.9rem;
+    padding: 0.5rem 1.25rem;
+  }
+
+  .share-channels {
+    margin-top: 1.5rem;
+  }
+
+  .share-channels h3 {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .share-links {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .share-link {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.25rem;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    .page-hero {
+      padding: 3.5rem 0 3rem;
+    }
+
+    .grid-2.action-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script>
+  const copyBtn = document.querySelector('.copy-btn');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', () => {
+      const targetId = copyBtn.getAttribute('data-target');
+      const textEl = targetId ? document.getElementById(targetId) : null;
+      if (textEl) {
+        navigator.clipboard.writeText(textEl.textContent || '').then(() => {
+          const original = copyBtn.textContent;
+          copyBtn.textContent = 'Copied';
+          setTimeout(() => { copyBtn.textContent = original; }, 2000);
+        });
+      }
+    });
+  }
+</script>

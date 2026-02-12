@@ -1,0 +1,149 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="News & Updates" description="Campaign updates and news from the Black Mental Health and Wellbeing Alliance.">
+
+  <!-- ── Hero ── -->
+  <section class="page-hero page-hero-compact" aria-labelledby="news-heading">
+    <div class="container narrow">
+      <p class="section-label">News &amp; Updates</p>
+      <h1 id="news-heading">Campaign updates</h1>
+    </div>
+  </section>
+
+  <!-- ── Placeholder Content ── -->
+  <section class="section" aria-labelledby="updates-heading">
+    <div class="container narrow">
+      <h2 id="updates-heading" class="sr-only">Latest updates</h2>
+      <div class="news-placeholder">
+        <p>News and updates from the Alliance will appear here as the campaign progresses.</p>
+        <p class="muted">For now, follow us on social media for the latest.</p>
+      </div>
+
+      <div class="social-links-section">
+        <h3>Follow the Alliance</h3>
+        <div class="social-links">
+          <a href="https://x.com/BMHManifesto" class="card social-card" target="_blank" rel="noopener noreferrer">
+            <span class="social-name">X / Twitter</span>
+            <span class="social-handle muted small">@BMHManifesto</span>
+          </a>
+          <a href="https://www.instagram.com/bmhmanifesto/" class="card social-card" target="_blank" rel="noopener noreferrer">
+            <span class="social-name">Instagram</span>
+            <span class="social-handle muted small">@bmhmanifesto</span>
+          </a>
+          <a href="https://www.facebook.com/BlackMHWBAlliance" class="card social-card" target="_blank" rel="noopener noreferrer">
+            <span class="social-name">Facebook</span>
+            <span class="social-handle muted small">BlackMHWBAlliance</span>
+          </a>
+          <a href="mailto:BlackMHManifesto@gmail.com" class="card social-card">
+            <span class="social-name">Email</span>
+            <span class="social-handle muted small">BlackMHManifesto@gmail.com</span>
+          </a>
+        </div>
+      </div>
+
+      <hr class="divider" />
+
+      <p class="muted small future-note">This page will be expanded with blog posts and campaign updates. Built with Astro content collections.</p>
+    </div>
+  </section>
+
+</Base>
+
+<style>
+  /* ── Page Hero ── */
+  .page-hero {
+    background: var(--primary);
+    color: #FFFFFF;
+    padding: 5rem 0 4rem;
+    text-align: center;
+  }
+
+  .page-hero-compact {
+    padding: 4rem 0 3rem;
+  }
+
+  .page-hero .section-label {
+    color: var(--accent);
+  }
+
+  .page-hero h1 {
+    color: #FFFFFF;
+    margin-bottom: 0;
+  }
+
+  /* ── News placeholder ── */
+  .news-placeholder {
+    padding: 3rem 2rem;
+    border: 2px dashed var(--border);
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .news-placeholder p:first-child {
+    font-size: 1.1rem;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+  }
+
+  /* ── Social links ── */
+  .social-links-section h3 {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 1rem;
+  }
+
+  .social-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .social-card {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .social-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .social-name {
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 1rem;
+  }
+
+  .social-handle {
+    color: var(--muted);
+  }
+
+  /* ── Future note ── */
+  .future-note {
+    text-align: center;
+    font-style: italic;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    .page-hero {
+      padding: 3.5rem 0 3rem;
+    }
+
+    .page-hero-compact {
+      padding: 3rem 0 2.5rem;
+    }
+
+    .social-links {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

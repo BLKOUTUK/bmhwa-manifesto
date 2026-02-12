@@ -1,0 +1,287 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+}
+
+const {
+  title,
+  description = 'The Black Mental Health Manifesto demands structural change to close the inequality gap for Black people within mental health services in England.',
+  ogImage = '/og-image.jpg'
+} = Astro.props;
+
+const siteTitle = `${title} | Black Mental Health Manifesto`;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{siteTitle}</title>
+  <meta name="description" content={description}>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content={siteTitle}>
+  <meta property="og:description" content={description}>
+  <meta property="og:image" content={ogImage}>
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_GB">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@BMHManifesto">
+  <meta name="twitter:title" content={siteTitle}>
+  <meta name="twitter:description" content={description}>
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="sitemap" href="/sitemap-index.xml">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="site-header" role="banner">
+    <nav class="container site-nav" aria-label="Main navigation">
+      <a href="/" class="site-logo">
+        <span class="logo-text">BMHWA</span>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="/manifesto">The Manifesto</a></li>
+        <li><a href="/case-for-change">The Case</a></li>
+        <li><a href="/take-action">Take Action</a></li>
+        <li><a href="/learning">Learning</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/news">News</a></li>
+        <li><a href="/press">Press</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <slot />
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <h3>Black Mental Health Manifesto</h3>
+          <p class="muted small">A Manifesto for Radical Change — demanding structural change to close the inequality gap for Black people within mental health services in England.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Pages</h4>
+          <ul role="list">
+            <li><a href="/manifesto">The Manifesto</a></li>
+            <li><a href="/case-for-change">The Case for Change</a></li>
+            <li><a href="/take-action">Take Action</a></li>
+            <li><a href="/learning">Learning & Capacity Building</a></li>
+            <li><a href="/about">About the Alliance</a></li>
+          </ul>
+        </div>
+        <div class="footer-connect">
+          <h4>Connect</h4>
+          <ul role="list">
+            <li><a href="mailto:BlackMHManifesto@gmail.com">Email</a></li>
+            <li><a href="https://www.instagram.com/bmhmanifesto/" rel="noopener noreferrer" target="_blank">Instagram</a></li>
+            <li><a href="https://x.com/BMHManifesto" rel="noopener noreferrer" target="_blank">X / Twitter</a></li>
+            <li><a href="https://www.facebook.com/BlackMHWBAlliance" rel="noopener noreferrer" target="_blank">Facebook</a></li>
+          </ul>
+        </div>
+        <div class="footer-newsletter">
+          <h4>Stay informed</h4>
+          <p class="muted small">Get campaign updates and calls to action.</p>
+          <a href="#newsletter" class="btn btn-primary">Sign up</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="muted small">&copy; {new Date().getFullYear()} Black Mental Health and Wellbeing Alliance. <a href="/privacy">Privacy Policy</a></p>
+        <p class="muted small">#ProtectBlackMentalHealth</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+
+<style is:global>
+  @import '../styles/global.css';
+
+  /* ── Header ── */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--primary);
+    border-bottom: 1px solid rgba(232, 168, 56, 0.2);
+  }
+
+  .site-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .site-logo {
+    text-decoration: none;
+  }
+
+  .logo-text {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    color: #FFFFFF;
+    letter-spacing: 0.02em;
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 0.25rem;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 0.5rem 0.75rem;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 4px;
+    transition: color 0.2s, background 0.2s;
+  }
+
+  .nav-links a:hover,
+  .nav-links a[aria-current="page"] {
+    color: #FFFFFF;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .nav-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #FFFFFF;
+    border-radius: 1px;
+    transition: transform 0.2s;
+  }
+
+  /* ── Footer ── */
+  .site-footer {
+    background: var(--primary);
+    color: rgba(255, 255, 255, 0.8);
+    padding: 3rem 0 1.5rem;
+    margin-top: 4rem;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .site-footer h3 {
+    font-family: var(--font-heading);
+    color: #FFFFFF;
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .site-footer h4 {
+    font-family: var(--font-body);
+    font-weight: 600;
+    color: var(--accent);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.75rem;
+  }
+
+  .site-footer ul {
+    list-style: none;
+  }
+
+  .site-footer ul li {
+    margin-bottom: 0.4rem;
+  }
+
+  .site-footer a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+
+  .site-footer a:hover {
+    color: var(--accent);
+  }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1.5rem;
+  }
+
+  .footer-bottom .muted {
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  .footer-bottom a {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  /* ── Responsive nav ── */
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .nav-toggle { display: flex; }
+    .nav-links.open {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--primary);
+      padding: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script>
+  const toggle = document.querySelector('.nav-toggle');
+  const links = document.querySelector('.nav-links');
+  if (toggle && links) {
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+  }
+</script>

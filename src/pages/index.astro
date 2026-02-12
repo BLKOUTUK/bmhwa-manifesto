@@ -1,0 +1,300 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Home" description="The Black Mental Health Manifesto demands structural change. 23 recommendations across 3 areas of action to close the inequality gap for Black people within mental health services in England.">
+
+  <!-- ── Hero ── -->
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="container narrow">
+      <p class="hero-stat">Black people are detained under the Mental Health Act at nearly <strong>4 times</strong> the rate of white people.</p>
+      <h1 id="hero-heading">This must end.</h1>
+      <p class="hero-sub">The Black Mental Health Manifesto demands structural change. 23 recommendations. 3 areas of action. A coalition of people and organisations saying: <em>enough.</em></p>
+      <div class="hero-ctas">
+        <a href="/manifesto" class="btn btn-primary">Read the Manifesto</a>
+        <a href="/take-action" class="btn btn-outline hero-btn-outline">Take Action</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── The Crisis in Numbers ── -->
+  <section class="section" aria-labelledby="crisis-heading">
+    <div class="container">
+      <p class="section-label">The Crisis in Numbers</p>
+      <h2 id="crisis-heading">The evidence is clear</h2>
+      <div class="stats-grid">
+        <div class="stat-callout">
+          <p class="stat-number">23%</p>
+          <p class="stat-context">Black adults experiencing a common mental health problem weekly &mdash; compared to 17% of White British adults.</p>
+          <p class="stat-source">NHS Digital, 2016</p>
+        </div>
+        <div class="stat-callout">
+          <p class="stat-number">6%</p>
+          <p class="stat-context">Black adults receiving treatment for mental health problems &mdash; compared to 13% of White British adults.</p>
+          <p class="stat-source">NHS Digital, 2016</p>
+        </div>
+        <div class="stat-callout">
+          <p class="stat-number">3.6x</p>
+          <p class="stat-context">Higher detention rate under the Mental Health Act for Black people compared to white people.</p>
+          <p class="stat-source">NHS Digital, 2023</p>
+        </div>
+        <div class="stat-callout">
+          <p class="stat-number">&pound;118bn</p>
+          <p class="stat-context">Annual cost of mental ill-health to the UK economy. Addressing disparities means cost savings for everyone.</p>
+          <p class="stat-source">McDaid et al, 2022</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── The 3 Areas ── -->
+  <section class="section" aria-labelledby="areas-heading">
+    <div class="container">
+      <p class="section-label">The Manifesto</p>
+      <h2 id="areas-heading">3 Areas of Action</h2>
+      <p class="areas-intro muted">23 recommendations structured around the systemic, institutional, and cultural changes needed to close the inequality gap.</p>
+      <div class="grid-3 areas-cards">
+        <a href="/manifesto#part-1" class="card area-card">
+          <span class="area-number">Part 1</span>
+          <h3>Addressing Structural Drivers</h3>
+          <p>8 recommendations targeting government, commissioners, and Integrated Care Systems. Tackle racism as a determinant of health.</p>
+          <span class="area-link">Read recommendations 1&ndash;8 &rarr;</span>
+        </a>
+        <a href="/manifesto#part-2" class="card area-card">
+          <span class="area-number">Part 2</span>
+          <h3>Improving Ways of Working</h3>
+          <p>9 recommendations for the NHS, regulators, and practitioners. Reform systems from within through anti-racist frameworks and accountability.</p>
+          <span class="area-link">Read recommendations 9&ndash;17 &rarr;</span>
+        </a>
+        <a href="/manifesto#part-3" class="card area-card">
+          <span class="area-number">Part 3</span>
+          <h3>Reimagining Mental Health Support</h3>
+          <p>6 recommendations to build new approaches rooted in community and lived experience, not Eurocentric norms.</p>
+          <span class="area-link">Read recommendations 18&ndash;23 &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Not Just Words ── -->
+  <section class="section" aria-labelledby="solutions-heading">
+    <div class="container narrow">
+      <p class="section-label">Not Just Words</p>
+      <h2 id="solutions-heading">The Alliance doesn't just demand change &mdash; it builds solutions.</h2>
+      <div class="card solutions-card">
+        <h3>Assess &amp; Align &middot; Learning</h3>
+        <p>Through programmes like Assess &amp; Align and capacity-building resources, the Alliance equips organisations and practitioners to turn manifesto commitments into measurable progress.</p>
+        <a href="/learning" class="btn btn-secondary">Explore Learning &amp; Capacity Building</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Endorsements ── -->
+  <section class="section endorsements-section" aria-labelledby="endorsements-heading">
+    <div class="container">
+      <p class="section-label">Endorsements</p>
+      <h2 id="endorsements-heading">Supported by organisations across the UK</h2>
+      <div class="endorsements-placeholder">
+        <p class="muted">Organisation logos coming soon.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Final CTA ── -->
+  <section class="cta-section" aria-labelledby="cta-heading">
+    <div class="container narrow cta-inner">
+      <h2 id="cta-heading">Read the manifesto. Share it. Act on it.</h2>
+      <p>23 recommendations. Backed by evidence. Demanding structural change for Black mental health in England.</p>
+      <div class="cta-buttons">
+        <a href="/manifesto" class="btn btn-primary">Read the Manifesto</a>
+        <a href="/take-action" class="btn btn-outline hero-btn-outline">Take Action</a>
+      </div>
+    </div>
+  </section>
+
+</Base>
+
+<style>
+  /* ── Hero ── */
+  .hero {
+    background: var(--primary);
+    color: #FFFFFF;
+    padding: 6rem 0 5rem;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-stat {
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1rem;
+  }
+
+  .hero-stat strong {
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  .hero h1 {
+    color: #FFFFFF;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-sub {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: rgba(255, 255, 255, 0.75);
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.7;
+  }
+
+  .hero-sub em {
+    color: var(--accent);
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hero-btn-outline {
+    color: #FFFFFF;
+    border-color: #FFFFFF;
+  }
+
+  .hero-btn-outline:hover {
+    background: #FFFFFF;
+    color: var(--primary);
+  }
+
+  /* ── Stats grid ── */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  /* ── Area cards ── */
+  .areas-intro {
+    max-width: 700px;
+    margin-bottom: 2rem;
+  }
+
+  .area-card {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .area-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  }
+
+  .area-number {
+    font-family: var(--font-data);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.5rem;
+  }
+
+  .area-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .area-card p {
+    color: var(--text);
+    font-size: 0.95rem;
+    flex: 1;
+  }
+
+  .area-link {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin-top: 1rem;
+  }
+
+  /* ── Solutions card ── */
+  .solutions-card {
+    margin-top: 1.5rem;
+    padding: 2rem;
+  }
+
+  .solutions-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.75rem;
+    color: var(--primary);
+  }
+
+  .solutions-card p {
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+  }
+
+  /* ── Endorsements ── */
+  .endorsements-section {
+    text-align: center;
+  }
+
+  .endorsements-placeholder {
+    padding: 3rem 2rem;
+    border: 2px dashed var(--border);
+    border-radius: 8px;
+    margin-top: 1.5rem;
+  }
+
+  /* ── Final CTA ── */
+  .cta-section {
+    background: var(--primary);
+    color: #FFFFFF;
+    padding: 5rem 0;
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    color: #FFFFFF;
+    margin-bottom: 1rem;
+  }
+
+  .cta-section p {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.1rem;
+    max-width: 550px;
+    margin: 0 auto 2rem;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    .hero {
+      min-height: auto;
+      padding: 4rem 0 3.5rem;
+    }
+
+    .stats-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

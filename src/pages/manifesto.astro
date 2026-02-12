@@ -1,0 +1,381 @@
+---
+import Base from '../layouts/Base.astro';
+
+const recommendations = {
+  part1: [
+    {
+      num: 1,
+      title: 'The government should develop and implement a comprehensive strategy to eradicate racism from society and appoint a cabinet level minister to oversee this.',
+      why: 'There is currently no coherent strategy to combat racism in the UK despite wide-ranging disparities and calls from civil society.',
+    },
+    {
+      num: 2,
+      title: 'The government should actively fund and co-design social prescribing approaches to mental health in Black communities.',
+      why: 'Traditional clinical mental health services have not achieved good outcomes for Black communities; community-based models have proven benefits.',
+    },
+    {
+      num: 3,
+      title: 'The government should allocate equitable funding for Black community-led suicide prevention initiatives.',
+      why: 'Associated suicide risks are demonstrably higher in low and middle-income areas, with young Black men aged 13 to 24 most at risk.',
+    },
+    {
+      num: 4,
+      title: "The government should put an end to 'hostile environment' policies which harm or exacerbate mental health problems amongst refugees, asylum-seekers and migrants in the UK.",
+      why: 'Refugees and asylum-seekers report greater levels of anxiety, depression and PTSD, worsened by over a decade of hostile environment policies.',
+    },
+    {
+      num: 5,
+      title: 'The Government must ensure the compensation scheme for Windrush victims factors in culturally sensitive mental health and wellbeing for the victims and their families.',
+      why: 'Victims have endured forced detention, loss of employment and housing, and separation from families, contributing to severe mental trauma.',
+    },
+    {
+      num: 6,
+      title: 'Commissioners should devolve and distribute power, knowledge, resources and funding for organisations led by and for Black communities.',
+      why: 'Black-led organisations have solutions but are held back by a lack of sustainable funding; 9 in 10 were at risk of closure at the start of the pandemic.',
+    },
+    {
+      num: 7,
+      title: 'The Government should empower all local Integrated Care Systems to prioritise eradicating health inequalities facing Black communities.',
+      why: 'ICSs have a legal duty to address health inequalities under the Health and Care Act 2022 and the Advancing Mental Health Equalities strategy.',
+    },
+    {
+      num: 8,
+      title: 'Local public services must ensure people impacted by mental health challenges know their rights by funding culturally appropriate advocacy services.',
+      why: 'Black people are nearly four times more likely to be detained under the Mental Health Act and report worse outcomes during care and treatment.',
+    },
+  ],
+  part2: [
+    {
+      num: 9,
+      title: "All NHS Trusts and mental health service providers should implement NHS England's Patient and Carer Race Equality Framework (PCREF).",
+      why: 'PCREF provides a systematic, transparent anti-racism framework to drive service improvements for racialised communities.',
+    },
+    {
+      num: 10,
+      title: 'Cultural competency and anti-racism training must be made mandatory for all practitioners, policymakers, and funders.',
+      why: 'Racism causes trauma that contributes to mental ill-health, yet actionable anti-racist recommendations from 50 years ago remain unimplemented.',
+    },
+    {
+      num: 11,
+      title: 'The Government should work with Integrated Care Systems to increase the numbers of mental health response paramedics.',
+      why: 'Mental health response vehicles have reduced A&E admissions to 16%, compared to 50% with regular ambulance responses.',
+    },
+    {
+      num: 12,
+      title: 'Policymakers, academic institutions, and funders should actively invest in community research conducted by and for Black communities.',
+      why: 'Colonialism has established racial hierarchies of knowledge that perpetuate racism through research and policy sectors.',
+    },
+    {
+      num: 13,
+      title: 'Diversify and prioritise the inclusion of individuals with lived experience on decision-making boards of key institutions.',
+      why: 'Current approaches reinforce beliefs that Black communities do not know what is best for them, stripping them of agency and self-determination.',
+    },
+    {
+      num: 14,
+      title: 'Anti-racism theory and practice must be standard for all NHS and social care mental health occupations.',
+      why: 'Higher education curricula are rooted in colonialism and racism, making it impossible for practitioners to be truly culturally responsive.',
+    },
+    {
+      num: 15,
+      title: 'Regulators such as the CQC, ICBs, EHRC and NICE must have policies explicit about anti-racist practice and undertake audits for accountability.',
+      why: 'Regulators are in a unique position to rebuild trust with Black people and rectify systemic inequalities through frameworks like PCREF.',
+    },
+    {
+      num: '16 & 17',
+      title: 'The next government must prioritise reform of the Mental Health Act 1983, including the statutory offer of Advance Choice Documents.',
+      why: 'The detention rate was 3.6 times higher for Black people in 2022/23; Advance Choice Documents give patients a voice in their future care.',
+    },
+  ],
+  part3: [
+    {
+      num: 18,
+      title: 'The government should establish a non-ambiguous definition of mental health that is holistic, culturally appropriate, and moves away from a culture of blame.',
+      why: 'The current WHO definition negates the reality of Black people who face racism and discrimination impacting their wellbeing.',
+    },
+    {
+      num: 19,
+      title: 'The government should invest in culturally responsive interventions made by and for Black people, including more Black therapists.',
+      why: 'Retrofitting existing interventions not designed for or with Black people perpetuates harm; new approaches must centre reparative justice.',
+    },
+    {
+      num: 20,
+      title: 'The government and academic institutions should invest in community-based research into mental health and microbiomes focusing on diverse communities.',
+      why: 'Research shows relationships between gut health and depression, with variations in gut microbiomes based on race and ethnicity.',
+    },
+    {
+      num: 21,
+      title: 'The government should allocate funds from prisons, policing and surveillance services into communities and community interventions.',
+      why: 'Black people are almost nine times more likely to be stopped and searched; negative police interactions increase risks of PTSD and depression.',
+    },
+    {
+      num: 22,
+      title: 'The government should work with racialised communities to develop and embed an anti-racist and diverse school curriculum.',
+      why: 'Less than a third of teachers have received training on racism, yet 94% believe it should be given to all school staff.',
+    },
+    {
+      num: 23,
+      title: 'The Government should abolish school exclusions and implement restorative and trauma-informed responses to behaviour in schools.',
+      why: 'Black Caribbean children are nearly twice as likely to be excluded; exclusions predict the onset of new mental health problems.',
+    },
+  ],
+};
+---
+
+<Base title="The Manifesto" description="23 recommendations for structural change across government, NHS, education, and civil society. A Manifesto for Radical Change by the Black Mental Health and Wellbeing Alliance.">
+
+  <!-- ── Hero ── -->
+  <section class="manifesto-hero" aria-labelledby="manifesto-heading">
+    <div class="container narrow">
+      <p class="section-label">Black Mental Health and Wellbeing Alliance</p>
+      <h1 id="manifesto-heading">The Black Mental Health Manifesto</h1>
+      <p class="manifesto-subtitle">A Manifesto for Radical Change</p>
+      <p class="manifesto-hero-desc">23 recommendations for structural change across government, NHS, education, and civil society.</p>
+      <a href="/bmh-manifesto.pdf" class="btn btn-primary" download>Download PDF</a>
+    </div>
+  </section>
+
+  <!-- ── About ── -->
+  <section class="section" aria-labelledby="about-heading">
+    <div class="container narrow">
+      <p class="section-label">About the Alliance</p>
+      <h2 id="about-heading">Who we are</h2>
+      <p>The Black Mental Health and Wellbeing Alliance is a collective of individuals with lived experience and grassroots organisations in the mental health sector, with a primary focus on tackling racial inequalities that disproportionately impact Black people.</p>
+      <p>The Manifesto serves as a point of reference for the Government, healthcare professionals, those working in education, practitioners, policymakers and anyone involved in or accountable for instigating change.</p>
+      <p>Through collaboration, we can dismantle systemic barriers and develop a mental health system that genuinely meets the needs of all communities, including the Black community.</p>
+      <blockquote>
+        <p>When community members speak, it&rsquo;s essential that we listen.</p>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ── Setting the Scene ── -->
+  <section class="section" aria-labelledby="scene-heading">
+    <div class="container narrow">
+      <p class="section-label">Setting the Scene</p>
+      <h2 id="scene-heading">The crisis and the path forward</h2>
+      <p>Although we have made great strides in mental health care in the UK, inequalities in access, experience and outcomes continue to persist. For Black people, these disparities are stark and often rooted in racism and discrimination.</p>
+      <p>Black people are more likely to experience a common mental health problem, have higher rates of PTSD and suicide risk, and are more likely to be diagnosed with schizophrenia. Despite these high prevalence rates, Black adults have the lowest treatment rates. The evidence is clear that race and ethnicity are not known risk factors for poor mental health &mdash; which points to racism, not race, as an undeniable factor.</p>
+      <p>Many mental health initiatives, reforms, and services have not yet been able to address the needs of Black people in tangible ways. Reports going as far back as over 20 years ago contain unfulfilled recommendations. The Black Mental Health Manifesto seeks to be a catalyst for that change.</p>
+    </div>
+  </section>
+
+  <!-- ── Part 1 ── -->
+  <section class="section" id="part-1" aria-labelledby="part1-heading">
+    <div class="container narrow">
+      <p class="section-label">Part 1</p>
+      <h2 id="part1-heading">Addressing Structural Drivers</h2>
+      <p class="part-intro">Structural inequities contribute to poorer mental health outcomes. Black communities in Britain are disproportionately impacted by known risk factors &mdash; lower-income households, overcrowded housing, higher unemployment, and school exclusions. Racism and discrimination are at the heart of these inequalities. Action can be taken to break these cycles.</p>
+      <div class="rec-list">
+        {recommendations.part1.map((rec) => (
+          <article class="card rec-card" id={`rec-${rec.num}`}>
+            <span class="rec-badge">{rec.num}</span>
+            <h3 class="rec-title">{rec.title}</h3>
+            <p class="rec-why"><strong>Why?</strong> {rec.why}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Part 2 ── -->
+  <section class="section" id="part-2" aria-labelledby="part2-heading">
+    <div class="container narrow">
+      <p class="section-label">Part 2</p>
+      <h2 id="part2-heading">Improving Ways of Working</h2>
+      <p class="part-intro">Racism permeates the key structures and systems that Black people interact with. To ensure long-standing change, we must address the systems, the strategies that govern them, and the practice of actors within them &mdash; including anti-racist commissioning, decision-making, accountability, and cultural competency.</p>
+      <div class="rec-list">
+        {recommendations.part2.map((rec) => (
+          <article class="card rec-card" id={`rec-${rec.num}`}>
+            <span class="rec-badge">{rec.num}</span>
+            <h3 class="rec-title">{rec.title}</h3>
+            <p class="rec-why"><strong>Why?</strong> {rec.why}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Part 3 ── -->
+  <section class="section" id="part-3" aria-labelledby="part3-heading">
+    <div class="container narrow">
+      <p class="section-label">Part 3</p>
+      <h2 id="part3-heading">Reimagining Mental Health Support</h2>
+      <p class="part-intro">Our current understanding of mental health is rooted in white, Eurocentric norms. To eliminate racial disparities, we must reimagine how we understand mental health and build support systems that allow for different ways of knowing and being. We must learn from the past and build on community strengths to create sustainable change.</p>
+      <div class="rec-list">
+        {recommendations.part3.map((rec) => (
+          <article class="card rec-card" id={`rec-${rec.num}`}>
+            <span class="rec-badge">{rec.num}</span>
+            <h3 class="rec-title">{rec.title}</h3>
+            <p class="rec-why"><strong>Why?</strong> {rec.why}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Download ── -->
+  <section class="section download-section" aria-labelledby="download-heading">
+    <div class="container narrow download-inner">
+      <h2 id="download-heading">Download the full Manifesto</h2>
+      <p>The Black Mental Health Manifesto is freely available to download, share, and reference. Distribute it to colleagues, elected representatives, commissioners, and anyone in a position to act.</p>
+      <a href="/bmh-manifesto.pdf" class="btn btn-primary btn-lg" download>Download PDF</a>
+      <p class="muted small download-note">April 2024 &middot; Black Mental Health and Wellbeing Alliance</p>
+    </div>
+  </section>
+
+  <!-- ── Action Bridge ── -->
+  <section class="action-bridge" aria-labelledby="bridge-heading">
+    <div class="container narrow bridge-inner">
+      <h2 id="bridge-heading">Now you&rsquo;ve read it &mdash; here&rsquo;s what you can do</h2>
+      <p>Whether you are a policymaker, practitioner, commissioner, educator, funder, or community member, there are concrete steps you can take to advance these recommendations.</p>
+      <a href="/take-action" class="btn btn-primary">Take Action</a>
+    </div>
+  </section>
+
+</Base>
+
+<style>
+  /* ── Manifesto Hero ── */
+  .manifesto-hero {
+    background: var(--primary);
+    color: #FFFFFF;
+    padding: 5rem 0 4rem;
+    text-align: center;
+  }
+
+  .manifesto-hero .section-label {
+    color: var(--accent);
+  }
+
+  .manifesto-hero h1 {
+    color: #FFFFFF;
+    margin-bottom: 0.5rem;
+  }
+
+  .manifesto-subtitle {
+    font-family: var(--font-heading);
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    color: var(--accent);
+    margin-bottom: 1rem;
+    font-style: italic;
+  }
+
+  .manifesto-hero-desc {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+    max-width: 560px;
+    margin: 0 auto 2rem;
+  }
+
+  /* ── Part intro paragraphs ── */
+  .part-intro {
+    color: var(--muted);
+    margin-bottom: 2rem;
+    line-height: 1.7;
+  }
+
+  /* ── Recommendation cards ── */
+  .rec-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .rec-card {
+    border-left: 4px solid var(--accent);
+    padding: 1.5rem 1.5rem 1.5rem 1.75rem;
+    position: relative;
+  }
+
+  .rec-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--primary);
+    font-family: var(--font-data);
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    flex-shrink: 0;
+  }
+
+  .rec-title {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .rec-why {
+    font-size: 0.95rem;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+
+  .rec-why strong {
+    color: var(--text);
+  }
+
+  /* ── Download section ── */
+  .download-section {
+    text-align: center;
+    background: var(--light-bg);
+  }
+
+  .download-inner h2 {
+    margin-bottom: 1rem;
+  }
+
+  .download-inner p {
+    color: var(--muted);
+    max-width: 520px;
+    margin: 0 auto 1.5rem;
+  }
+
+  .btn-lg {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+  }
+
+  .download-note {
+    margin-top: 1rem;
+  }
+
+  /* ── Action bridge ── */
+  .action-bridge {
+    background: var(--primary);
+    color: #FFFFFF;
+    padding: 4rem 0;
+    text-align: center;
+  }
+
+  .action-bridge h2 {
+    color: #FFFFFF;
+    margin-bottom: 1rem;
+  }
+
+  .action-bridge p {
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 550px;
+    margin: 0 auto 2rem;
+    font-size: 1.05rem;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    .manifesto-hero {
+      padding: 3.5rem 0 3rem;
+    }
+
+    .rec-card {
+      padding: 1.25rem 1.25rem 1.25rem 1.5rem;
+    }
+  }
+</style>

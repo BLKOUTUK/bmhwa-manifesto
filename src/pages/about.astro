@@ -1,0 +1,256 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="About the Alliance" description="The Black Mental Health and Wellbeing Alliance is a coalition of individuals with lived experience and grassroots organisations demanding structural change for Black mental health in England.">
+
+  <!-- ── Hero ── -->
+  <section class="page-hero" aria-labelledby="about-heading">
+    <div class="container narrow">
+      <p class="section-label">About</p>
+      <h1 id="about-heading">A coalition of people and organisations demanding change.</h1>
+      <p class="page-hero-desc">The Alliance exists because the system will not reform itself. We bring together lived experience, community knowledge, and professional expertise to make change happen.</p>
+    </div>
+  </section>
+
+  <!-- ── Who We Are ── -->
+  <section class="section" aria-labelledby="who-heading">
+    <div class="container narrow">
+      <p class="section-label">Who We Are</p>
+      <h2 id="who-heading">The Black Mental Health and Wellbeing Alliance</h2>
+
+      <p>The Black Mental Health and Wellbeing Alliance is a collective of individuals with lived experience and grassroots organisations in the mental health sector, with a primary focus on tackling racial inequalities that disproportionately impact Black people.</p>
+
+      <p>We came together because decades of reports, recommendations, and reviews have failed to deliver meaningful change. Black people continue to face worse outcomes at every stage of the mental health system &mdash; from access to treatment, from detention to community care, from childhood to old age.</p>
+
+      <p>The Alliance is not just a campaign group. We are building practical tools, sharing knowledge, and creating frameworks that organisations can use to turn commitment into action. The Manifesto is our public demand. But behind it is ongoing work: capacity-building, research partnerships, and the development of resources like <a href="/learning#assess-align">Assess &amp; Align</a>.</p>
+
+      <blockquote>
+        <p>When community members speak, it&rsquo;s essential that we listen.</p>
+      </blockquote>
+
+      <p>The Manifesto serves as a point of reference for the Government, healthcare professionals, those working in education, practitioners, policymakers, and anyone involved in or accountable for instigating change. Through collaboration, we can dismantle systemic barriers and develop a mental health system that genuinely meets the needs of all communities, including the Black community.</p>
+    </div>
+  </section>
+
+  <!-- ── Our Journey ── -->
+  <section class="section" aria-labelledby="journey-heading">
+    <div class="container narrow">
+      <p class="section-label">Our Journey</p>
+      <h2 id="journey-heading">How we got here</h2>
+
+      <ol class="timeline" role="list">
+        <li class="timeline-item">
+          <span class="timeline-date">2022&ndash;2023</span>
+          <div class="timeline-content">
+            <h3>Community workshops</h3>
+            <p>A series of workshops facilitated by the <strong>Ubele Initiative</strong> brought together people with lived experience, practitioners, and community organisations. Together, they identified the structural barriers to Black mental health and wellbeing and the changes needed to address them.</p>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <span class="timeline-date">2023</span>
+          <div class="timeline-content">
+            <h3>Coalition forming</h3>
+            <p>From these workshops, the Alliance took shape &mdash; a coalition committed to translating community insight into concrete demands. The manifesto was drafted through a collaborative process, rooted in evidence and lived experience.</p>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <span class="timeline-date">April 2024</span>
+          <div class="timeline-content">
+            <h3>Manifesto published</h3>
+            <p>The Black Mental Health Manifesto was published &mdash; 23 recommendations across three areas of action, addressed to government, the NHS, commissioners, educators, regulators, and civil society.</p>
+          </div>
+        </li>
+        <li class="timeline-item timeline-item-current">
+          <span class="timeline-date">Ongoing</span>
+          <div class="timeline-content">
+            <h3>Campaign and tool-building</h3>
+            <p>The Alliance continues to campaign for the implementation of manifesto recommendations, build capacity-building tools like Assess &amp; Align, and develop partnerships with organisations across the sector.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ── Steering Committee ── -->
+  <section class="section" aria-labelledby="committee-heading">
+    <div class="container narrow">
+      <p class="section-label">Leadership</p>
+      <h2 id="committee-heading">The Steering Committee</h2>
+      <p>The Alliance is guided by a steering committee of individuals with lived experience, practitioners, and community leaders. The committee ensures that the manifesto&rsquo;s demands remain grounded in the realities of those most affected and that our work is accountable to the communities we serve.</p>
+      <p>Chaired by <strong>Kadra</strong>.</p>
+
+      <div class="committee-placeholder">
+        <p class="muted">Committee member profiles and photos will be featured here.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Partner Organisations ── -->
+  <section class="section" aria-labelledby="partners-heading">
+    <div class="container">
+      <p class="section-label">Our Partners</p>
+      <h2 id="partners-heading">Partner organisations</h2>
+      <p class="muted">The Alliance works alongside organisations committed to racial justice in mental health. Partners are displayed with equal visual weight &mdash; this is a coalition, not a hierarchy.</p>
+
+      <div class="partners-placeholder">
+        <p class="muted">Partner logos coming soon.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Join the Alliance ── -->
+  <section class="join-section" aria-labelledby="join-heading">
+    <div class="container narrow join-inner">
+      <h2 id="join-heading">Join the Alliance</h2>
+      <p>The manifesto belongs to the community. If your organisation supports these demands and is willing to act on them, join us.</p>
+      <a href="/take-action#organisations" class="btn btn-primary">Endorse the Manifesto</a>
+    </div>
+  </section>
+
+</Base>
+
+<style>
+  /* ── Page Hero ── */
+  .page-hero {
+    background: var(--primary);
+    color: #FFFFFF;
+    padding: 5rem 0 4rem;
+    text-align: center;
+  }
+
+  .page-hero .section-label {
+    color: var(--accent);
+  }
+
+  .page-hero h1 {
+    color: #FFFFFF;
+    margin-bottom: 1rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .page-hero-desc {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.15rem;
+    max-width: 620px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  /* ── Timeline ── */
+  .timeline {
+    list-style: none;
+    position: relative;
+    margin-top: 2rem;
+    padding-left: 2rem;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--border));
+  }
+
+  .timeline-item {
+    position: relative;
+    padding-bottom: 2.5rem;
+    padding-left: 1.5rem;
+  }
+
+  .timeline-item:last-child {
+    padding-bottom: 0;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2rem;
+    top: 0.35rem;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--light-bg);
+    border: 3px solid var(--accent);
+    z-index: 1;
+  }
+
+  .timeline-item-current::before {
+    background: var(--accent);
+  }
+
+  .timeline-date {
+    display: inline-block;
+    font-family: var(--font-data);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.5rem;
+  }
+
+  .timeline-content h3 {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .timeline-content p {
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  /* ── Committee placeholder ── */
+  .committee-placeholder {
+    padding: 3rem 2rem;
+    border: 2px dashed var(--border);
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 1.5rem;
+  }
+
+  /* ── Partners placeholder ── */
+  .partners-placeholder {
+    padding: 4rem 2rem;
+    border: 2px dashed var(--border);
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 1.5rem;
+  }
+
+  /* ── Join section ── */
+  .join-section {
+    background: var(--primary);
+    color: #FFFFFF;
+    padding: 4rem 0;
+    text-align: center;
+  }
+
+  .join-section h2 {
+    color: #FFFFFF;
+    margin-bottom: 1rem;
+  }
+
+  .join-section p {
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 550px;
+    margin: 0 auto 2rem;
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    .page-hero {
+      padding: 3.5rem 0 3rem;
+    }
+  }
+</style>
