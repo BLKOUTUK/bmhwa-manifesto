@@ -1,3 +1,11 @@
+> ⛔ **SUPERSEDED (19 June 2026).** This is the **Round 1** proposal (indigo-black
+> `#1B1B3A` + gold + red, DM Serif Display). It is **not** the current direction.
+> The live design system is **`docs/round-2/03_design-system.md`** — warm brown-black,
+> ochre, demand-red on warm off-white, with the BC Empire Windrush display face.
+> Kept for history only. Do not build from this file.
+
+---
+
 # Design System — Black Mental Health Manifesto
 
 **Status**: Proposed (pending steering committee feedback from survey Q14)
