@@ -8,3 +8,4 @@ design system. Replace with BMHWA's own photography when supplied (via Ariel).
 |------|--------|-----------|
 | `public/images/community-joy.jpg` | Group laughing together | https://www.pexels.com/photo/group-of-friends-laughing-together-7149169/ |
 | `public/images/conversation.jpg` | Two men talking on a bench | https://www.pexels.com/photo/two-men-sitting-on-the-bench-and-talking-16582974/ |
+| `public/images/warm-portrait.jpg` | Smiling man, portrait | https://www.pexels.com/photo/a-smiling-african-man-with-a-big-smile-18587652/ |
