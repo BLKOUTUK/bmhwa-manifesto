@@ -1,0 +1,350 @@
+---
+// The Living Charter — second evolution direction, ported from Claude Design (Living Charter.dc.html).
+// Preview route: /bmhwa-manifesto/living-charter/ — does NOT replace the live home page.
+// Display face: Anton + Archivo (as designed). Largely JS-rendered (live day-counters, voting, forms).
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+const heroImg = base + 'images/community-joy.jpg';
+const solImg = base + 'images/woman-afro.jpg';
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Living Charter — Black Mental Health Manifesto</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,600;1,800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{background:#16131C;color:#F8F1E6;font-family:'Archivo',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  ::selection{background:#FF3B2E;color:#16131C}
+  a{color:inherit}
+  @keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.2}}
+  @keyframes stamp{0%{opacity:0;transform:rotate(-14deg) scale(1.7)}55%{opacity:1}100%{opacity:1;transform:rotate(-8deg) scale(1)}}
+  @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+</style>
+</head>
+<body>
+
+<div style="max-width:1180px;margin:0 auto;padding:0 clamp(18px,5vw,56px)">
+  <!-- NAV -->
+  <nav style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 0;position:relative;z-index:5">
+    <a href="#top" style="text-decoration:none;display:flex;align-items:center;gap:12px">
+      <span style="width:34px;height:34px;border-radius:50%;background:#FF3B2E;display:grid;place-items:center;font-family:'Anton';font-size:20px;color:#16131C;flex:none">B</span>
+      <span style="font-family:'Anton';font-size:clamp(15px,2.4vw,19px);letter-spacing:.06em;line-height:.95">THE LIVING<br>CHARTER</span>
+    </a>
+    <a href="#voice" style="text-decoration:none;font-family:'Archivo';font-weight:800;font-size:14px;letter-spacing:.04em;padding:12px 20px;border-radius:100px;background:#FFC53A;color:#16131C">Add your voice</a>
+  </nav>
+
+  <!-- HERO -->
+  <header id="top" style="padding:clamp(24px,5vw,52px) 0 clamp(40px,7vw,84px)">
+    <div style="display:flex;flex-wrap:wrap;gap:clamp(28px,5vw,60px);align-items:flex-end">
+      <div style="flex:1 1 460px;min-width:300px">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:22px;flex-wrap:wrap">
+          <span style="font-family:'Archivo';font-weight:800;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#FFC53A">Black Mental Health &amp; Wellbeing Alliance</span>
+          <span style="display:inline-block;transform:rotate(-3deg);background:#FF3B2E;color:#16131C;font-family:'Anton';font-size:12px;letter-spacing:.08em;padding:5px 11px;border-radius:3px">RECEIPTS · NOT PROMISES</span>
+        </div>
+        <h1 style="font-family:'Anton';font-weight:400;font-size:clamp(40px,8.4vw,92px);line-height:.92;letter-spacing:-.01em;margin:0 0 8px;text-wrap:balance">
+          BLACK PEOPLE ARE DETAINED <span style="color:#FF3B2E">NEARLY 4&times;</span> THE RATE OF WHITE PEOPLE.
+        </h1>
+        <p style="font-family:'Anton';font-size:clamp(30px,6.4vw,66px);line-height:.95;margin:18px 0 0;color:#FFC53A">This ends with us.</p>
+        <p style="max-width:48ch;font-size:clamp(15px,2.2vw,18px);line-height:1.5;color:#E6DCCC;margin:22px 0 30px">
+          23 demands. Years old. Still ignored. This is the count of what they owe us.
+        </p>
+        <div style="display:flex;gap:14px;flex-wrap:wrap">
+          <a href="#demands" style="text-decoration:none;font-family:'Archivo';font-weight:800;font-size:15px;padding:15px 24px;border-radius:100px;background:#F8F1E6;color:#16131C">See the 23 demands &darr;</a>
+          <a href="#voice" style="text-decoration:none;font-family:'Archivo';font-weight:800;font-size:15px;padding:15px 24px;border-radius:100px;background:transparent;color:#F8F1E6;border:1.5px solid rgba(243,233,216,.32)">Add your voice</a>
+        </div>
+      </div>
+      <div style="flex:1 1 300px;min-width:260px;display:flex;flex-direction:column;gap:18px">
+        <div style="position:relative;aspect-ratio:4/5;border-radius:8px;overflow:hidden;border:2px solid rgba(255,197,58,.45)">
+          <img src={heroImg} alt="Black British portrait, joy-led" style="width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1) contrast(1.18) brightness(.96)" />
+          <div style="position:absolute;inset:0;background:#FF3B2E;mix-blend-mode:multiply;pointer-events:none"></div>
+        </div>
+        <div style="background:#211D28;border:1.5px solid rgba(255,59,46,.4);border-radius:8px;padding:18px 20px">
+          <div style="display:flex;align-items:baseline;gap:4px">
+            <span id="heroNum" style="font-family:'Anton';font-size:clamp(48px,11vw,72px);line-height:.85;color:#FF3B2E">0.0</span>
+            <span style="font-family:'Anton';font-size:clamp(30px,7vw,46px);color:#FFC53A">&times;</span>
+          </div>
+          <p style="margin:8px 0 0;font-size:13px;line-height:1.4;color:#ABA3B2;font-weight:600">more likely to be sectioned. Not a glitch &mdash; built that way.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
+
+<!-- STAT TICKER -->
+<div style="background:#FF3B2E;color:#16131C;overflow:hidden;white-space:nowrap;border-top:2px solid #16131C;border-bottom:2px solid #16131C">
+  <div style="display:inline-flex;gap:0;animation:ticker 34s linear infinite;will-change:transform;font-family:'Anton';font-size:15px;letter-spacing:.04em;padding:9px 0">
+    <span id="tickerA" style="display:inline-flex"></span><span id="tickerB" style="display:inline-flex" aria-hidden="true"></span>
+  </div>
+</div>
+
+<div style="max-width:1180px;margin:0 auto;padding:0 clamp(18px,5vw,56px)">
+  <!-- DEMANDS / RECEIPTS LEDGER -->
+  <section id="demands" style="padding:clamp(48px,8vw,96px) 0 clamp(36px,6vw,64px)">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:30px">
+      <div>
+        <span style="font-family:'Archivo';font-weight:800;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#1FC795">The receipts</span>
+        <h2 style="font-family:'Anton';font-size:clamp(34px,6.6vw,68px);line-height:.95;margin:10px 0 0">23 DEMANDS.<br><span style="color:#FF3B2E">0 MET.</span> THE CLOCK IS RUNNING.</h2>
+      </div>
+      <p style="max-width:34ch;font-size:15px;line-height:1.5;color:#ABA3B2;margin:0">Each card counts the days it&rsquo;s been ignored. The longer it runs, the louder we get.</p>
+    </div>
+    <div id="featured"></div>
+    <div id="demandGrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:18px"></div>
+  </section>
+</div>
+
+<!-- SOLIDARITY BAND -->
+<section id="solidarity" style="background:#100D15;border-top:2px solid rgba(243,233,216,.1);border-bottom:2px solid rgba(243,233,216,.1);padding:clamp(44px,7vw,84px) 0">
+  <div style="overflow:hidden;white-space:nowrap;border-top:1.5px solid rgba(255,197,58,.28);border-bottom:1.5px solid rgba(255,197,58,.28);padding:11px 0;margin-bottom:clamp(34px,5vw,56px)">
+    <div style="display:inline-flex;animation:marq 30s linear infinite;will-change:transform;font-family:'Anton';font-size:16px;letter-spacing:.05em;color:#FFC53A">
+      <span id="marqueeA" style="display:inline-flex"></span><span id="marqueeB" style="display:inline-flex" aria-hidden="true"></span>
+    </div>
+  </div>
+  <div style="max-width:1180px;margin:0 auto;padding:0 clamp(18px,5vw,56px)">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-bottom:24px">
+      <div>
+        <span style="font-family:'Archivo';font-weight:800;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#FFC53A">Solidarity is the whole movement</span>
+        <h2 style="font-family:'Anton';font-size:clamp(30px,5.4vw,56px);line-height:.96;margin:10px 0 0">WE ARE BLACK <span style="color:#FF3B2E">AND</span><br>EVERYTHING ELSE TOO.</h2>
+      </div>
+      <div style="display:flex;align-items:center;gap:9px;background:#211D28;border:1.5px solid rgba(31,199,149,.5);border-radius:100px;padding:9px 16px">
+        <span style="width:9px;height:9px;border-radius:50%;background:#1FC795;animation:pulse 1.4s ease-in-out infinite"></span>
+        <span style="font-size:13px;font-weight:700">Live today, <span id="todayText"></span></span>
+      </div>
+    </div>
+    <div id="momentCard"></div>
+  </div>
+</section>
+
+<div style="max-width:1180px;margin:0 auto;padding:0 clamp(18px,5vw,56px)">
+  <!-- YOUR VOICE -->
+  <section id="voice" style="padding:clamp(48px,8vw,96px) 0 clamp(40px,6vw,72px)">
+    <span style="font-family:'Archivo';font-weight:800;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#1FC795">This charter is yours to shape</span>
+    <h2 style="font-family:'Anton';font-size:clamp(32px,6vw,62px);line-height:.95;margin:10px 0 30px">YOUR VOICE MOVES IT.</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:18px">
+      <div style="background:#211D28;border:1.5px solid rgba(243,233,216,.14);border-radius:12px;padding:24px;display:flex;flex-direction:column">
+        <span style="font-family:'Anton';font-size:20px;color:#FFC53A">SUGGEST A DEMAND</span>
+        <p style="font-size:14px;color:#ABA3B2;line-height:1.45;margin:8px 0 14px">Something missing from the 23? Put it on the record.</p>
+        <input id="suggestInput" placeholder="e.g. Mental health first aid led by our elders" style="font-family:'Archivo';font-size:14px;padding:13px 15px;border-radius:9px;border:1.5px solid rgba(243,233,216,.2);background:#16131C;color:#F8F1E6;outline:none;width:100%"/>
+        <button id="suggestBtn" style="cursor:pointer;margin-top:12px;font-family:'Archivo';font-weight:800;font-size:14px;padding:13px;border-radius:100px;border:none;background:#FFC53A;color:#16131C">Add it &rarr;</button>
+        <div id="suggestList" style="margin-top:16px;display:flex;flex-direction:column;gap:9px"></div>
+      </div>
+      <div style="background:#211D28;border:1.5px solid rgba(243,233,216,.14);border-radius:12px;padding:24px;display:flex;flex-direction:column">
+        <span style="font-family:'Anton';font-size:20px;color:#FF3B2E">SHARE LIVED EXPERIENCE</span>
+        <p style="font-size:14px;color:#ABA3B2;line-height:1.45;margin:8px 0 14px">Your story is evidence. Share what you&rsquo;re comfortable with &mdash; first name or anonymous.</p>
+        <input id="nameInput" placeholder="First name (optional)" style="font-family:'Archivo';font-size:14px;padding:13px 15px;border-radius:9px;border:1.5px solid rgba(243,233,216,.2);background:#16131C;color:#F8F1E6;outline:none;width:100%;margin-bottom:10px"/>
+        <textarea id="storyInput" placeholder="What happened, and what should have happened instead." rows="3" style="font-family:'Archivo';font-size:14px;padding:13px 15px;border-radius:9px;border:1.5px solid rgba(243,233,216,.2);background:#16131C;color:#F8F1E6;outline:none;width:100%;resize:vertical"></textarea>
+        <button id="storyBtn" style="cursor:pointer;margin-top:12px;font-family:'Archivo';font-weight:800;font-size:14px;padding:13px;border-radius:100px;border:none;background:#FF3B2E;color:#16131C">Add to the record &rarr;</button>
+        <div id="storyList" style="margin-top:16px;display:flex;flex-direction:column;gap:9px"></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer style="background:#FF3B2E;color:#16131C;padding:clamp(40px,6vw,72px) 0">
+  <div style="max-width:1180px;margin:0 auto;padding:0 clamp(18px,5vw,56px)">
+    <h2 style="font-family:'Anton';font-size:clamp(34px,8vw,86px);line-height:.9;margin:0 0 22px;text-wrap:balance">NO MORE UNFULFILLED PROMISES.</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between">
+      <a href="#voice" style="text-decoration:none;font-family:'Archivo';font-weight:800;font-size:16px;padding:16px 28px;border-radius:100px;background:#16131C;color:#F8F1E6">Add your voice</a>
+      <span style="font-family:'Archivo';font-weight:800;font-size:13px;letter-spacing:.04em;max-width:30ch;line-height:1.4">Black Mental Health &amp; Wellbeing Alliance &middot; The Living Charter &middot; built by us, for us.</span>
+    </div>
+  </div>
+</footer>
+
+<script is:inline define:vars={{ solImg }}>
+(function () {
+  var DEMANDS = [
+    { num: "01", year: 2018, since: "2018-10-01", text: "End the 4× detention gap under the Mental Health Act.", base: 1284 },
+    { num: "02", year: 2018, since: "2018-10-01", text: "Police out of mental health crisis response.", base: 1106 },
+    { num: "03", year: 2018, since: "2018-10-01", text: "Ban face-down restraint of Black patients.", base: 974 },
+    { num: "04", year: 2019, since: "2019-10-01", text: "Community-led crisis houses in every Black-majority area.", base: 812 },
+    { num: "05", year: 2018, since: "2018-10-01", text: "Fund Black-led mental health organisations directly, long-term.", base: 903 },
+    { num: "06", year: 2018, since: "2018-10-01", text: "Mandatory cultural competence — not a one-day training.", base: 688 },
+    { num: "07", year: 2019, since: "2019-10-01", text: "End the over-prescription of antipsychotics to Black men.", base: 740 },
+    { num: "08", year: 2018, since: "2018-10-01", text: "Independent investigation of every Black death in detention.", base: 1521 },
+    { num: "09", year: 2020, since: "2020-10-01", text: "End adultification — protect Black children in CAMHS.", base: 967 },
+    { num: "10", year: 2018, since: "2018-10-01", text: "Publish ethnicity data on every section, restraint and discharge.", base: 559 },
+    { num: "11", year: 2019, since: "2019-10-01", text: "Black peer advocates on every mental health ward.", base: 702 },
+    { num: "12", year: 2020, since: "2020-10-01", text: "Trauma-informed support for survivors of racism.", base: 631 },
+    { num: "13", year: 2019, since: "2019-10-01", text: "End school exclusions feeding the pipeline to detention.", base: 845 },
+    { num: "14", year: 2021, since: "2021-10-01", text: "Sanctuary, not detention, for migrants in crisis.", base: 593 },
+    { num: "15", year: 2020, since: "2020-10-01", text: "Reparative funding for communities harmed by past care.", base: 514 },
+    { num: "16", year: 2020, since: "2020-10-01", text: "Faith and community healing recognised in care plans.", base: 477 },
+    { num: "17", year: 2019, since: "2019-10-01", text: "End “schizophrenia” as a racialised over-diagnosis.", base: 690 },
+    { num: "18", year: 2019, since: "2019-10-01", text: "Free, culturally-rooted therapy — no six-session cap.", base: 818 },
+    { num: "19", year: 2020, since: "2020-10-01", text: "Black women heard, not medicated, in maternal mental health.", base: 936 },
+    { num: "20", year: 2021, since: "2021-10-01", text: "LGBTQ+ Black people safe from conversion practices in care.", base: 705 },
+    { num: "21", year: 2021, since: "2021-10-01", text: "Disability justice built into every reform.", base: 540 },
+    { num: "22", year: 2022, since: "2022-10-01", text: "A Black mental health commissioner with real power.", base: 612 },
+    { num: "23", year: 2018, since: "2018-10-01", text: "This charter reviewed in public, by us, every year.", base: 488 }
+  ];
+  var MOMENTS = [
+    { key:"ramadan", label:"Ramadan", when:"Feb–Mar", accent:"#1FC795", celebrate:"Black Muslim communities carry a healing tradition older than any clinic — patience, fasting, care.", reject:"We reject the Islamophobia that reads faith as risk and prayer as symptom.", back:"We back Black Muslim wellbeing — services that honour faith, never flatten it." },
+    { key:"iwd", label:"Int’l Women’s Day", when:"8 March", accent:"#FF3B2E", celebrate:"Black women hold the line — in families, in movements, in every ward that fails them.", reject:"We reject the ‘strong Black woman’ myth that denies pain and delays care.", back:"We back Black women heard the first time — not medicated into silence." },
+    { key:"refugee", label:"Refugee Week", when:"mid-June", accent:"#FFC53A", celebrate:"Black migrants cross borders and still find the strength to begin again.", reject:"We reject detention dressed as care and the hostile environment in the consulting room.", back:"We back sanctuary — safety and support, never a cell, for people in crisis." },
+    { key:"windrush", label:"Windrush Day", when:"22 June", accent:"#FF3B2E", celebrate:"The Windrush generation rebuilt this country — and gave us the lettering this movement wears.", reject:"We reject the scandal that deported its own elders and the trauma the state never treated.", back:"We back reparative care — owed, overdue, and named out loud." },
+    { key:"pride", label:"Pride", when:"June", accent:"#FFC53A", celebrate:"Black queer people gave this country ballroom, lovers’ rock, and the nerve to be free out loud.", reject:"We reject the clinics that pathologise Black queerness and the ‘conversion’ practices still legal today.", back:"We back Black queer joy — held, housed, and free to grow old together." },
+    { key:"disability", label:"Disability Pride", when:"July", accent:"#1FC795", celebrate:"Black disabled people invented access, mutual aid and crip joy long before the words existed.", reject:"We reject reforms that forget us — and forms, buildings and wards that lock us out.", back:"We back disability justice woven through every demand — nothing about us without us." },
+    { key:"bhm", label:"Black History Month", when:"October", accent:"#1FC795", celebrate:"Every October we name what was here all year: Black brilliance that built Britain.", reject:"We reject a history that thanks us in October and detains us in November.", back:"We back Black futures — funded, led by us, no expiry date." },
+    { key:"tdor", label:"Trans Day of Remembrance", when:"20 Nov", accent:"#FF5DA2", celebrate:"We say the names — Black trans people who loved, organised, and made room for the rest of us.", reject:"We reject the violence, the misgendering on wards, the care that arrives too late.", back:"We back Black trans lives now — not just remembered, but resourced and alive." }
+  ];
+
+  var votes = {}, sVotes = {};
+  var suggestions = [
+    { id:"s1", text:"Mental health first aid led by our elders, in our spaces", votes:41 },
+    { id:"s2", text:"End stop-and-search as a route into psychiatric care", votes:28 }
+  ];
+  var stories = [
+    { id:"t1", name:"Anonymous", text:"I went in for help and left with a section. No one asked what I needed — they decided I was a risk before I said a word." }
+  ];
+  try {
+    votes = JSON.parse(localStorage.getItem("bmhwa.votes") || "null") || votes;
+    sVotes = JSON.parse(localStorage.getItem("bmhwa.svotes") || "null") || sVotes;
+    suggestions = JSON.parse(localStorage.getItem("bmhwa.suggestions") || "null") || suggestions;
+    stories = JSON.parse(localStorage.getItem("bmhwa.stories") || "null") || stories;
+  } catch (e) {}
+  function persist() {
+    try {
+      localStorage.setItem("bmhwa.votes", JSON.stringify(votes));
+      localStorage.setItem("bmhwa.svotes", JSON.stringify(sVotes));
+      localStorage.setItem("bmhwa.suggestions", JSON.stringify(suggestions));
+      localStorage.setItem("bmhwa.stories", JSON.stringify(stories));
+    } catch (e) {}
+  }
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+  function fmt(n){ return n.toLocaleString("en-GB"); }
+  function daysSince(iso){ return Math.max(0, Math.floor((Date.now() - new Date(iso+"T00:00:00").getTime())/86400000)); }
+
+  function featuredHTML(d){
+    var voted = !!votes[d.num];
+    return '<article style="background:#F8F1E6;color:#16131C;border-radius:12px;padding:clamp(22px,4vw,40px);position:relative;overflow:hidden;border:2px solid #16131C;box-shadow:8px 8px 0 #FF3B2E;margin-bottom:34px">'
+      + '<div style="position:absolute;top:18px;right:18px;font-family:\'Anton\';font-size:clamp(16px,3vw,22px);color:#FF3B2E;border:3px solid #FF3B2E;border-radius:6px;padding:5px 13px;letter-spacing:.06em;animation:stamp .7s ease both">UNMET</div>'
+      + '<span style="font-family:\'Anton\';font-size:14px;letter-spacing:.1em;color:#1FC795">DEMAND 01</span>'
+      + '<h3 style="font-family:\'Anton\';font-size:clamp(28px,5.2vw,52px);line-height:.98;margin:8px 0 0;max-width:18ch">'+esc(d.text)+'</h3>'
+      + '<div style="display:flex;flex-wrap:wrap;gap:clamp(18px,4vw,44px);align-items:flex-end;margin-top:26px">'
+      + '<div><div style="font-family:\'Anton\';font-size:clamp(40px,9vw,76px);line-height:.85;color:#FF3B2E">'+fmt(daysSince(d.since))+'</div>'
+      + '<div style="font-family:\'Archivo\';font-weight:800;font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin-top:6px">days unmet · demanded since '+d.year+'</div></div>'
+      + '<div style="display:flex;gap:10px;align-items:center;margin-left:auto">'
+      + '<span style="font-size:13px;font-weight:700;color:#6A6276">'+fmt(d.base+(voted?1:0))+' backing this</span>'
+      + '<button data-vote="'+d.num+'" style="cursor:pointer;font-family:\'Archivo\';font-weight:800;font-size:15px;padding:13px 22px;border-radius:100px;border:2px solid #16131C;background:'+(voted?'#1FC795':'#16131C')+';color:'+(voted?'#16131C':'#F8F1E6')+'">'+(voted?'✓ Backing':'Back this')+'</button>'
+      + '</div></div></article>';
+  }
+  function cardHTML(d){
+    var voted = !!votes[d.num];
+    return '<article style="background:#211D28;border:1.5px solid rgba(243,233,216,.14);border-radius:11px;padding:22px;display:flex;flex-direction:column;position:relative">'
+      + '<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px">'
+      + '<span style="font-family:\'Anton\';font-size:13px;letter-spacing:.08em;color:#FFC53A">DEMAND '+d.num+'</span>'
+      + '<span style="font-family:\'Anton\';font-size:12px;color:#FF3B2E;border:1.5px solid #FF3B2E;border-radius:4px;padding:2px 7px;transform:rotate(-5deg);letter-spacing:.05em">UNMET</span></div>'
+      + '<h3 style="font-family:\'Archivo\';font-weight:800;font-size:18px;line-height:1.18;margin:12px 0 0;letter-spacing:-.01em">'+esc(d.text)+'</h3>'
+      + '<div style="margin-top:auto;padding-top:20px">'
+      + '<div style="display:flex;align-items:baseline;gap:7px"><span style="font-family:\'Anton\';font-size:30px;line-height:.9;color:#FF3B2E">'+fmt(daysSince(d.since))+'</span><span style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8C8598">days unmet</span></div>'
+      + '<div style="display:flex;align-items:center;gap:8px;margin-top:9px"><span style="font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#8C8598">since '+d.year+'</span><span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#1FC795;animation:pulse 1.8s ease-in-out infinite"></span></div>'
+      + '<div style="display:flex;align-items:center;gap:9px;margin-top:16px">'
+      + '<button data-vote="'+d.num+'" style="cursor:pointer;font-family:\'Archivo\';font-weight:800;font-size:13px;padding:9px 15px;border-radius:100px;border:1.5px solid '+(voted?'#1FC795':'rgba(243,233,216,.3)')+';background:'+(voted?'#1FC795':'transparent')+';color:'+(voted?'#16131C':'#F8F1E6')+'">'+(voted?'✓ Backing':'Back this')+'</button>'
+      + '<span style="font-size:12px;font-weight:700;color:#8C8598">'+fmt(d.base+(voted?1:0))+'</span></div></div></article>';
+  }
+  function renderDemands(){
+    document.getElementById("featured").innerHTML = featuredHTML(DEMANDS[0]);
+    document.getElementById("demandGrid").innerHTML = DEMANDS.slice(1).map(cardHTML).join("");
+    Array.prototype.forEach.call(document.querySelectorAll('[data-vote]'), function(btn){
+      btn.addEventListener("click", function(){ var id=btn.getAttribute("data-vote"); votes[id]=!votes[id]; persist(); renderDemands(); });
+    });
+  }
+
+  function pickMoment(d){
+    var m=d.getMonth()+1, day=d.getDate(), idx=function(k){return MOMENTS.findIndex(function(x){return x.key===k;});};
+    if(m===11&&day>=18&&day<=22)return idx("tdor");
+    if(m===11)return idx("tdor");
+    if(m===10)return idx("bhm");
+    if(m===7)return idx("disability");
+    if(m===6&&day===22)return idx("windrush");
+    if(m===6&&day>=16&&day<=22)return idx("refugee");
+    if(m===6)return idx("pride");
+    if(m===3&&day>=6&&day<=10)return idx("iwd");
+    if(m===2||m===3)return idx("ramadan");
+    return idx("pride");
+  }
+  var momentIdx = pickMoment(new Date());
+  function renderMoment(){
+    var m = MOMENTS[momentIdx];
+    var isNow = momentIdx === pickMoment(new Date());
+    var tint = (m.accent==="#FFC53A") ? "#FF3B2E" : m.accent;
+    var nowBg = isNow ? "#1FC795" : "rgba(243,233,216,.12)";
+    var nowFg = isNow ? "#16131C" : "#ABA3B2";
+    var row = function(lbl,col,txt){ return '<div style="display:flex;gap:14px"><span style="font-family:\'Anton\';color:'+col+';font-size:13px;letter-spacing:.06em;flex:none;width:74px;padding-top:3px">'+lbl+'</span><p style="margin:0;font-size:clamp(16px,2.4vw,20px);line-height:1.4;font-weight:600">'+esc(txt)+'</p></div>'; };
+    var div = '<div style="height:1px;background:rgba(243,233,216,.12)"></div>';
+    document.getElementById("momentCard").innerHTML =
+      '<div style="background:#211D28;border:2px solid '+m.accent+';border-radius:14px;overflow:hidden"><div style="display:flex;flex-wrap:wrap">'
+      + '<div style="flex:1 1 320px;min-width:280px;padding:clamp(22px,4vw,40px)">'
+      + '<div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:18px">'
+      + '<span style="font-family:\'Anton\';font-size:clamp(22px,4vw,34px);color:'+m.accent+';line-height:1">'+esc(m.label)+'</span>'
+      + '<span style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#8C8598;border:1px solid rgba(243,233,216,.2);border-radius:100px;padding:4px 11px">'+esc(m.when)+'</span>'
+      + '<span style="font-size:12px;font-weight:800;letter-spacing:.06em;color:'+nowFg+';background:'+nowBg+';border-radius:100px;padding:4px 11px">'+(isNow?'HAPPENING NOW':'ON ROTATION')+'</span></div>'
+      + '<div style="display:flex;flex-direction:column;gap:16px">'+row('CELEBRATE','#1FC795',m.celebrate)+div+row('REJECT','#FF3B2E',m.reject)+div+row('BACK','#FFC53A',m.back)+'</div>'
+      + '<div style="display:flex;align-items:center;gap:12px;margin-top:26px;flex-wrap:wrap">'
+      + '<button id="momPrev" style="cursor:pointer;font-family:\'Archivo\';font-weight:800;font-size:14px;width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(243,233,216,.3);background:transparent;color:#F8F1E6">←</button>'
+      + '<button id="momNext" style="cursor:pointer;font-family:\'Archivo\';font-weight:800;font-size:14px;width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(243,233,216,.3);background:transparent;color:#F8F1E6">→</button>'
+      + '<span style="font-size:13px;color:#8C8598;font-weight:600">'+(momentIdx+1)+' / '+MOMENTS.length+' · one template, every community we hold</span></div></div>'
+      + '<div style="flex:1 1 240px;min-width:220px;position:relative;background:#16131C;min-height:300px">'
+      + '<img src="'+solImg+'" alt="Black British portrait of joy" style="width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0;filter:grayscale(1) contrast(1.15)"/>'
+      + '<div style="position:absolute;inset:0;background:'+tint+';mix-blend-mode:multiply;pointer-events:none;opacity:.9"></div></div>'
+      + '</div></div>';
+    document.getElementById("momPrev").addEventListener("click", function(){ momentIdx=(momentIdx-1+MOMENTS.length)%MOMENTS.length; renderMoment(); });
+    document.getElementById("momNext").addEventListener("click", function(){ momentIdx=(momentIdx+1)%MOMENTS.length; renderMoment(); });
+  }
+
+  function renderSuggestions(){
+    var sorted = suggestions.map(function(s){ var voted=!!sVotes[s.id]; return {s:s, total:s.votes+(voted?1:0), voted:voted}; }).sort(function(a,b){return b.total-a.total;});
+    document.getElementById("suggestList").innerHTML = sorted.map(function(o){
+      return '<div style="display:flex;align-items:center;gap:10px;background:#16131C;border:1px solid rgba(243,233,216,.12);border-radius:9px;padding:11px 13px">'
+        + '<button data-svote="'+o.s.id+'" style="cursor:pointer;font-family:\'Anton\';font-size:13px;width:36px;height:36px;flex:none;border-radius:8px;border:1.5px solid '+(o.voted?'#FFC53A':'rgba(243,233,216,.3)')+';background:'+(o.voted?'#FFC53A':'transparent')+';color:'+(o.voted?'#16131C':'#F8F1E6')+'">↑</button>'
+        + '<span style="font-size:14px;line-height:1.3;font-weight:600;flex:1">'+esc(o.s.text)+'</span>'
+        + '<span style="font-family:\'Anton\';font-size:16px;color:#8C8598">'+o.total+'</span></div>';
+    }).join("");
+    Array.prototype.forEach.call(document.querySelectorAll('[data-svote]'), function(btn){
+      btn.addEventListener("click", function(){ var id=btn.getAttribute("data-svote"); sVotes[id]=!sVotes[id]; persist(); renderSuggestions(); });
+    });
+  }
+  function renderStories(){
+    document.getElementById("storyList").innerHTML = stories.map(function(st){
+      return '<div style="background:#16131C;border-left:3px solid #FF3B2E;border-radius:0 9px 9px 0;padding:12px 14px">'
+        + '<p style="font-size:14px;line-height:1.45;margin:0;font-weight:500">“'+esc(st.text)+'”</p>'
+        + '<span style="font-size:12px;color:#8C8598;font-weight:700;letter-spacing:.04em">— '+esc(st.name)+'</span></div>';
+    }).join("");
+  }
+
+  // ticker + marquee
+  var tickerStr = "23 demands  •  0 met  •  thousands of days unmet  •  ".repeat(2);
+  document.getElementById("tickerA").innerHTML = '<span style="padding:0 0">'+tickerStr+'</span>';
+  document.getElementById("tickerB").innerHTML = '<span style="padding:0 0">'+tickerStr+'</span>';
+  var marqueeStr = MOMENTS.map(function(x){return x.label;}).join("  ◆  ") + "  ◆  ";
+  document.getElementById("marqueeA").innerHTML = '<span>'+marqueeStr+'</span>';
+  document.getElementById("marqueeB").innerHTML = '<span>'+marqueeStr+'</span>';
+  document.getElementById("todayText").textContent = new Date().toLocaleDateString("en-GB",{day:"numeric",month:"long"});
+
+  // hero count-up
+  var heroEl = document.getElementById("heroNum"), start=null, dur=1500, target=3.9;
+  function tick(t){ if(!start)start=t; var p=Math.min(1,(t-start)/dur); var eased=1-Math.pow(1-p,3); heroEl.textContent=(eased*target).toFixed(1); if(p<1)requestAnimationFrame(tick); }
+  requestAnimationFrame(tick);
+
+  // forms
+  document.getElementById("suggestBtn").addEventListener("click", function(){
+    var inp=document.getElementById("suggestInput"); var t=inp.value.trim(); if(!t)return;
+    suggestions.unshift({id:"s"+Date.now(), text:t, votes:1}); inp.value=""; persist(); renderSuggestions();
+  });
+  document.getElementById("storyBtn").addEventListener("click", function(){
+    var si=document.getElementById("storyInput"); var ni=document.getElementById("nameInput");
+    var t=si.value.trim(); if(!t)return; var name=ni.value.trim()||"Anonymous";
+    stories.unshift({id:"t"+Date.now(), name:name, text:t}); si.value=""; ni.value=""; persist(); renderStories();
+  });
+
+  renderDemands(); renderMoment(); renderSuggestions(); renderStories();
+})();
+</script>
+</body>
+</html>
