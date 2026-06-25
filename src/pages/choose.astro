@@ -1,0 +1,79 @@
+---
+// Neutral decision page for the BMHWA team — compare the two site directions and choose.
+// Deliberately understated palette (neither preview's) so it doesn't favour either.
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+const A = base + 'home-v2/';
+const B = base + 'living-charter/';
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Choose a direction — Black Mental Health Manifesto site</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#F6F2EA;color:#1A1A1A;font-family:'Work Sans',system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:980px;margin:0 auto;padding:clamp(28px,6vw,64px) clamp(18px,5vw,40px)}
+  h1{font-size:clamp(28px,5vw,44px);line-height:1.05;margin:0 0 14px;letter-spacing:-.01em}
+  h2{font-size:22px;margin:0 0 6px}
+  .lede{font-size:clamp(16px,2.2vw,19px);color:#3a2e26;max-width:62ch;margin:0 0 8px}
+  .note{font-size:14px;color:#6F635A;max-width:62ch}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:20px;margin:34px 0 8px}
+  .card{background:#fff;border:1px solid rgba(43,33,28,.14);border-radius:14px;padding:26px;display:flex;flex-direction:column;gap:12px}
+  .tag{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#6F635A;font-weight:700}
+  .card h2{margin-top:2px}
+  .essence{font-size:15px;color:#3a2e26;margin:0}
+  .row{font-size:14px;margin:0}
+  .row b{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#9a8f84;margin-bottom:2px}
+  .btn{display:inline-block;text-decoration:none;text-align:center;background:#2B211C;color:#F6F2EA;font-weight:600;font-size:15px;padding:13px 20px;border-radius:100px;margin-top:auto}
+  .q{background:#EFE7D7;border-radius:14px;padding:24px 26px;margin:30px 0}
+  .q ul{margin:10px 0 0;padding-left:20px}
+  .q li{margin:7px 0;font-size:15px}
+  .pill{display:inline-block;background:#D89A2D;color:#2B211C;font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase;padding:5px 12px;border-radius:100px;margin-bottom:18px}
+  hr{border:none;border-top:1px solid rgba(43,33,28,.12);margin:34px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <span class="pill">A decision for the Alliance</span>
+  <h1>Two directions for the manifesto site. We pick one — together.</h1>
+  <p class="lede">Both are live, working previews of where the site could go next. The words, figures and quotes inside them are <strong>placeholder</strong> — so judge the <em>direction and the feeling</em>, not the details. The real recommendations and content come after we choose.</p>
+  <p class="note">There is no house favourite and no default. "Blend them" or "neither yet" are both real answers. The only wrong outcome is drifting into one because it was already there.</p>
+
+  <div class="cards">
+    <div class="card">
+      <span class="tag">Direction A</span>
+      <h2>The Manifest</h2>
+      <p class="essence">Heritage and record. The Windrush <em>manifest</em> as the spine — a ledger we keep for ourselves, dignified and archival. Warm browns, hull-lettering, the long memory.</p>
+      <p class="row"><b>Commits us to</b> a serious, archival voice; broad and policy-aware reach; a confrontation with history (a slavery / Zong passage).</p>
+      <p class="row"><b>Asks of us</b> the licensed Windrush font; a yes/no on the heavier historical section.</p>
+      <a class="btn" href={A}>View Direction A &rarr;</a>
+    </div>
+    <div class="card">
+      <span class="tag">Direction B</span>
+      <h2>The Living Charter</h2>
+      <p class="essence">Receipts and urgency. "23 demands. 0 met. The clock is running." Live day-counters, a louder palette, and built-in participation — suggest a demand, share a story.</p>
+      <p class="row"><b>Commits us to</b> an urgent, movement voice; a younger, sharper reach; an invitation to the community to add to the record.</p>
+      <p class="row"><b>Asks of us</b> a back-end so suggestions, stories and votes are real and safe; sign-off on punchy demand wording.</p>
+      <a class="btn" href={B}>View Direction B &rarr;</a>
+    </div>
+  </div>
+
+  <div class="q">
+    <h2>Four questions to decide on — not "which is prettier"</h2>
+    <ul>
+      <li><strong>Who is it most for?</strong> The people we most want to reach — does A or B speak to them?</li>
+      <li><strong>Whose voice is this?</strong> Which register sounds like the Alliance — dignified record, or urgent movement?</li>
+      <li><strong>What can we resource and keep safe?</strong> B's story-sharing means holding people's real, sensitive disclosures.</li>
+      <li><strong>Which one feels like ours?</strong> Not the slicker one — the one that's <em>us</em>.</li>
+    </ul>
+  </div>
+
+  <hr/>
+  <p class="note"><strong>What happens once you decide:</strong> one proper build of the chosen direction — with the Alliance's <em>actual</em> 23 recommendations, the real Windrush font, and every placeholder (the example quotes, the seeded vote counts) removed or wired to something real. Then it comes back to the full group before anything goes live.</p>
+</div>
+</body>
+</html>
