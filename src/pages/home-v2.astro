@@ -1,0 +1,504 @@
+---
+// BMHM Home — "The Manifest" evolution, ported from Claude Design (BMHM Home.dc.html).
+// Preview route: /bmhwa-manifesto/home-v2/ — does NOT replace the live home page.
+// Display face: Anton (the hull-lettering stand-in from the design). The licensed
+// Empire Windrush face is available on-site and can be swapped in as a follow-up.
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+const heroImg = base + 'images/community-joy.jpg';
+const year = new Date().getFullYear();
+
+const stats = [
+  { value: '23%', label: 'of Black adults experience a common mental health problem each week — vs 17% of White British adults.', source: 'NHS Digital, 2016' },
+  { value: '6%', label: 'of Black adults receive treatment for mental health problems — vs 13% of White British adults.', source: 'NHS Digital, 2016' },
+  { value: '3.6×', label: 'higher detention rate under the Mental Health Act for Black people compared to white people.', source: 'NHS Digital, 2023' },
+  { value: '£118bn', label: 'annual cost of mental ill-health to the UK economy. Closing disparities saves for everyone.', source: 'McDaid et al, 2022' },
+];
+
+const parts = [
+  { no: '1', title: 'Addressing Structural Drivers', range: '01–08', count: '8', desc: 'Tackle racism as a determinant of health — aimed at government, commissioners and Integrated Care Systems.' },
+  { no: '2', title: 'Improving Ways of Working', range: '09–17', count: '9', desc: 'Embed anti-racist frameworks and accountability across the NHS, regulators and practitioners.' },
+  { no: '3', title: 'Reimagining Mental Health Support', range: '18–23', count: '6', desc: 'Replace deficit-based, Eurocentric models with care rooted in justice, community and lived experience.' },
+];
+
+const sigElapsed = year - 2018;
+
+const demands = [
+  { id: 'd8', num: '08', partLabel: 'Part 1 · Structural drivers', aim: 'Local public services', since: 2024, seed: 612,
+    text: 'Fund culturally appropriate advocacy so people know their rights in the mental health system.',
+    why: 'Black people are nearly 4× more likely to be detained — and report worse outcomes in care.' },
+  { id: 'd1617', num: '16·17', partLabel: 'Part 2 · Ways of working', aim: 'The next government', since: 2024, seed: 1903,
+    text: 'Reform the Mental Health Act 1983 and guarantee Advance Choice Documents.',
+    why: 'Detention ran 3.6× higher for Black people in 2022/23; Advance Choice Documents give patients a voice.' },
+  { id: 'd23', num: '23', partLabel: 'Part 3 · Reimagining support', aim: 'The Government', since: 2024, seed: 884,
+    text: 'Abolish school exclusions; replace them with restorative, trauma-informed responses.',
+    why: 'Black Caribbean children are nearly twice as likely to be excluded; exclusion predicts new mental ill-health.' },
+].map(d => ({ ...d, elapsed: year - d.since }));
+
+const tongues = ['English','Kiswahili','Yorùbá','Twi','Soomaali','Igbo','አማርኛ','العربية','Patois','Français','Lingála'];
+const tongueColor = (i) => [ 'rgba(246,242,234,.18)', '#E3A21E', 'rgba(246,242,234,.18)', 'rgba(246,242,234,.85)', '#D2331C', 'rgba(246,242,234,.18)', 'rgba(246,242,234,.85)', '#E3A21E', 'rgba(246,242,234,.18)', 'rgba(246,242,234,.85)', '#D2331C' ][i % 11];
+const tickerItems = ['On the record since April 2024','23 demands · 3 parts · still owed','#ProtectBlackMentalHealth','the record we keep for ourselves'];
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Living Manifest — Black Mental Health Manifesto</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0;background:#F6F2EA;-webkit-font-smoothing:antialiased;}
+  @keyframes bmhm-ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @keyframes bmhm-lang{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @keyframes bmhm-pulse{0%,100%{opacity:1}50%{opacity:.3}}
+</style>
+</head>
+<body>
+<div style="font-family:'Work Sans',sans-serif;color:#1A1A1A;background:#F6F2EA;overflow-x:hidden;">
+
+  <!-- ===== MANIFEST TICKER ===== -->
+  <div style="background:#14100B;color:#E3A21E;overflow:hidden;white-space:nowrap;border-bottom:1px solid rgba(227,162,30,.25);">
+    <div style="display:inline-flex;font-family:'Space Grotesk',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;padding:8px 0;animation:bmhm-ticker 38s linear infinite;will-change:transform;">
+      {[...tickerItems, ...tickerItems].map(t => (<><span style="padding:0 28px;">{t}</span><span style="opacity:.4;">/</span></>))}
+    </div>
+  </div>
+
+  <!-- ===== NAV ===== -->
+  <nav style="position:sticky;top:0;z-index:50;background:#221913;border-bottom:3px solid #14100B;">
+    <div style="max-width:1180px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;">
+      <a href="#top" style="text-decoration:none;display:flex;flex-direction:column;line-height:1;">
+        <span style="font-family:'Anton';color:#F6F2EA;font-size:18px;letter-spacing:.02em;text-transform:uppercase;">Black Mental Health</span>
+        <span style="font-family:'Space Grotesk',monospace;color:#E3A21E;font-size:10px;letter-spacing:.42em;text-transform:uppercase;margin-top:3px;">The Manifest</span>
+      </a>
+      <div style="display:flex;align-items:center;gap:18px;overflow-x:auto;">
+        <a href="#manifest" style="color:#D8CFC2;text-decoration:none;font-size:14px;font-weight:600;white-space:nowrap;">The Record</a>
+        <a href="#evidence" style="color:#D8CFC2;text-decoration:none;font-size:14px;font-weight:600;white-space:nowrap;">The Case</a>
+        <a href="#parts" style="color:#D8CFC2;text-decoration:none;font-size:14px;font-weight:600;white-space:nowrap;">3 Parts</a>
+        <a href="#manifest" style="background:#D2331C;color:#fff;text-decoration:none;font-size:13px;font-weight:700;padding:9px 16px;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap;">Add your name</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO (the hull) ===== -->
+  <header id="top" style="position:relative;background:#221913;background-image:radial-gradient(120% 80% at 50% -10%,rgba(227,162,30,.10),transparent 60%);color:#F6F2EA;">
+    <div style="display:flex;align-items:center;gap:10px;max-width:1180px;margin:0 auto;padding:18px 20px 0;">
+      <span style="flex:1;height:3px;background:#3a2c22;border-radius:2px;"></span>
+      <span style="width:9px;height:9px;border-radius:50%;background:#0f0a07;box-shadow:inset 0 1px 1px rgba(227,162,30,.35),inset 0 -1px 1px rgba(0,0,0,.6);"></span>
+      <span style="width:9px;height:9px;border-radius:50%;background:#0f0a07;box-shadow:inset 0 1px 1px rgba(227,162,30,.35),inset 0 -1px 1px rgba(0,0,0,.6);"></span>
+      <span style="width:9px;height:9px;border-radius:50%;background:#0f0a07;box-shadow:inset 0 1px 1px rgba(227,162,30,.35),inset 0 -1px 1px rgba(0,0,0,.6);"></span>
+      <span style="flex:1;height:3px;background:#3a2c22;border-radius:2px;"></span>
+    </div>
+    <div style="max-width:1180px;margin:0 auto;padding:clamp(40px,7vw,80px) 20px clamp(28px,4vw,44px);display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(28px,4vw,56px);align-items:center;">
+      <div>
+        <p style="font-family:'Space Grotesk',monospace;color:#E58A78;font-size:clamp(13px,1.6vw,16px);letter-spacing:.04em;line-height:1.5;margin:0 0 22px;max-width:30ch;">
+          Black people are detained under the Mental Health Act at nearly <strong style="color:#D2331C;font-weight:700;">4&times;</strong> the rate of white people.
+        </p>
+        <h1 style="font-family:'Anton';font-weight:400;text-transform:uppercase;margin:0;line-height:.84;letter-spacing:.005em;font-size:clamp(66px,15vw,148px);color:#F4EBD9;">
+          <span style="display:block;text-shadow:0 2px 0 rgba(0,0,0,.45);">This must</span>
+          <span style="display:block;color:#E3A21E;text-shadow:0 3px 1px rgba(0,0,0,.6),0 -2px 1px rgba(0,0,0,.45),0 6px 18px rgba(0,0,0,.4);">end.</span>
+        </h1>
+        <p style="font-size:clamp(15px,1.9vw,19px);line-height:1.6;color:#D8CFC2;max-width:46ch;margin:24px 0 0;">
+          A <em style="font-style:normal;color:#E3A21E;font-weight:600;">manifest</em> is a ship's record of who it carries. Black people have been written into those records before &mdash; and betrayed by them. This is the record we keep <em style="font-style:normal;color:#E3A21E;font-weight:600;">for ourselves</em> now &mdash; <strong style="color:#F6F2EA;font-weight:600;">23 demands, cut in and impossible to erase.</strong>
+        </p>
+        <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:30px;">
+          <a href="#manifest" style="background:#E3A21E;color:#221913;text-decoration:none;font-weight:700;font-size:15px;padding:15px 26px;letter-spacing:.03em;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;">Read the manifest <span style="font-family:'Space Grotesk',monospace;">&rarr;</span></a>
+          <a href="#manifest" style="background:transparent;color:#F6F2EA;text-decoration:none;font-weight:700;font-size:15px;padding:15px 26px;letter-spacing:.03em;text-transform:uppercase;border:2px solid rgba(246,242,234,.4);">Add your name</a>
+        </div>
+      </div>
+      <div style="position:relative;align-self:stretch;min-height:340px;">
+        <div style="position:relative;width:100%;height:100%;min-height:340px;border:3px solid #3a2c22;background:#2b211c;filter:grayscale(1) contrast(1.04);overflow:hidden;">
+          <img src={heroImg} alt="Black British portrait" style="display:block;width:100%;height:100%;min-height:340px;object-fit:cover;" />
+        </div>
+        <div style="position:absolute;inset:0;pointer-events:none;mix-blend-mode:multiply;background:linear-gradient(180deg,rgba(43,33,28,.08),rgba(43,33,28,.5));"></div>
+        <div style="position:absolute;inset:0;pointer-events:none;mix-blend-mode:screen;background:linear-gradient(180deg,rgba(227,162,30,.28),transparent 55%);"></div>
+        <span style="position:absolute;left:0;bottom:0;background:#D2331C;color:#fff;font-family:'Space Grotesk',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px;">On the record</span>
+      </div>
+    </div>
+    <div style="max-width:1180px;margin:0 auto;padding:8px 20px clamp(34px,5vw,52px);">
+      <div style="display:flex;align-items:center;gap:18px;">
+        <span style="flex:1;height:2px;background:rgba(246,242,234,.28);"></span>
+        <span style="font-family:'Space Grotesk',monospace;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:rgba(246,242,234,.5);">Load line</span>
+        <span style="position:relative;width:30px;height:30px;border:3px solid #E3A21E;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex:none;">
+          <span style="position:absolute;width:58px;height:3px;background:#E3A21E;"></span>
+        </span>
+        <span style="font-family:'Space Grotesk',monospace;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:rgba(246,242,234,.5);">The line we won't cross</span>
+        <span style="flex:1;height:2px;background:rgba(246,242,234,.28);"></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== THE LEDGER → THE RECORD ===== -->
+  <section style="background:#14100B;color:#F6F2EA;border-top:1px solid rgba(227,162,30,.25);">
+    <div style="max-width:1180px;margin:0 auto;padding:clamp(48px,7vw,88px) 20px;">
+      <div style="font-family:'Space Grotesk',monospace;font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:#C8841A;font-weight:700;margin-bottom:14px;">The deeper record · why a manifest</div>
+      <h2 style="font-family:'Anton';font-weight:400;text-transform:uppercase;line-height:.88;font-size:clamp(40px,7.5vw,96px);margin:0 0 22px;letter-spacing:.005em;">
+        <span style="display:block;color:#F4EBD9;text-shadow:0 2px 0 rgba(0,0,0,.45);">We have been</span>
+        <span style="display:block;color:#E3A21E;text-shadow:0 3px 1px rgba(0,0,0,.6),0 -2px 1px rgba(0,0,0,.45);">counted before.</span>
+      </h2>
+      <p style="max-width:60ch;font-size:clamp(15px,1.9vw,19px);line-height:1.6;color:#D8CFC2;margin:0 0 40px;">
+        A manifest is a ship's count of what it carries. Black people were entered on those records as that cargo &mdash; kidnapped from home, chained below deck, worked until they died, then tallied as property and weighed against an insurance claim. The clerk's tidy words were always a cover for terror, forced labour and murder. <strong style="color:#F6F2EA;font-weight:600;">So this time, we keep the count ourselves &mdash; and we name it for what it was.</strong>
+      </p>
+      <div style="border-top:2px solid rgba(227,162,30,.35);">
+        <div style="display:flex;flex-wrap:wrap;gap:clamp(16px,3vw,40px);padding:clamp(24px,3vw,34px) 0;border-bottom:1px solid rgba(246,242,234,.14);">
+          <div style="flex:none;width:120px;">
+            <div style="font-family:'Anton';font-size:clamp(30px,4vw,44px);line-height:.85;color:#E3A21E;">1781</div>
+            <div style="font-family:'Space Grotesk',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(246,242,234,.6);margin-top:6px;">The Zong</div>
+          </div>
+          <div style="flex:1;min-width:260px;display:flex;flex-direction:column;gap:14px;">
+            <p style="margin:0;font-size:15px;line-height:1.6;color:#C8B9A8;">More than 130 enslaved African people were thrown into the sea so a Liverpool syndicate could claim them on insurance. In court, the case was argued over <em style="font-style:normal;color:#E58A78;">cargo</em>, not murder.</p>
+            <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;font-family:'Space Grotesk',monospace;font-size:13px;letter-spacing:.04em;">
+              <span style="color:rgba(246,242,234,.55);">Entered as:</span>
+              <span style="text-decoration:line-through;text-decoration-color:#D2331C;text-decoration-thickness:2px;color:rgba(246,242,234,.45);">a loss · valued at £30 a head</span>
+            </div>
+            <p style="margin:0;font-family:'Work Sans',sans-serif;font-weight:700;font-size:clamp(17px,2.2vw,22px);line-height:1.3;color:#F6F2EA;">People. The drowned &mdash; named where we can, never a number.</p>
+          </div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:clamp(16px,3vw,40px);padding:clamp(24px,3vw,34px) 0;border-bottom:1px solid rgba(246,242,234,.14);">
+          <div style="flex:none;width:120px;">
+            <div style="font-family:'Anton';font-size:clamp(26px,3.4vw,38px);line-height:.85;color:#E3A21E;">1948<span style="font-size:.6em;">–73</span></div>
+            <div style="font-family:'Space Grotesk',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(246,242,234,.6);margin-top:6px;">Windrush</div>
+          </div>
+          <div style="flex:1;min-width:260px;display:flex;flex-direction:column;gap:14px;">
+            <p style="margin:0;font-size:15px;line-height:1.6;color:#C8B9A8;">A generation invited to rebuild Britain, recorded on landing cards. The Home Office destroyed the cards &mdash; then demanded they prove a belonging it had just erased.</p>
+            <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;font-family:'Space Grotesk',monospace;font-size:13px;letter-spacing:.04em;">
+              <span style="color:rgba(246,242,234,.55);">Logged as:</span>
+              <span style="text-decoration:line-through;text-decoration-color:#D2331C;text-decoration-thickness:2px;color:rgba(246,242,234,.45);">arrivals &rarr; then erased</span>
+            </div>
+            <p style="margin:0;font-family:'Work Sans',sans-serif;font-weight:700;font-size:clamp(17px,2.2vw,22px);line-height:1.3;color:#F6F2EA;">Here. Present. Ours &mdash; and still owed.</p>
+          </div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:clamp(16px,3vw,40px);padding:clamp(24px,3vw,34px) 0;border-bottom:2px solid rgba(227,162,30,.35);">
+          <div style="flex:none;width:120px;">
+            <div style="font-family:'Anton';font-size:clamp(30px,4vw,44px);line-height:.85;color:#E3A21E;">Now</div>
+            <div style="font-family:'Space Grotesk',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(246,242,234,.6);margin-top:6px;">This manifest</div>
+          </div>
+          <div style="flex:1;min-width:260px;display:flex;flex-direction:column;gap:14px;">
+            <p style="margin:0;font-size:15px;line-height:1.6;color:#C8B9A8;">23 demands, evidenced and dated, each stamped with how long it has gone unmet. Backed by name. Kept by us.</p>
+            <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;font-family:'Space Grotesk',monospace;font-size:13px;letter-spacing:.04em;color:#E3A21E;">
+              <span style="color:rgba(246,242,234,.55);">Recorded as:</span>
+              <span style="font-weight:700;">a count they can't massage or throw overboard</span>
+            </div>
+            <p style="margin:0;font-family:'Work Sans',sans-serif;font-weight:700;font-size:clamp(17px,2.2vw,22px);line-height:1.3;color:#E3A21E;">The record they can't destroy twice.</p>
+          </div>
+        </div>
+      </div>
+      <p style="margin:26px 0 0;font-family:'Space Grotesk',monospace;font-size:12px;line-height:1.6;letter-spacing:.02em;color:rgba(246,242,234,.45);max-width:62ch;">
+        The act of overwriting the ledger&rsquo;s own words follows M. NourbeSe Philip&rsquo;s <em style="font-style:italic;color:rgba(246,242,234,.7);">Zong!</em> (2008) &mdash; the legal record of the massacre, broken open to give the drowned back their voice.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== LIVING SOLIDARITY BAND ===== -->
+  <section id="sol" style="background:#E3A21E;color:#1a130d;position:relative;">
+    <div style="max-width:1180px;margin:0 auto;padding:clamp(28px,4vw,44px) 20px;">
+      <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:18px;">
+        <span style="font-family:'Space Grotesk',monospace;font-size:12px;letter-spacing:.26em;text-transform:uppercase;font-weight:700;">This week on the record</span>
+        <span id="sol-date" style="font-family:'Space Grotesk',monospace;font-size:12px;letter-spacing:.1em;opacity:.7;">&nbsp;</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(20px,3vw,40px);align-items:center;">
+        <div style="min-width:200px;">
+          <span style="display:inline-block;background:#1a130d;color:#F6F2EA;font-family:'Space Grotesk',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;margin-bottom:14px;">Standing with</span>
+          <h2 id="sol-tag" style="font-family:'Anton';font-weight:400;text-transform:uppercase;line-height:.9;font-size:clamp(40px,7vw,76px);margin:0;letter-spacing:.005em;">Black &amp; queer</h2>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <div style="display:flex;gap:12px;align-items:flex-start;"><span style="font-family:'Space Grotesk',monospace;font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;background:rgba(26,19,13,.14);padding:3px 8px;flex:none;margin-top:2px;">Celebrate</span><p id="sol-celebrate" style="margin:0;font-size:clamp(15px,1.8vw,18px);line-height:1.45;font-weight:500;">&nbsp;</p></div>
+          <div style="display:flex;gap:12px;align-items:flex-start;"><span style="font-family:'Space Grotesk',monospace;font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;background:#1a130d;color:#F6F2EA;padding:3px 8px;flex:none;margin-top:2px;">Reject</span><p id="sol-reject" style="margin:0;font-size:clamp(15px,1.8vw,18px);line-height:1.45;font-weight:500;">&nbsp;</p></div>
+          <div style="display:flex;gap:12px;align-items:flex-start;"><span style="font-family:'Space Grotesk',monospace;font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;background:rgba(26,19,13,.14);padding:3px 8px;flex:none;margin-top:2px;">Back joy</span><p id="sol-back" style="margin:0;font-size:clamp(15px,1.8vw,18px);line-height:1.45;font-weight:700;">&nbsp;</p></div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:14px;margin-top:24px;flex-wrap:wrap;">
+        <button id="sol-next" style="cursor:pointer;background:#1a130d;color:#F6F2EA;border:none;font-family:'Space Grotesk',monospace;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:10px 16px;">Next community &rarr;</button>
+        <div id="sol-dots" style="display:flex;gap:8px;"></div>
+        <span style="font-family:'Space Grotesk',monospace;font-size:12px;opacity:.7;">A rolling band — every community, every week.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LIVING MANIFEST ===== -->
+  <section id="manifest" style="max-width:1180px;margin:0 auto;padding:clamp(56px,8vw,104px) 20px clamp(40px,5vw,64px);">
+    <div style="margin-bottom:14px;font-family:'Space Grotesk',monospace;font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:#C8841A;font-weight:700;">The record / 23 demands, still owed</div>
+    <h2 style="font-family:'Anton';font-weight:400;text-transform:uppercase;line-height:.9;font-size:clamp(44px,8vw,104px);margin:0 0 16px;color:#221913;letter-spacing:.005em;">The living<br>manifest</h2>
+    <p style="max-width:54ch;font-size:clamp(15px,1.9vw,19px);line-height:1.6;color:#3a2e26;margin:0 0 40px;">Every demand is a line on the record &mdash; stamped with how long it has gone unmet. This page is the receipts. <strong>A promise doesn't get destroyed twice.</strong></p>
+
+    <!-- SIGNATURE CARD — Demand 5 -->
+    <article style="background:#221913;color:#F6F2EA;border:3px solid #14100B;position:relative;overflow:hidden;margin-bottom:40px;">
+      <div style="position:absolute;left:0;top:0;bottom:0;width:18px;background:#1a130d;display:flex;flex-direction:column;justify-content:space-around;align-items:center;padding:18px 0;">
+        {Array.from({length:5}).map(() => (<span style="width:7px;height:7px;border-radius:50%;background:#0f0a07;box-shadow:inset 0 1px 1px rgba(227,162,30,.4);"></span>))}
+      </div>
+      <div style="padding:clamp(28px,4vw,44px) clamp(24px,4vw,44px) clamp(28px,4vw,44px) clamp(40px,5vw,64px);display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(24px,4vw,48px);">
+        <div>
+          <div style="display:flex;align-items:flex-start;gap:18px;margin-bottom:18px;">
+            <span style="font-family:'Anton';font-size:clamp(60px,9vw,104px);line-height:.8;color:#E3A21E;text-shadow:0 3px 1px rgba(0,0,0,.55),0 -2px 1px rgba(0,0,0,.4);">05</span>
+            <div style="padding-top:6px;">
+              <div style="font-family:'Space Grotesk',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#E58A78;">Part 1 · Structural drivers</div>
+              <div style="font-family:'Space Grotesk',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(246,242,234,.6);margin-top:4px;">Aimed at: The Government</div>
+            </div>
+          </div>
+          <h3 style="font-family:'Work Sans',sans-serif;font-weight:700;font-size:clamp(20px,2.6vw,28px);line-height:1.22;margin:0 0 16px;color:#F6F2EA;">The Government must ensure the Windrush compensation scheme factors in culturally sensitive mental health support for victims and their families.</h3>
+          <p style="margin:0;color:#C8B9A8;font-size:15px;line-height:1.6;"><strong style="color:#E3A21E;">Why.</strong> Victims endured forced detention, lost jobs and homes, and separation from family &mdash; severe, ongoing trauma the state created and has never repaired.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;justify-content:space-between;gap:20px;">
+          <div style="border:2px dashed rgba(227,162,30,.5);padding:16px;transform:rotate(-1.2deg);">
+            <div style="display:flex;align-items:center;gap:8px;font-family:'Space Grotesk',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#E58A78;">
+              <span style="width:8px;height:8px;border-radius:50%;background:#D2331C;animation:bmhm-pulse 1.8s ease-in-out infinite;"></span>Still owed
+            </div>
+            <div style="font-family:'Anton';font-size:clamp(28px,4vw,40px);line-height:1;color:#F6F2EA;margin-top:8px;">{sigElapsed} years</div>
+            <div style="font-family:'Space Grotesk',monospace;font-size:12px;color:#C8B9A8;margin-top:6px;">On the record since 2018 — and counting.</div>
+          </div>
+          <blockquote style="margin:0;border-left:3px solid #D2331C;padding:4px 0 4px 16px;font-style:italic;font-size:15px;line-height:1.5;color:#E8DDCD;">
+            &ldquo;They took my papers, my job, my mum's last years. The apology came with a form. The healing never came.&rdquo;
+            <cite style="display:block;font-style:normal;font-family:'Space Grotesk',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(246,242,234,.55);margin-top:8px;">Windrush descendant · Birmingham</cite>
+          </blockquote>
+          <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
+            <button data-vote="d5" data-seed="1247" style="cursor:pointer;border:none;display:inline-flex;align-items:center;gap:10px;font-family:'Space Grotesk',monospace;font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase;padding:13px 20px;background:rgba(246,242,234,.08);color:#F6F2EA;">
+              <span style="font-size:16px;">&#9650;</span><span data-vote-label>Back this</span>
+            </button>
+            <span style="font-family:'Space Grotesk',monospace;font-size:14px;color:#C8B9A8;"><strong data-vote-count style="color:#F6F2EA;">&nbsp;</strong> backing this demand</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- COMPACT GRID -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;">
+      {demands.map(d => (
+        <article style="background:#FFFFFF;border:2px solid #221913;padding:24px;display:flex;flex-direction:column;gap:14px;">
+          <div style="display:flex;align-items:flex-start;gap:14px;">
+            <span style="font-family:'Anton';font-size:46px;line-height:.8;color:#221913;">{d.num}</span>
+            <div style="padding-top:3px;">
+              <div style="font-family:'Space Grotesk',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#C8841A;font-weight:700;">{d.partLabel}</div>
+              <div style="font-family:'Space Grotesk',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#6F635A;margin-top:3px;">Aimed at: {d.aim}</div>
+            </div>
+          </div>
+          <h3 style="font-family:'Work Sans',sans-serif;font-weight:700;font-size:17px;line-height:1.3;margin:0;color:#1A1A1A;">{d.text}</h3>
+          <p style="margin:0;color:#6F635A;font-size:13px;line-height:1.55;"><strong style="color:#221913;">Why.</strong> {d.why}</p>
+          <div style="display:flex;align-items:center;gap:8px;border-top:1px dashed rgba(43,33,28,.25);padding-top:12px;font-family:'Space Grotesk',monospace;font-size:11px;letter-spacing:.04em;color:#C8341F;">
+            <span style="width:7px;height:7px;border-radius:50%;background:#D2331C;animation:bmhm-pulse 1.8s ease-in-out infinite;"></span>On the record since {d.since} — still owed · <strong>{d.elapsed} yrs</strong>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;margin-top:auto;">
+            <button data-vote={d.id} data-seed={d.seed} style="cursor:pointer;border:2px solid #221913;display:inline-flex;align-items:center;gap:8px;font-family:'Space Grotesk',monospace;font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase;padding:9px 14px;background:transparent;color:#221913;">
+              <span>&#9650;</span><span data-vote-label>Back this</span>
+            </button>
+            <span style="font-family:'Space Grotesk',monospace;font-size:13px;color:#6F635A;"><strong data-vote-count style="color:#221913;">&nbsp;</strong></span>
+          </div>
+        </article>
+      ))}
+    </div>
+    <div style="text-align:center;margin-top:36px;">
+      <a href="#manifest" style="display:inline-block;background:#221913;color:#F6F2EA;text-decoration:none;font-weight:700;font-size:14px;letter-spacing:.04em;text-transform:uppercase;padding:15px 28px;">See all 23 on the record &rarr;</a>
+    </div>
+  </section>
+
+  <!-- ===== MANY TONGUES ===== -->
+  <section style="background:#221913;color:#F6F2EA;padding:clamp(48px,6vw,80px) 0;overflow:hidden;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 20px;text-align:center;">
+      <span style="font-family:'Space Grotesk',monospace;font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:#E3A21E;">A plurality mark</span>
+      <h2 style="font-family:'Anton';font-weight:400;text-transform:uppercase;line-height:.92;font-size:clamp(32px,5.5vw,64px);margin:14px 0 0;">Black mental health is<br>spoken in many tongues</h2>
+    </div>
+    <div style="margin-top:clamp(28px,4vw,48px);white-space:nowrap;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);">
+      <div style="display:inline-flex;animation:bmhm-lang 32s linear infinite;will-change:transform;">
+        {[...tongues, ...tongues].map((t, i) => (<span style={`font-family:'Anton';font-size:clamp(34px,5vw,60px);text-transform:uppercase;color:${tongueColor(i)};padding:0 .35em;`}>{t}</span>))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EVIDENCE ===== -->
+  <section id="evidence" style="max-width:1180px;margin:0 auto;padding:clamp(56px,8vw,104px) 20px;">
+    <div style="font-family:'Space Grotesk',monospace;font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:#C8841A;font-weight:700;margin-bottom:12px;">The case — in numbers</div>
+    <h2 style="font-family:'Anton';font-weight:400;text-transform:uppercase;line-height:.9;font-size:clamp(40px,7vw,88px);margin:0 0 36px;color:#221913;">The evidence is clear</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(390px,1fr));gap:2px;background:#221913;border:2px solid #221913;">
+      {stats.map(s => (
+        <div style="background:#F6F2EA;padding:28px 22px;display:flex;flex-direction:column;gap:10px;">
+          <div style="font-family:'Anton';font-size:clamp(48px,6vw,68px);line-height:.85;color:#D2331C;">{s.value}</div>
+          <p style="margin:0;font-size:14px;line-height:1.5;color:#1A1A1A;">{s.label}</p>
+          <div style="font-family:'Space Grotesk',monospace;font-size:11px;letter-spacing:.06em;color:#6F635A;margin-top:auto;">{s.source}</div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- ===== 3 PARTS ===== -->
+  <section id="parts" style="background:#EFE7D7;">
+    <div style="max-width:1180px;margin:0 auto;padding:clamp(56px,8vw,104px) 20px;">
+      <div style="font-family:'Space Grotesk',monospace;font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:#C8841A;font-weight:700;margin-bottom:12px;">The manifesto</div>
+      <h2 style="font-family:'Anton';font-weight:400;text-transform:uppercase;line-height:.9;font-size:clamp(40px,7vw,88px);margin:0 0 16px;color:#221913;">3 areas of action</h2>
+      <p style="max-width:52ch;font-size:clamp(15px,1.9vw,19px);line-height:1.6;color:#3a2e26;margin:0 0 40px;">23 recommendations structured around the systemic, institutional and cultural changes needed to close the inequity gap.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;">
+        {parts.map(p => (
+          <a href="#manifest" style="text-decoration:none;background:#221913;color:#F6F2EA;padding:28px;display:flex;flex-direction:column;gap:14px;min-height:260px;border-top:6px solid #E3A21E;">
+            <div style="display:flex;align-items:baseline;justify-content:space-between;">
+              <span style="font-family:'Space Grotesk',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#E3A21E;">Part {p.no}</span>
+              <span style="font-family:'Space Grotesk',monospace;font-size:12px;color:rgba(246,242,234,.6);">{p.range}</span>
+            </div>
+            <h3 style="font-family:'Anton';font-weight:400;text-transform:uppercase;font-size:clamp(24px,3vw,34px);line-height:.95;margin:0;">{p.title}</h3>
+            <p style="margin:0;font-size:14px;line-height:1.55;color:#C8B9A8;">{p.desc}</p>
+            <span style="margin-top:auto;font-family:'Space Grotesk',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#E3A21E;">{p.count} demands &rarr;</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EVOLUTION, NOT REBUILD ===== -->
+  <section style="max-width:1180px;margin:0 auto;padding:clamp(56px,8vw,96px) 20px;">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:34px;">
+      <span style="height:3px;flex:1;background:#221913;border-radius:2px;"></span>
+      <span style="font-family:'Space Grotesk',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#221913;font-weight:700;white-space:nowrap;">An evolution, not a rebuild</span>
+      <span style="height:3px;flex:1;background:#221913;border-radius:2px;"></span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
+      <div style="border:2px solid #221913;padding:28px;background:#FFFFFF;">
+        <h3 style="font-family:'Anton';font-weight:400;text-transform:uppercase;font-size:28px;margin:0 0 18px;color:#221913;">What we kept</h3>
+        <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px;">
+          <li style="display:flex;gap:10px;font-size:15px;line-height:1.45;"><span style="color:#C8841A;font-weight:700;">&#10003;</span>The Empire Windrush face &mdash; the hull-lettering voice</li>
+          <li style="display:flex;gap:10px;font-size:15px;line-height:1.45;"><span style="color:#C8841A;font-weight:700;">&#10003;</span>The warm Pan-African palette</li>
+          <li style="display:flex;gap:10px;font-size:15px;line-height:1.45;"><span style="color:#C8841A;font-weight:700;">&#10003;</span>Duotone Black British portraiture, joy-led</li>
+          <li style="display:flex;gap:10px;font-size:15px;line-height:1.45;"><span style="color:#C8841A;font-weight:700;">&#10003;</span>23 demands across 3 parts, and the evidence</li>
+        </ul>
+      </div>
+      <div style="border:2px solid #D2331C;padding:28px;background:#221913;color:#F6F2EA;">
+        <h3 style="font-family:'Anton';font-weight:400;text-transform:uppercase;font-size:28px;margin:0 0 18px;color:#E3A21E;">What we pushed</h3>
+        <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px;">
+          <li style="display:flex;gap:10px;font-size:15px;line-height:1.45;"><span style="color:#D2331C;font-weight:700;">&rarr;</span>The <strong>manifest</strong> as the spine &mdash; a record we keep for ourselves</li>
+          <li style="display:flex;gap:10px;font-size:15px;line-height:1.45;"><span style="color:#D2331C;font-weight:700;">&rarr;</span>Demands as a living record, stamped with how long they've gone unmet</li>
+          <li style="display:flex;gap:10px;font-size:15px;line-height:1.45;"><span style="color:#D2331C;font-weight:700;">&rarr;</span>A rolling, date-aware solidarity band &mdash; where intersectionality lives</li>
+          <li style="display:flex;gap:10px;font-size:15px;line-height:1.45;"><span style="color:#D2331C;font-weight:700;">&rarr;</span>Vote-up + lived experience, and hull-lettering: cut-in type, riveted seams, a waterline</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section style="background:#D2331C;color:#fff;">
+    <div style="max-width:1180px;margin:0 auto;padding:clamp(56px,8vw,96px) 20px;text-align:center;">
+      <h2 style="font-family:'Anton';font-weight:400;text-transform:uppercase;line-height:.9;font-size:clamp(40px,8vw,96px);margin:0 0 18px;">Read it. Share it.<br>Act on it.</h2>
+      <p style="max-width:50ch;margin:0 auto 30px;font-size:clamp(15px,2vw,19px);line-height:1.6;opacity:.92;">23 demands. Backed by evidence. On the record &mdash; and impossible to erase twice.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;">
+        <a href="#manifest" style="background:#221913;color:#F6F2EA;text-decoration:none;font-weight:700;font-size:15px;padding:16px 28px;letter-spacing:.03em;text-transform:uppercase;">Read the manifest</a>
+        <a href="#manifest" style="background:#fff;color:#D2331C;text-decoration:none;font-weight:700;font-size:15px;padding:16px 28px;letter-spacing:.03em;text-transform:uppercase;">Add your name</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer style="background:#14100B;color:#C8B9A8;">
+    <div style="display:flex;align-items:center;gap:10px;max-width:1180px;margin:0 auto;padding:22px 20px 0;">
+      <span style="flex:1;height:3px;background:#2B211C;border-radius:2px;"></span>
+      <span style="width:9px;height:9px;border-radius:50%;background:#0f0a07;box-shadow:inset 0 1px 1px rgba(227,162,30,.3);"></span>
+      <span style="width:9px;height:9px;border-radius:50%;background:#0f0a07;box-shadow:inset 0 1px 1px rgba(227,162,30,.3);"></span>
+      <span style="width:9px;height:9px;border-radius:50%;background:#0f0a07;box-shadow:inset 0 1px 1px rgba(227,162,30,.3);"></span>
+      <span style="flex:1;height:3px;background:#2B211C;border-radius:2px;"></span>
+    </div>
+    <div style="max-width:1180px;margin:0 auto;padding:32px 20px 40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;">
+      <div>
+        <div style="font-family:'Anton';color:#F6F2EA;font-size:20px;text-transform:uppercase;">Black Mental Health Manifest</div>
+        <p style="font-size:14px;line-height:1.55;margin:12px 0 0;max-width:36ch;">A Manifesto for Radical Change &mdash; demanding structural change to close the inequity gap for Black people within mental health services in England.</p>
+      </div>
+      <div>
+        <div style="font-family:'Space Grotesk',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#E3A21E;margin-bottom:12px;">Pages</div>
+        <div style="display:flex;flex-direction:column;gap:8px;font-size:14px;">
+          <a href="#manifest" style="color:#C8B9A8;text-decoration:none;">The Manifesto</a>
+          <a href="#evidence" style="color:#C8B9A8;text-decoration:none;">The Case for Change</a>
+          <a href="#manifest" style="color:#C8B9A8;text-decoration:none;">Take Action</a>
+          <a href="#manifest" style="color:#C8B9A8;text-decoration:none;">About the Alliance</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-family:'Space Grotesk',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#E3A21E;margin-bottom:12px;">Connect</div>
+        <div style="display:flex;flex-direction:column;gap:8px;font-size:14px;">
+          <a href="mailto:BlackMHManifesto@gmail.com" style="color:#C8B9A8;text-decoration:none;">Email</a>
+        </div>
+      </div>
+    </div>
+    <div style="max-width:1180px;margin:0 auto;padding:0 20px 32px;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;font-family:'Space Grotesk',monospace;font-size:12px;color:#6F635A;">
+      <span>&copy; 2026 Black Mental Health and Wellbeing Alliance</span>
+      <span style="color:#E3A21E;letter-spacing:.12em;">#ProtectBlackMentalHealth</span>
+    </div>
+  </footer>
+
+</div>
+
+<script is:inline>
+(function () {
+  var communities = [
+    { tag: 'Black & queer', accent: '#E3A21E',
+      celebrate: 'Black queer organisers built the ballrooms, the helplines and the chosen families that kept a generation alive.',
+      reject: "Reject the misgendering on the ward and the lie that you must choose between your Blackness and your queerness.",
+      back: 'Back their joy — care that holds all of who you are, no part left at the door.' },
+    { tag: 'Black & disabled', accent: '#D2331C',
+      celebrate: 'Black disabled organisers built mutual aid networks that outlasted every funding cycle.',
+      reject: 'Reject the assessments that treat survival as a luxury and wards that mistake distress for danger.',
+      back: 'Back their joy — access is love, and rest is a right.' },
+    { tag: 'Black women', accent: '#E3A21E',
+      celebrate: 'Black women hold the clinics, the kitchens and the campaigns — first to be called, last to be cared for.',
+      reject: 'Reject being unheard in the consulting room, over-detained on the ward, and told our pain is strength.',
+      back: 'Back their joy — softness, safety, and the right to be looked after too.' },
+    { tag: 'Black & migrant', accent: '#D2331C',
+      celebrate: 'Black migrants rebuilt the NHS they were invited to staff, and the communities that hold it together.',
+      reject: "Reject the hostile environment that turns a doctor's room into a border.",
+      back: 'Back their joy — sanctuary, dignity, and care without a status check.' },
+    { tag: 'Black & of faith', accent: '#E3A21E',
+      celebrate: 'Black churches, mosques and temples were the first mental health service many ever trusted.',
+      reject: 'Reject services that read faith as a symptom instead of a source of strength.',
+      back: 'Back their joy — care that makes room for the spirit, not just the chart.' }
+  ];
+
+  var weekIdx = Math.floor(Date.now() / (1000 * 60 * 60 * 24 * 7)) % communities.length;
+  var idx = weekIdx;
+  var sol = document.getElementById('sol');
+
+  function renderSol() {
+    var c = communities[idx];
+    sol.style.background = c.accent;
+    document.getElementById('sol-tag').textContent = c.tag;
+    document.getElementById('sol-celebrate').textContent = c.celebrate;
+    document.getElementById('sol-reject').textContent = c.reject;
+    document.getElementById('sol-back').textContent = c.back;
+    var d = new Date();
+    document.getElementById('sol-date').textContent = 'Week of ' + d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+    var dots = communities.map(function (_, i) {
+      return '<span style="width:11px;height:11px;border-radius:50%;border:2px solid #1a130d;background:' + (i === idx ? '#1a130d' : 'transparent') + ';"></span>';
+    }).join('');
+    document.getElementById('sol-dots').innerHTML = dots;
+  }
+  document.getElementById('sol-next').addEventListener('click', function () {
+    idx = (idx + 1) % communities.length; renderSol();
+  });
+  renderSol();
+
+  // Voting (localStorage)
+  var votes = {}, voted = {};
+  try { votes = JSON.parse(localStorage.getItem('bmhm_votes') || '{}'); voted = JSON.parse(localStorage.getItem('bmhm_voted') || '{}'); } catch (e) {}
+  function fmt(n) { return n >= 1000 ? (n / 1000).toFixed(1).replace('.0', '') + 'k' : String(n); }
+
+  Array.prototype.forEach.call(document.querySelectorAll('[data-vote]'), function (btn) {
+    var id = btn.getAttribute('data-vote');
+    var seed = parseInt(btn.getAttribute('data-seed'), 10) || 0;
+    var wrap = btn.parentNode;
+    var countEl = wrap.querySelector('[data-vote-count]');
+    var labelEl = btn.querySelector('[data-vote-label]');
+    var dark = id === 'd5';
+    function paint() {
+      var v = (votes[id] || 0) + seed;
+      if (countEl) countEl.textContent = fmt(v);
+      if (voted[id]) {
+        labelEl.textContent = 'Backed';
+        btn.style.background = '#E3A21E';
+        btn.style.color = '#221913';
+      }
+    }
+    paint();
+    btn.addEventListener('click', function () {
+      if (voted[id]) return;
+      voted[id] = true; votes[id] = (votes[id] || 0) + 1;
+      try { localStorage.setItem('bmhm_votes', JSON.stringify(votes)); localStorage.setItem('bmhm_voted', JSON.stringify(voted)); } catch (e) {}
+      paint();
+    });
+  });
+})();
+</script>
+</body>
+</html>
