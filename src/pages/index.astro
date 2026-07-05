@@ -18,24 +18,11 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
     </div>
   </section>
 
-  <!-- ── Many Tongues (Round 2 decision 4: symbolic recognition of mother tongues) ── -->
-  <section class="tongues" aria-label="The many languages of our communities">
+  <!-- ── Intersectionality band (replaces many-tongues; agreed w/ Ariel Jun-Jul 2026) ── -->
+  <section class="intersect" aria-label="Intersectionality">
     <div class="container">
-      <p class="tongues-lead">Black mental health is spoken in many tongues.</p>
-      <ul class="tongues-list" role="list">
-        <li>English</li>
-        <li>Kiswahili</li>
-        <li>Yorùbá</li>
-        <li>Twi</li>
-        <li>Soomaali</li>
-        <li>Igbo</li>
-        <li lang="am">አማርኛ</li>
-        <li lang="ar" dir="rtl">العربية</li>
-        <li>Patois</li>
-        <li>Français</li>
-        <li>Português</li>
-        <li>Lingála</li>
-      </ul>
+      <p class="intersect-lead">Never only about race.</p>
+      <p class="intersect-text">Black mental health lives where being Black meets being queer, disabled, a woman, a man, a migrant, of faith &mdash; and asks to be met in full.</p>
     </div>
   </section>
 
@@ -237,8 +224,8 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
     color: var(--primary);
   }
 
-  /* ── Many tongues band ── */
-  .tongues {
+  /* ── Intersectionality band ── */
+  .intersect {
     background: var(--primary);
     color: #FFFFFF;
     padding: 2.75rem 0;
@@ -246,7 +233,7 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
     border-top: 3px solid var(--accent);
   }
 
-  .tongues-lead {
+  .intersect-lead {
     font-family: var(--font-display);
     text-transform: uppercase;
     letter-spacing: 0.02em;
@@ -256,18 +243,13 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
     margin-bottom: 1.25rem;
   }
 
-  .tongues-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.5rem 1.75rem;
-    list-style: none;
-  }
-
-  .tongues-list li {
+  .intersect-text {
     font-family: var(--font-body);
-    font-size: 1.15rem;
-    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.25rem;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.92);
+    max-width: 44rem;
+    margin: 0 auto;
   }
 
   /* ── Voices band ── */
