@@ -1,6 +1,8 @@
 # Spec 03 — candidate screening log
 
-68 of 132 remaining library candidates were NOT added, each with a reason below. This is the no-silent-truncation record for the verification-at-scale pass. 63 entries were added and verified; 5 more promoted from Spec 01's manual-check backlog; 1 (Strathclyde 'Queer and the Cost of Living Crisis' PDF) remains unreachable (Cloudflare, no archive snapshot) and is still badged for human check.
+Of 132 remaining library candidates, this is the no-silent-truncation record. 63 added + verified in the first pass; 5 more promoted from Spec 01's manual-check backlog; 1 (Strathclyde 'Queer and the Cost of Living Crisis' PDF) remains unreachable (Cloudflare, no archive) and is still badged.
+
+**Reconsideration pass (6 Jul 2026, session 2):** on Rob's steer, re-reviewed the cuts and recovered **5** that were over-conservative — valid evidence from another context (US research on the Black-queer intersection: idx 2, 54, 98) or useful UK signposting (Qalliance idx 87, Birmingham LGBT idx 22), each honestly labelled (US sources flagged as US). Library now **117**. The remaining ~63 cuts stand as correctly excluded — duplicates of live entries, US health-financing with no NHS analogue (Medicaid/insurance-parity/carve-outs), dead/unfetchable pages, off-mission commercial/directory pages, and the Pride-in-Place keyword trap. This is the distinction behind holding the Sewell chapter but adding the US intersection studies: *actively misleading* stays out; *valid but broader* comes in with a label.
 
 | idx | reason | url |
 |---|---|---|

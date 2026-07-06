@@ -1330,5 +1330,65 @@
    "LGBTQ+ & queer men"
   ],
   "status": "verified"
+ },
+ {
+  "org": "Sexual Health journal (US study)",
+  "title": "Health-care access and sexuality disclosure among Black sexual minority men (US)",
+  "summary": "A US study (Jackson, Mississippi and Atlanta, Georgia) of 386 Black gay, bisexual and other sexual minority men, examining how disclosing one's sexuality to a health provider relates to health-care access and use — one of the few studies to isolate that dynamic for Black queer men.",
+  "means": "US evidence on a question UK data rarely isolates — whether Black queer men feel able to be out to their clinicians, and what it costs their care when they can't. Read the numbers as US, the dynamic as shared.",
+  "url": "https://www.researchgate.net/publication/346842454",
+  "topics": [
+   "LGBTQ+ & queer men",
+   "Access & therapy"
+  ],
+  "status": "verified"
+ },
+ {
+  "org": "Journal of Medical Internet Research (US study)",
+  "title": "Digital mental health use at the intersection of race and sexuality (US)",
+  "summary": "A US study using the 2021 Adolescent Behaviors and Experiences Survey (7,705 young people) on who used digital mental health services during the pandemic. Sexual minority youth used them far more than heterosexual peers (18.1% vs 5.6%), and the study examines how that varies by race and ethnicity and their intersection — a lens on both need and the digital divide.",
+  "means": "For anyone building digital or remote support: US evidence that Black queer young people carry higher need and hit distinct access barriers at the intersection. UK equivalents barely exist — this is the shape of the question to ask here.",
+  "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12603589/",
+  "topics": [
+   "Young people",
+   "LGBTQ+ & queer men"
+  ],
+  "status": "verified"
+ },
+ {
+  "org": "SSM — Population Health (US study)",
+  "title": "Intersectional disparities in pandemic outcomes (US)",
+  "summary": "A US study using large-scale Chicago administrative data on people diagnosed with Covid-19, decomposing racial-ethnic, gender-identity and sexual-minority disparities in unmet resource needs and hospitalization. It finds substantial racial-ethnic and gender-identity disparities, weak evidence of sexual minority disparities in unmet needs, and traces how household size, chronic illness, obesity and unemployment contribute to a portion of these disparities.",
+  "means": "A worked example of intersectional analysis done properly — naming the mechanisms behind a disparity rather than stopping at the headline. A methodological model for the evidence UK bids should be asking for.",
+  "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10407278/",
+  "topics": [
+   "Racism & discrimination",
+   "Health inequalities"
+  ],
+  "status": "verified"
+ },
+ {
+  "org": "Qalliance",
+  "title": "Qalliance — national mental health resources",
+  "summary": "A curated list of UK support resources that a queer community organisation points its members to, including mental health services like CALM's suicide-prevention helpline, Mind, Mindline Trans+, and Samaritans, as well as broader support from Gendered Intelligence, MindOut, Rainbow Mind, and The Mix. Each entry describes what the organisation offers and how to reach it.",
+  "means": "A ready-made signposting sheet: when a member needs support beyond what your organisation offers, these are the national services to hand them, already gathered.",
+  "url": "https://www.qalliance.org.uk/national-resources",
+  "topics": [
+   "Access & therapy",
+   "LGBTQ+ & queer men"
+  ],
+  "status": "verified"
+ },
+ {
+  "org": "Birmingham LGBT",
+  "title": "Birmingham LGBT — community groups directory",
+  "summary": "A directory of social and peer-support groups across Birmingham and the surrounding area — from African Rainbow Family, the UK grassroots charity for LGBTIQ+ refugees and people seeking asylum of African heritage, through book clubs, sports teams and social groups. A picture of what a local queer community-groups map looks like.",
+  "means": "A model for mapping the community groups in your own area — and a live route to African Rainbow Family, which serves Black LGBTIQ+ people navigating the asylum system.",
+  "url": "https://blgbt.org/community-groups/",
+  "topics": [
+   "Community interventions",
+   "LGBTQ+ & queer men"
+  ],
+  "status": "verified"
  }
 ]
