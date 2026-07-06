@@ -1,0 +1,33 @@
+[
+  {
+    "org": "Melanin Moods CIC",
+    "title": "Beyond The Fade \u2014 barbershop mental health",
+    "summary": "A Black-led community interest company supporting Black barbers and barbershop owners with their own mental health \u2014 care for the men who hold community spaces.",
+    "means": "A working model of reaching Black men through the spaces they already own and trust.",
+    "url": "https://www.melaninmoodscic.co.uk/beyond-the-fade",
+    "topics": [
+      "Black-led organisations & funding",
+      "Community interventions",
+      "Black men & masculinity"
+    ],
+    "status": "reverify",
+    "verdict": "supported",
+    "reason": "The source text confirms that 'Beyond The Fade' is a community-led initiative for Black barbers and barbershop owners, creating a safe space for them to discuss mental health, and recognizing barbershops as cultural and social hubs within the Black community, which aligns with the entry's claims about supporting the men who hold community spaces and reaching Black men through trusted spaces.",
+    "corrected_summary": ""
+  },
+  {
+    "org": "Terrence Higgins Trust",
+    "title": "The State of the Nation",
+    "summary": "Terrence Higgins Trust's stocktake of HIV and STIs in England, documenting the unequal burden carried by particular communities.",
+    "means": "Sexual-health inequality data to pair with mental-health evidence when making the whole-person case.",
+    "url": "https://tht.org.uk/sites/default/files/2020-02/State%20of%20the%20nation%20report%20v2.pdf",
+    "topics": [
+      "LGBTQ+ & queer men",
+      "Health inequalities"
+    ],
+    "status": "reverify",
+    "verdict": "supported",
+    "reason": "The source text confirms the report is by Terrence Higgins Trust, focuses on HIV and STIs in England, documents unequal burdens on communities, and provides data on sexual health inequalities.",
+    "corrected_summary": ""
+  }
+]

@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro';
 const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 ---
 
-<Base title="Learning & Capacity Building" description="The Alliance doesn't just advocate — it acts. Assess & Align, toolkits, shared learning, and the Burke Platform vision for equitable research and practice.">
+<Base title="Learning & Capacity Building" description="The Alliance doesn't just advocate — it acts. Assess & Align, toolkits, shared learning, and an evidence-platform vision for equitable research and practice.">
 
   <!-- ── Hero ── -->
   <section class="page-hero" aria-labelledby="learning-heading">
@@ -21,7 +21,7 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
       <h2 id="assess-heading">Assess &amp; Align</h2>
 
       <div class="card feature-card">
-        <span class="feature-badge">In development</span>
+        <span class="feature-badge">Live tool</span>
         <p class="feature-desc">A tool built by the Alliance to help Black voluntary sector leaders evaluate research requests for equity, collaboration, and cultural sensitivity.</p>
         <p>Born from the manifesto&rsquo;s demand for equitable research practices (<a href={`${base}manifesto#rec-12`}>Recommendation 12</a>), Assess &amp; Align provides a structured framework for community organisations to assess whether a proposed research partnership genuinely serves their community &mdash; or simply extracts from it.</p>
         <p>The tool helps organisations ask the right questions before committing to research relationships:</p>
@@ -33,7 +33,8 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
           <li>Is there accountability for how findings are used?</li>
         </ul>
         <div class="feature-status">
-          <p class="muted small">Launching 2026. Built by Alliance members with lived experience of navigating inequitable research partnerships.</p>
+          <a href="https://blkoutuk.github.io/align/" class="btn btn-primary" target="_blank" rel="noopener">Open Assess &amp; Align</a>
+          <p class="muted small">Built by Alliance members with lived experience of navigating inequitable research partnerships. Ten questions, five dimensions, and a feedback letter you can send &mdash; nothing you enter leaves your browser.</p>
         </div>
       </div>
     </div>
@@ -85,17 +86,18 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
     </div>
   </section>
 
-  <!-- ── The Burke Platform Vision ── -->
-  <section class="section" aria-labelledby="burke-heading">
+  <!-- ── Evidence Platform Vision ── -->
+  <section class="section" aria-labelledby="evidence-heading">
     <div class="container narrow">
       <p class="section-label">Looking Ahead</p>
-      <h2 id="burke-heading">The Burke Platform</h2>
+      <h2 id="evidence-heading">An evidence platform for Black civil society</h2>
 
-      <div class="card burke-card">
-        <p>Looking ahead, the Alliance is developing <strong>The Burke Platform</strong> &mdash; an AI-powered knowledge platform that will transform how Black civil society organisations access and use research evidence.</p>
-        <p>Named after <strong>Dr Aggrey Burke</strong>, a pioneer in transcultural psychiatry in Britain, the platform builds on the <strong>Synergi Collaborative Centre&rsquo;s</strong> legacy of evidence-based work on ethnic inequities in mental health.</p>
-        <p class="burke-vision">The vision: a single place where Black-led organisations can find, understand, and apply the evidence that matters to their communities &mdash; without needing to navigate paywalled journals or decode academic language.</p>
-        <p class="muted small">Early development stage. More details to follow.</p>
+      <div class="card evidence-card">
+        <p>Looking ahead, the Alliance is developing an <strong>AI-supported evidence platform</strong> that will transform how Black civil society organisations access and use research evidence.</p>
+        <p>The platform builds on the <strong>Synergi Collaborative Centre&rsquo;s</strong> legacy of evidence-based work on ethnic inequities in mental health.</p>
+        <p class="evidence-vision">The vision: a single place where Black-led organisations can find, understand, and apply the evidence that matters to their communities &mdash; without needing to navigate paywalled journals or decode academic language.</p>
+        <a href={`${base}evidence/`} class="btn btn-outline">Preview the draft library</a>
+        <p class="muted small">Early development stage. The platform&rsquo;s name will be announced by the Alliance in due course.</p>
       </div>
     </div>
   </section>
@@ -236,17 +238,17 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
     margin-bottom: 0.75rem;
   }
 
-  /* ── Burke card ── */
-  .burke-card {
+  /* ── Evidence platform card ── */
+  .evidence-card {
     padding: 2rem;
     border-left: 4px solid var(--primary);
   }
 
-  .burke-card p {
+  .evidence-card p {
     line-height: 1.7;
   }
 
-  .burke-vision {
+  .evidence-vision {
     font-weight: 500;
     color: var(--primary);
   }

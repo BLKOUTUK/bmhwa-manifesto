@@ -1,0 +1,377 @@
+---
+import Base from '../layouts/Base.astro';
+import entries from '../data/evidence.json';
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+const topics = [...new Set(entries.flatMap((e) => e.topics))].sort();
+const verifiedCount = entries.filter((e) => e.status === 'verified').length;
+const primaryTopics = [...new Set(entries.map((e) => e.topics[0]))];
+const groups = primaryTopics
+  .map((t) => ({ topic: t, items: entries.filter((e) => e.topics[0] === t) }))
+  .sort((a, b) => b.items.length - a.items.length);
+---
+
+<Base title="Evidence Library" description="Find, understand, and apply the evidence that matters — every entry summarised in plain language, verified against its source, and tagged to what you can do with it.">
+
+  <!-- ── Hero ── -->
+  <section class="page-hero" aria-labelledby="evidence-heading">
+    <div class="container narrow">
+      <p class="section-label">Learning &amp; Capacity Building</p>
+      <h1 id="evidence-heading">Evidence in our hands</h1>
+      <p class="page-hero-desc">The evidence that matters to Black communities &mdash; in plain language, with what it means for your organisation, and a citation you can use today.</p>
+    </div>
+  </section>
+
+  <!-- ── Draft banner ── -->
+  <section class="section draft-note-wrap">
+    <div class="container narrow">
+      <div class="draft-note">
+        <strong>Draft library.</strong> Every entry has been checked against its source ({verifiedCount} of {entries.length} machine-verified, the rest awaiting a human check &mdash; each is labelled). Alliance editorial sign-off is pending. If something here is wrong, <a href="mailto:BlackMHManifesto@gmail.com">tell us</a>.
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Search & filter ── -->
+  <section class="section" aria-labelledby="library-heading">
+    <div class="container narrow">
+      <h2 id="library-heading" class="visually-hidden">Browse the library</h2>
+
+      <div class="lib-controls">
+        <input type="search" id="lib-search" placeholder="Search the library&hellip; (e.g. detention, census, funding)" aria-label="Search the evidence library" />
+        <div class="topic-chips" role="group" aria-label="Filter by topic">
+          <button class="topic-chip active" data-topic="" type="button">All ({entries.length})</button>
+          {topics.map((t) => (
+            <button class="topic-chip" data-topic={t} type="button">{t}</button>
+          ))}
+        </div>
+      </div>
+
+      <p class="result-count muted small" id="result-count">{entries.length} entries</p>
+
+      <div class="entries">
+        {groups.map((g, gi) => (
+          <details class="topic-group" open={gi === 0}>
+            <summary class="topic-summary">
+              <span class="topic-name">{g.topic}</span>
+              <span class="topic-count">{g.items.length} {g.items.length === 1 ? 'entry' : 'entries'}</span>
+            </summary>
+            <div class="topic-entries">
+              {g.items.map((e) => (
+                <article class="card entry" data-topics={e.topics.join('|')} data-text={`${e.title} ${e.org} ${e.summary} ${e.means} ${e.topics.join(' ')}`.toLowerCase()}>
+                  <p class="entry-org">{e.org}</p>
+                  <h3 class="entry-title"><a href={e.url} target="_blank" rel="noopener">{e.title}</a></h3>
+                  <p class="entry-summary">{e.summary}</p>
+                  <p class="entry-means"><span class="means-label">What this means for you:</span> {e.means}</p>
+                  <div class="entry-foot">
+                    {e.status === 'verified'
+                      ? <span class="badge badge-verified" title="Summary checked against the source by an independent AI, reviewed by an editor">Source-checked</span>
+                      : <span class="badge badge-manual" title="Source blocks automated checking — human verification pending">Human check pending</span>}
+                    <span class="entry-topics muted small">{e.topics.join(' · ')}</span>
+                    <button class="copy-cite" type="button" data-cite={`${e.title} — ${e.org}. ${e.url}`}>Copy citation</button>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </details>
+        ))}
+      </div>
+
+      <div class="lib-empty" id="lib-empty" hidden>
+        <p class="muted">Nothing matches &mdash; try fewer words, or <a href="mailto:BlackMHManifesto@gmail.com">ask us to find it</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── The other half ── -->
+  <section class="section evidence-pair" aria-labelledby="pair-heading">
+    <div class="container narrow">
+      <div class="card pair-card">
+        <p class="section-label">The other half</p>
+        <h2 id="pair-heading">Evaluating a research request?</h2>
+        <p>This library helps evidence flow <em>to</em> your organisation. <strong>Assess &amp; Align</strong> governs what flows <em>out</em>: ten questions to evaluate whether a research partnership serves your community &mdash; and a feedback letter to send, whatever you decide.</p>
+        <a href="https://blkoutuk.github.io/align/" class="btn btn-primary" target="_blank" rel="noopener">Open Assess &amp; Align</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── How this library works ── -->
+  <section class="section" aria-labelledby="how-heading">
+    <div class="container narrow">
+      <p class="section-label">How this library works</p>
+      <h2 id="how-heading">Checked, in the open</h2>
+      <div class="grid-2 how-grid">
+        <div class="card how-card">
+          <h3>Accuracy</h3>
+          <p>Every summary is checked against the source it cites by an independent AI. If a claim isn&rsquo;t in the source, it doesn&rsquo;t ship.</p>
+        </div>
+        <div class="card how-card">
+          <h3>Usefulness</h3>
+          <p>Each entry says what the evidence means for a real job &mdash; a bid, a commissioning conversation, a service design.</p>
+        </div>
+        <div class="card how-card">
+          <h3>Values</h3>
+          <p>Sources are screened for whether they belong in a library the Alliance puts its name to. People, not machines, hold this judgement.</p>
+        </div>
+        <div class="card how-card">
+          <h3>Freshness</h3>
+          <p>Links are re-checked and new sources added monthly. Entries last verified <strong>6 July 2026</strong>.</p>
+        </div>
+      </div>
+      <p class="muted small how-note">Free at the point of use. No login, no cookies, no tracking.</p>
+    </div>
+  </section>
+
+</Base>
+
+<style>
+  .page-hero {
+    background:
+      linear-gradient(rgba(43, 33, 28, 0.82), rgba(43, 33, 28, 0.9)),
+      url('/bmhwa-manifesto/images/conversation.jpg') center / cover no-repeat;
+    color: #FFFFFF;
+    padding: 5rem 0 4rem;
+    text-align: center;
+  }
+  .page-hero .section-label { color: var(--accent); }
+  .page-hero h1 { color: #FFFFFF; margin-bottom: 1rem; }
+  .page-hero-desc {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.15rem;
+    max-width: 620px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px; height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  /* ── Draft banner ── */
+  .draft-note-wrap { padding-bottom: 0; }
+  .draft-note {
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--urgent);
+    background: var(--card-bg);
+    padding: 1rem 1.25rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* ── Controls ── */
+  .lib-controls { margin-bottom: 1rem; }
+  #lib-search {
+    width: 100%;
+    font: inherit;
+    padding: 0.85rem 1.1rem;
+    border: 2px solid var(--primary);
+    border-radius: 6px;
+    background: var(--card-bg);
+    color: var(--text);
+    margin-bottom: 1rem;
+  }
+  #lib-search:focus { outline: 3px solid var(--accent); outline-offset: 1px; }
+
+  .topic-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .topic-chip {
+    font-family: var(--font-data);
+    font-size: 0.78rem;
+    letter-spacing: 0.02em;
+    padding: 0.35rem 0.8rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--card-bg);
+    color: var(--text);
+    cursor: pointer;
+  }
+  .topic-chip:hover { border-color: var(--primary); }
+  .topic-chip.active {
+    background: var(--primary);
+    color: #FFFFFF;
+    border-color: var(--primary);
+  }
+
+  .result-count { margin: 0.75rem 0 1rem; }
+
+  /* ── Entries ── */
+  .entries { display: flex; flex-direction: column; gap: 0.75rem; }
+
+  .topic-group {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--card-bg);
+  }
+  .topic-summary {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+    cursor: pointer;
+    list-style: none;
+  }
+  .topic-summary::-webkit-details-marker { display: none; }
+  .topic-summary::before {
+    content: '+';
+    font-family: var(--font-data);
+    font-weight: 700;
+    color: var(--urgent);
+    width: 1rem;
+  }
+  .topic-group[open] > .topic-summary::before { content: '\2212'; }
+  .topic-summary:hover .topic-name { text-decoration: underline; }
+  .topic-name {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--primary);
+  }
+  .topic-count {
+    font-family: var(--font-data);
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+  .topic-entries {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 1.25rem 1.25rem;
+  }
+
+  .entry { padding: 1.5rem; border-left: 4px solid var(--accent); }
+  .entry-org {
+    font-family: var(--font-data);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--urgent);
+    margin-bottom: 0.35rem;
+  }
+  .entry-title {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.45;
+    margin-bottom: 0.5rem;
+  }
+  .entry-title a { color: var(--primary); text-decoration: none; }
+  .entry-title a:hover { text-decoration: underline; }
+  .entry-summary { font-size: 0.95rem; line-height: 1.65; margin-bottom: 0.6rem; }
+  .entry-means {
+    font-size: 0.93rem;
+    line-height: 1.6;
+    background: var(--light-bg);
+    padding: 0.7rem 0.9rem;
+    border-radius: 6px;
+    margin-bottom: 0.8rem;
+  }
+  .means-label { font-weight: 700; color: var(--primary); }
+
+  .entry-foot {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+  .badge {
+    font-family: var(--font-data);
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+  }
+  .badge-verified { background: var(--primary); color: var(--accent); }
+  .badge-manual { background: var(--light-bg); color: var(--urgent); border: 1px solid var(--urgent); }
+  .entry-topics { flex: 1; }
+  .copy-cite {
+    font: inherit;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--urgent);
+    background: transparent;
+    border: 1.5px solid var(--urgent);
+    border-radius: 6px;
+    padding: 0.25rem 0.7rem;
+    cursor: pointer;
+  }
+  .copy-cite:hover { background: var(--urgent); color: #FFFFFF; }
+
+  .lib-empty { padding: 2.5rem 1rem; text-align: center; border: 2px dashed var(--border); border-radius: 8px; }
+
+  /* ── Pair card ── */
+  .evidence-pair { padding-top: 0; }
+  .pair-card { padding: 2rem; border-left: 4px solid var(--primary); }
+  .pair-card .btn { margin-top: 1rem; }
+
+  /* ── How cards ── */
+  .how-grid { margin-top: 1.5rem; }
+  .how-card { padding: 1.5rem; }
+  .how-card h3 {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+  }
+  .how-card p { font-size: 0.95rem; line-height: 1.6; }
+  .how-note { margin-top: 1.25rem; text-align: center; }
+
+  @media (max-width: 768px) {
+    .page-hero { padding: 3.5rem 0 3rem; }
+    .how-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<script is:inline>
+  (function () {
+    const search = document.getElementById('lib-search');
+    const chips = document.querySelectorAll('.topic-chip');
+    const entries = document.querySelectorAll('.entry');
+    const count = document.getElementById('result-count');
+    const empty = document.getElementById('lib-empty');
+    let topic = '';
+
+    function apply() {
+      const q = search.value.trim().toLowerCase();
+      const terms = q ? q.split(/\s+/) : [];
+      const filtering = !!(q || topic);
+      let shown = 0;
+      entries.forEach(function (el) {
+        const okTopic = !topic || el.dataset.topics.split('|').indexOf(topic) !== -1;
+        const okText = terms.every(function (t) { return el.dataset.text.indexOf(t) !== -1; });
+        const show = okTopic && okText;
+        el.hidden = !show;
+        if (show) shown++;
+      });
+      document.querySelectorAll('.topic-group').forEach(function (g, i) {
+        const visible = g.querySelectorAll('.entry:not([hidden])').length;
+        g.hidden = visible === 0;
+        g.open = filtering ? visible > 0 : i === 0;
+      });
+      count.textContent = shown + (shown === 1 ? ' entry' : ' entries');
+      empty.hidden = shown !== 0;
+    }
+
+    search.addEventListener('input', apply);
+    chips.forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        chips.forEach(function (c) { c.classList.remove('active'); });
+        chip.classList.add('active');
+        topic = chip.dataset.topic;
+        apply();
+      });
+    });
+
+    document.querySelectorAll('.copy-cite').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        navigator.clipboard.writeText(btn.dataset.cite).then(function () {
+          const old = btn.textContent;
+          btn.textContent = 'Copied';
+          setTimeout(function () { btn.textContent = old; }, 1600);
+        });
+      });
+    });
+  })();
+</script>
