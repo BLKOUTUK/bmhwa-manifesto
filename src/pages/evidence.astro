@@ -8,6 +8,7 @@ const primaryTopics = [...new Set(entries.map((e) => e.topics[0]))];
 const groups = primaryTopics
   .map((t) => ({ topic: t, items: entries.filter((e) => e.topics[0] === t) }))
   .sort((a, b) => b.items.length - a.items.length);
+const startHere = entries.filter((e) => e.start_here);
 ---
 
 <Base title="Evidence Library" description="Find, understand, and apply the evidence that matters — every entry summarised in plain language, verified against its source, and tagged to what you can do with it.">
@@ -48,8 +49,34 @@ const groups = primaryTopics
       <p class="result-count muted small" id="result-count">{entries.length} entries</p>
 
       <div class="entries">
+        {startHere.length > 0 && (
+          <details class="topic-group start-here" open id="start-here-group">
+            <summary class="topic-summary">
+              <span class="topic-name">Start here</span>
+              <span class="topic-count">{startHere.length} {startHere.length === 1 ? 'entry' : 'entries'}</span>
+            </summary>
+            <p class="start-here-intro muted small">If you're new to the library: one entry per theme, chosen for the jobs organisations do most &mdash; bids, commissioning conversations, research requests. Every entry also lives in its topic below.</p>
+            <div class="topic-entries">
+              {startHere.map((e) => (
+                <article class="card entry entry-dup">
+                  <p class="entry-org">{e.org}</p>
+                  <h3 class="entry-title"><a href={e.url} target="_blank" rel="noopener">{e.title}</a></h3>
+                  <p class="entry-summary">{e.summary}</p>
+                  <p class="entry-means"><span class="means-label">What this means for you:</span> {e.means}</p>
+                  <div class="entry-foot">
+                    {e.status === 'verified'
+                      ? <span class="badge badge-verified" title="Summary checked against the source by an independent AI, reviewed by an editor">Source-checked</span>
+                      : <span class="badge badge-manual" title="Source blocks automated checking — human verification pending">Human check pending</span>}
+                    <span class="entry-topics muted small">{e.topics.join(' · ')}</span>
+                    <button class="copy-cite" type="button" data-cite={`${e.title} — ${e.org}. ${e.url}`}>Copy citation</button>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </details>
+        )}
         {groups.map((g, gi) => (
-          <details class="topic-group" open={gi === 0}>
+          <details class="topic-group" open={startHere.length === 0 && gi === 0}>
             <summary class="topic-summary">
               <span class="topic-name">{g.topic}</span>
               <span class="topic-count">{g.items.length} {g.items.length === 1 ? 'entry' : 'entries'}</span>
@@ -202,6 +229,17 @@ const groups = primaryTopics
     border-radius: 8px;
     background: var(--card-bg);
   }
+  .topic-group.start-here {
+    border: 2px solid var(--accent);
+  }
+  .topic-group.start-here .topic-name::before {
+    content: '\2605\00a0';
+    color: var(--accent);
+  }
+  .start-here-intro {
+    margin: 0;
+    padding: 0 1.25rem 0.5rem;
+  }
   .topic-summary {
     display: flex;
     align-items: baseline;
@@ -328,7 +366,8 @@ const groups = primaryTopics
   (function () {
     const search = document.getElementById('lib-search');
     const chips = document.querySelectorAll('.topic-chip');
-    const entries = document.querySelectorAll('.entry');
+    const entries = document.querySelectorAll('.entry:not(.entry-dup)');
+    const startHereGroup = document.getElementById('start-here-group');
     const count = document.getElementById('result-count');
     const empty = document.getElementById('lib-empty');
     let topic = '';
@@ -345,10 +384,14 @@ const groups = primaryTopics
         el.hidden = !show;
         if (show) shown++;
       });
-      document.querySelectorAll('.topic-group').forEach(function (g, i) {
+      if (startHereGroup) {
+        startHereGroup.hidden = filtering;
+        if (!filtering) startHereGroup.open = true;
+      }
+      document.querySelectorAll('.topic-group:not(.start-here)').forEach(function (g, i) {
         const visible = g.querySelectorAll('.entry:not([hidden])').length;
         g.hidden = visible === 0;
-        g.open = filtering ? visible > 0 : i === 0;
+        g.open = filtering ? visible > 0 : false;
       });
       count.textContent = shown + (shown === 1 ? ' entry' : ' entries');
       empty.hidden = shown !== 0;
