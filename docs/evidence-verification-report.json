@@ -1,0 +1,667 @@
+[
+  {
+    "org": "NHS Providers",
+    "title": "Trusts tackling inequalities as Black people almost four times more likely to be detained",
+    "summary": "The NHS trusts' own membership body reports the headline disparity: Black people are almost four times more likely than white people to be detained under the Mental Health Act, and sets out what trusts are doing about it.",
+    "means": "Your headline statistic for bids and commissioning conversations \u2014 from inside the NHS, so hard to dispute.",
+    "url": "https://nhsproviders.org/news/trusts-tackling-inequalities-as-black-people-almost-four-times-more-likely-to-be-arrested-under-mental-health-laws",
+    "topics": [
+      "Detention & the Mental Health Act"
+    ],
+    "verdict": "corrected",
+    "reason": "The source text states Black people are almost four times more likely to be detained, but the entry incorrectly states they are almost four times more likely to be 'arrested under mental health laws' in the title and summary, and the source is from NHS Providers, not NHS Alliance.",
+    "corrected_summary": "The NHS Providers' own membership body reports the headline disparity: Black people are almost four times more likely than white people to be detained under the Mental Health Act, and sets out what trusts are doing about it."
+  },
+  {
+    "org": "CQC / GOV.UK",
+    "title": "Monitoring the Mental Health Act in 2024 to 2025",
+    "summary": "The regulator's annual report on how the Mental Health Act is being used \u2014 including the persistent ethnic disparities in detention, community treatment orders and restrictive practice.",
+    "means": "The official record of the problem, updated annually. Cite the current edition so your evidence can't be dismissed as out of date.",
+    "url": "https://assets.publishing.service.gov.uk/media/697a3384c23c8fa26650dee5/cqc-monitoring-the-mental-health-act-in-2024-to-2025.pdf",
+    "topics": [
+      "Detention & the Mental Health Act"
+    ],
+    "verdict": "supported",
+    "reason": "The source text confirms the CQC's annual report on the Mental Health Act, including persistent ethnic disparities in detention, community treatment orders, and restrictive practices, and is dated for 2024/25.",
+    "corrected_summary": ""
+  },
+  {
+    "org": "GOV.UK",
+    "title": "Mental Health Bill receives Royal Assent",
+    "summary": "The Mental Health Act reform became law in 2026 \u2014 the government's announcement sets out what changes, including measures intended to address racial disparities in detention.",
+    "means": "The law has changed. Services and commissioners now have new duties you can hold them to \u2014 and new language for your proposals.",
+    "url": "https://www.gov.uk/government/news/mental-health-bill-receives-royal-assent-revolutionising-care",
+    "topics": [
+      "Detention & the Mental Health Act",
+      "Policy & commissioning"
+    ],
+    "verdict": "corrected",
+    "reason": "The source text states the Mental Health Act became law in 2025, not 2026.",
+    "corrected_summary": "The Mental Health Act reform became law in 2025 \u2014 the government's announcement sets out what changes, including measures intended to address racial disparities in detention."
+  },
+  {
+    "org": "Royal College of Psychiatrists",
+    "title": "Mental Health Bill (England and Wales) receives Royal Assent \u2014 College response",
+    "summary": "The professional body for psychiatrists responds to the new Act \u2014 useful for where the profession itself says implementation must go further.",
+    "means": "When clinicians' own College concedes a point, you can build on it rather than argue it.",
+    "url": "https://www.rcpsych.ac.uk/news-and-features/latest-news/detail/2026/01/14/mental-health-bill-(england-and-wales)-receives-royal-assent",
+    "topics": [
+      "Detention & the Mental Health Act",
+      "Policy & commissioning"
+    ],
+    "verdict": "cut",
+    "reason": "The source text is a navigation menu and does not contain any content related to the Royal College of Psychiatrists' response to the Mental Health Bill or any statements about implementation needing to go further.",
+    "corrected_summary": null
+  },
+  {
+    "org": "NHS Providers",
+    "title": "The Mental Health Act 2025: what you need to know",
+    "summary": "A plain-English explainer of the new Act for NHS trust leaders \u2014 what changes, when, and what trusts must do differently.",
+    "means": "Read what commissioners are being told, so you arrive knowing their obligations better than they do.",
+    "url": "https://nhsproviders.org/resources/the-mental-health-act-2025-what-you-need-to-know",
+    "topics": [
+      "Detention & the Mental Health Act",
+      "Policy & commissioning"
+    ],
+    "verdict": "cut",
+    "reason": "The source text is from 'The NHS Alliance homepage' and 'NHS Confederation', not 'NHS Providers' as stated in the entry, and it does not explicitly state that it is for 'NHS trust leaders' or 'commissioners'.",
+    "corrected_summary": ""
+  },
+  {
+    "org": "Peer-reviewed (PMC)",
+    "title": "From mental health detention to health systems reform",
+    "summary": "Peer-reviewed analysis arguing that detention disparities are a whole-system problem requiring systems reform, not a service-level fix.",
+    "means": "Academic backing for the position that community-level and system-level change belong in the same conversation.",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12798615/",
+    "topics": [
+      "Detention & the Mental Health Act",
+      "Research evidence"
+    ],
+    "verdict": "cut",
+    "reason": "The source text is only the title, author list, and abstract, which does not contain the detailed analysis or arguments about detention disparities being a whole-system problem or requiring systems reform, nor does it explicitly state that community-level and system-level change belong in the same conversation, as claimed in the entry's summary and 'what this means' line.",
+    "corrected_summary": ""
+  },
+  {
+    "org": "NHS England",
+    "title": "Patient and Carer Race Equality Framework (PCREF)",
+    "summary": "The national framework making race equality a contractual expectation for every NHS mental health trust \u2014 the first anti-racism framework embedded in NHS mental health policy.",
+    "means": "The policy hook for almost any bid: your work helps trusts meet an obligation they already have.",
+    "url": "https://www.england.nhs.uk/mental-health/advancing-mental-health-equalities/pcref/",
+    "topics": [
+      "Race equity in services (PCREF)",
+      "Policy & commissioning"
+    ],
+    "verdict": "supported",
+    "reason": "The source text explicitly states that the PCREF is NHS England's first anti-racism framework for mental health services, is mandatory for all NHS mental health trusts and providers, and sets out clear actions they must take, making race equality a contractual expectation.",
+    "corrected_summary": ""
+  },
+  {
+    "org": "Care Quality Commission",
+    "title": "Brief guide: Patient and Carer Race Equality Framework",
+    "summary": "How the regulator inspects against PCREF \u2014 what inspectors look for when they assess a trust's race equality work.",
+    "means": "Trusts are marked on this. Show a trust how partnership with you improves what the inspector sees.",
+    "url": "https://www.cqc.org.uk/guidance-providers/nhs-trusts/brief-guides-inspection-teams",
+    "topics": [
+      "Race equity in services (PCREF)"
+    ],
+    "verdict": "supported",
+    "reason": "The source text confirms that the guide sets out what inspectors look at when checking how providers implement PCREF, aligning with the summary and the implication that trusts are assessed on this.",
+    "corrected_summary": ""
+  },
+  {
+    "org": "South London & Maudsley NHS FT",
+    "title": "PCREF at SLaM",
+    "summary": "The South London trust's PCREF programme \u2014 one of the original pilot sites, covering Lambeth, Southwark, Lewisham and Croydon.",
+    "means": "If you work in South London, this is your local trust's stated commitment \u2014 quote it back to them.",
+    "url": "https://slam.nhs.uk/PCREF",
+    "topics": [
+      "Race equity in services (PCREF)"
+    ],
+    "verdict": "supported",
+    "reason": "The source text explicitly states that the PCREF program is at South London and Maudsley NHS Foundation Trust, focuses on the four London boroughs of Lambeth, Southwark, Croydon, and Lewisham, and aims to eliminate racial disparity in mental health services for Black communities, which aligns with the 'what this means' line about a stated commitment.",
+    "corrected_summary": ""
+  },
+  {
+    "org": "East London NHS FT",
+    "title": "ELFT PCREF action plan",
+    "summary": "East London's published PCREF action plan \u2014 concrete commitments with dates.",
+    "means": "Published commitments are accountability handles. Check what was promised, then ask what happened.",
+    "url": "https://www.elft.nhs.uk/sites/default/files/2026-03/ELFT%20PCREF%20Action%20Plan%202025.26%20%283%29.pdf",
+    "topics": [
+      "Race equity in services (PCREF)"
+    ],
+    "verdict": "supported",
+    "reason": "The source text explicitly states it is an 'East London NHS Foundation Trust Patient and Carer Race Equality Framework (PCREF) Action Plan 2025/26' and outlines 'Objectives 2025/26' and 'actions, and accountability measures', confirming it is a published action plan with concrete commitments and dates.",
+    "corrected_summary": ""
+  },
+  {
+    "org": "NELFT",
+    "title": "PCREF at North East London NHS FT",
+    "summary": "North East London's PCREF page and commitments.",
+    "means": "Local accountability handle for organisations in North East London.",
+    "url": "https://www.nelft.nhs.uk/patient-and-carer-race-equality-framework/",
+    "topics": [
+      "Race equity in services (PCREF)"
+    ],
+    "verdict": "supported",
+    "reason": "The entry accurately describes the content of the NELFT PCREF page and its implications for local accountability.",
+    "corrected_summary": ""
+  },
+  {
+    "org": "Leicestershire Partnership NHS Trust",
+    "title": "PCREF overview",
+    "summary": "The East Midlands trust's PCREF overview document.",
+    "means": "Local accountability handle for organisations in Leicester, Leicestershire and Rutland.",
+    "url": "https://www.leicspart.nhs.uk/wp-content/uploads/2026/03/Patient-and-Carer-Race-Equality-Framework-PCREF-Overview-V2.pdf",
+    "topics": [
+      "Race equity in services (PCREF)"
+    ],
+    "verdict": "cut",
+    "reason": "The source text does not mention 'local accountability handle for organisations in Leicester, Leicestershire and Rutland' for PCREF.",
+    "corrected_summary": ""
+  },
+  {
+    "org": "Combined Healthcare (North Staffs)",
+    "title": "Implementation of the Patient and Carer Race Equality Framework",
+    "summary": "A Midlands trust's account of implementing PCREF.",
+    "means": "Evidence that PCREF implementation is happening outside London \u2014 useful comparator for your own area.",
+    "url": "https://www.combined.nhs.uk/about/inclusion-and-belonging/implementation-of-the-patient-and-carer-race-equality-framework-pcref/",
+    "topics": [
+      "Race equity in services (PCREF)"
+    ],
+    "verdict": "supported",
+    "reason": "The source text explicitly states that North Staffordshire Combined Healthcare NHS Trust is implementing PCREF, confirming it is a Midlands trust doing so, and the implementation details provide a useful comparator.",
+    "corrected_summary": ""
+  },
+  {
+    "org": "Sheffield Health & Social Care",
+    "title": "PCREF action plan 2024\u20132027",
+    "summary": "Sheffield's three-year PCREF action plan.",
+    "means": "A multi-year published plan \u2014 the strongest kind of accountability handle.",
+    "url": "https://www.sheffieldpartnership.nhs.uk/patient-carer-race-equality-framework-action-plan-2024-2027",
+    "topics": [
+      "Race equity in services (PCREF)"
+    ],
+    "verdict": "supported",
+    "reason": "The source text explicitly states 'Patient Carer Race Equality Framework action plan 2024-2027' and details objectives 'over the next three years', confirming it is a multi-year published plan from Sheffield Health & Social Care.",
+    "corrected_summary": ""
+  },
+  {
+    "org": "NHS England",
+    "title": "Ethnicity Recording Improvement Plan",
+    "summary": "The NHS plan to fix poor ethnicity recording in health data \u2014 without which disparities stay invisible.",
+    "means": "When told 'the data doesn't show a problem', this is the NHS admitting the data itself is the problem.",
+    "url": "https://www.england.nhs.uk/long-read/ethnicity-recording-improvement-plan/",
+    "topics": [
+      "Race equity in services (PCREF)",
+      "Population data & census"
+    ],
+    "verdict": "supported",
+    "reason": "The source text explicitly states that poor quality ethnicity data makes it harder to identify inequalities and design interventions, directly supporting the idea that without this data, disparities remain invisible and that the data itself is the problem.",
+    "corrected_summary": ""
+  },
+  {
+    "org": "NHS Race & Health Observatory",
+    "title": "NHS Race and Health Observatory",
+    "summary": "The independent body reviewing ethnic inequalities in health and making recommendations to the NHS \u2014 its reviews cover mental health, maternity, workforce and more.",
+    "means": "A standing source of NHS-commissioned evidence on race and health; check here before commissioning new research.",
+    "url": "https://www.nhsrho.org/",
+    "topics": [
+      "Race equity in services (PCREF)",
+      "Research evidence"
+    ],
+    "verdict": "supported",
+    "reason": "The source text confirms the NHS Race and Health Observatory is an independent body that reviews ethnic inequalities in health, makes policy recommendations, and covers mental health, maternity, and workforce, thus serving as a source of NHS-commissioned evidence.",
+    "corrected_summary": ""
+  },
+  {
+    "org": "Office for National Statistics",
+    "title": "Ethnicity \u2014 ONS hub",
+    "summary": "The national statistics hub for ethnicity data: population, census releases, and analysis.",
+    "means": "Population denominators for your area and communities \u2014 the numbers every needs analysis starts from.",
+    "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/ethnicity",
+    "topics": [
+      "Population data & census"
+    ],
+    "verdict": "supported",
+    "reason": "The source text is from the Office for National Statistics and provides data and analysis on ethnicity, including census releases and population figures, which aligns with the entry's description of a national statistics hub for ethnicity data and population denominators.",
+    "corrected_summary": ""
+  },
+  {
+    "org": "Office for National Statistics",
+    "title": "Sexual orientation, England and Wales: Census 2021",
+    "summary": "The first census to ask about sexual orientation \u2014 national and local-authority-level estimates.",
+    "means": "Official population estimates for LGB+ people, down to local level \u2014 no more 'we don't know how many'.",
+    "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/sexuality/bulletins/sexualorientationenglandandwales/census2021",
+    "topics": [
+      "Population data & census",
+      "LGBTQ+ & queer men"
+    ],
+    "verdict": "supported",
+    "reason": "The source text confirms that the Census 2021 was the first to ask about sexual orientation, provides national and local-authority-level estimates, and explicitly states that this data provides a more detailed understanding of the LGB+ population, fulfilling the 'no more we don't know how many' claim.",
+    "corrected_summary": ""
+  },
+  {
+    "org": "Office for National Statistics",
+    "title": "Gender identity by ethnic group \u2014 Census 2021 (RM038)",
+    "summary": "Census cross-tabulation of gender identity by ethnicity \u2014 the intersectional population baseline.",
+    "means": "The dataset that proves Black trans and gender-diverse people are countable \u2014 and counted.",
+    "url": "https://www.ons.gov.uk/datasets/RM038",
+    "topics": [
+      "Population data & census",
+      "LGBTQ+ & queer men"
+    ],
+    "verdict": "supported",
+    "reason": "The source text explicitly states that the dataset provides estimates classifying usual residents by gender identity and ethnic group, including 'Black, Black British, Black Welsh, Caribbean or African' as an ethnic category, thereby supporting the claim that Black trans and gender-diverse people are countable and counted.",
+    "corrected_summary": ""
+  },
+  {
+    "org": "Office for National Statistics",
+    "title": "Sexual orientation, further personal characteristics \u2014 Census 2021",
+    "summary": "Census release crossing sexual orientation with ethnicity, religion and other characteristics.",
+    "means": "The intersectional cross-tabs \u2014 sexual orientation by ethnicity \u2014 for population-level claims about Black queer communities.",
+    "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/sexuality/articles/sexualorientationfurtherpersonalcharacteristicsenglandandwales/census2021",
+    "topics": [
+      "Population data & census",
+      "LGBTQ+ & queer men"
+    ],
+    "verdict": "supported",
+    "reason": "The source text explicitly states it explores 'ethnic group' in relation to sexual orientation from Census 2021, supporting the summary and 'what this means' line about intersectional cross-tabs for population-level claims.",
+    "corrected_summary": ""
+  },
+  {
+    "org": "Office for National Statistics",
+    "title": "Sexual orientation and gender identity quality information",
+    "summary": "ONS's own assessment of how reliable the census sexual orientation and gender identity data is, and how to use it well.",
+    "means": "Read before citing the census \u2014 knowing the caveats first beats having them used against you.",
+    "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/sexuality/methodologies/sexualorientationandgenderidentityqualityinformationforcensus2021",
+    "topics": [
+      "Population data & census"
+    ],
+    "verdict": "supported",
+    "reason": "The source text is an 'assessment of how reliable the census sexual orientation and gender identity data is' and discusses how to interpret and use it, including caveats and corrections.",
+    "corrected_summary": ""
+  },
+  {
+    "org": "Office for National Statistics",
+    "title": "Health inequalities \u2014 ONS hub",
+    "summary": "National statistics on health inequalities, including by ethnicity and deprivation.",
+    "means": "Official inequality statistics to anchor a needs analysis.",
+    "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/healthinequalities",
+    "topics": [
+      "Population data & census",
+      "Health inequalities"
+    ],
+    "verdict": "supported",
+    "reason": "The source text is from the Office for National Statistics, explicitly mentions 'Health inequalities', and details statistics by 'ethnicity' and 'deprivation', aligning with the entry's claims of official statistics for a needs analysis.",
+    "corrected_summary": ""
+  },
+  {
+    "org": "Office for National Statistics",
+    "title": "Healthy life expectancy, UK",
+    "summary": "How many years people live in good health, by area and deprivation \u2014 one of the starkest inequality measures published.",
+    "means": "Healthy-life-expectancy gaps make inequality concrete for funders in a single number.",
+    "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/healthandlifeexpectancies/bulletins/healthstatelifeexpectanciesuk/between2011to2013and2022to2024",
+    "topics": [
+      "Population data & census",
+      "Health inequalities"
+    ],
+    "verdict": "supported",
+    "reason": "The source text is from the Office for National Statistics and discusses healthy life expectancy by area, including deprivation, and highlights the gaps as measures of inequality.",
+    "corrected_summary": ""
+  },
+  {
+    "org": "Mind",
+    "title": "The Big Mental Health Report",
+    "summary": "Mind's flagship annual report on the state of mental health in England and Wales \u2014 prevalence, services, funding and inequality in one document.",
+    "means": "The sector's most-cited scale-of-need report; commissioners already trust it.",
+    "url": "https://www.centreformentalhealth.org.uk/publications/the-big-mental-health-report-2025/",
+    "topics": [
+      "Sector reports"
+    ],
+    "verdict": "corrected",
+    "reason": "The report is produced by the Centre for Mental Health in collaboration with Mind, not solely by Mind, and the 'Means' section makes claims about its trust and citation that are not supported by the provided text.",
+    "corrected_summary": "The Centre for Mental Health, in collaboration with Mind, produces this annual report on the state of mental health in England and Wales, covering prevalence, services, funding, and inequality."
+  },
+  {
+    "org": "Centre for Mental Health",
+    "title": "The Big Mental Health Report 2025",
+    "summary": "Centre for Mental Health's edition of the annual sector stocktake, with economic analysis of mental ill-health.",
+    "means": "The economic framing \u2014 costs of inaction \u2014 that Treasury-minded funders respond to.",
+    "url": "https://www.centreformentalhealth.org.uk/publications/the-big-mental-health-report-2025/",
+    "topics": [
+      "Sector reports"
+    ],
+    "verdict": "supported",
+    "reason": "The source text confirms the report is an annual stocktake by the Centre for Mental Health, includes economic analysis of mental ill-health, and explicitly states the cost of mental ill health in England is estimated at \u00a3300 billion a year, which aligns with the 'costs of inaction' framing.",
+    "corrected_summary": ""
+  },
+  {
+    "org": "Mental Health Foundation",
+    "title": "Negative mental health effects of the rising cost of living",
+    "summary": "Evidence on how the cost-of-living crisis is damaging mental health, naming people from Black and minority ethnic communities among the groups at highest risk.",
+    "means": "Connects economic conditions to mental-health need \u2014 the context section of any current bid.",
+    "url": "https://www.mentalhealth.org.uk/explore-mental-health/blogs/negative-mental-health-effects-rising-cost-living",
+    "topics": [
+      "Sector reports",
+      "Health inequalities"
+    ],
+    "verdict": "supported",
+    "reason": "The source text explicitly states that the cost-of-living crisis is detrimentally impacting mental health and names 'people from Black and minority ethnic communities' as one of the 'high risk-groups that are more likely to be disproportionately affected', directly supporting all claims in the entry.",
+    "corrected_summary": ""
+  },
+  {
+    "org": "The King's Fund",
+    "title": "The health of people from ethnic minority groups in England",
+    "summary": "An independent evidence review of ethnic health inequalities in England, across conditions and causes.",
+    "means": "Independent, funder-recognised anchor for the needs analysis in any race-equity bid.",
+    "url": "https://www.kingsfund.org.uk/insight-and-analysis/long-reads/health-people-ethnic-minority-groups-england",
+    "topics": [
+      "Health inequalities"
+    ],
+    "verdict": "unverified",
+    "reason": "source not fetchable: only 58 chars extracted"
+  },
+  {
+    "org": "The Health Foundation",
+    "title": "Quantifying health inequalities in England",
+    "summary": "Analysis putting numbers on health inequality in England \u2014 who loses how many years, and to what.",
+    "means": "When you need the inequality claim quantified rather than asserted.",
+    "url": "https://www.health.org.uk/reports-and-analysis/analysis/quantifying-health-inequalities-in-england",
+    "topics": [
+      "Health inequalities"
+    ],
+    "verdict": "cut",
+    "reason": "The provided source text is an 'Access Denied' message and does not contain any information about health inequalities in England, thus it cannot support the entry's claims.",
+    "corrected_summary": ""
+  },
+  {
+    "org": "British Medical Association",
+    "title": "UK health inequalities and life expectancy",
+    "summary": "The doctors' union's evidence page on health inequalities and what medicine can and can't fix alone.",
+    "means": "Clinical-establishment support for the position that health inequality is social, not just medical.",
+    "url": "https://www.bma.org.uk/what-we-do/population-health/addressing-social-determinants-that-influence-health/health-inequalities-in-england",
+    "topics": [
+      "Health inequalities"
+    ],
+    "verdict": "cut",
+    "reason": "The provided source text is a navigation menu and does not contain the content of the BMA's evidence page on health inequalities, nor does it discuss what medicine can or cannot fix, or the social nature of health inequality.",
+    "corrected_summary": null
+  },
+  {
+    "org": "Care Quality Commission",
+    "title": "Black men's mental health \u2014 State of Care 2024\u201325",
+    "summary": "The regulator's State of Care report gives Black men's mental health its own section \u2014 documenting how services fail Black men specifically.",
+    "means": "The regulator naming Black men's experience as a system failure \u2014 cite it when a service claims the problem is engagement, not provision.",
+    "url": "https://www.cqc.org.uk/publications/major-report/state-care/2024-2025/",
+    "topics": [
+      "Black men & masculinity",
+      "Detention & the Mental Health Act"
+    ],
+    "verdict": "supported",
+    "reason": "The source text confirms the existence of the 'State of Care 2024/25' report by the Care Quality Commission and explicitly lists 'Black men\u2019s mental health' as a section under 'Focus on groups of people of specific concern', supporting the entry's claims about the report and its focus.",
+    "corrected_summary": ""
+  },
+  {
+    "org": "Health Equity Evidence Centre",
+    "title": "Improving mental health care for Black men \u2014 evidence brief",
+    "summary": "A focused evidence brief on what works in mental health care for Black men.",
+    "means": "A ready-made 'what works' summary for service design \u2014 check your model against it.",
+    "url": "https://www.heec.co.uk/wp-content/uploads/2025/10/BMMH-brief.pdf",
+    "topics": [
+      "Black men & masculinity",
+      "Research evidence"
+    ],
+    "verdict": "supported",
+    "reason": "The source text explicitly states that the brief highlights 'what needs to change to make care safer, fairer and more effective' and identifies 'changes in organisational culture, mental health service design and delivery, and sets out five clear priorities for action', which aligns with a 'what works' summary for service design.",
+    "corrected_summary": ""
+  },
+  {
+    "org": "London Assembly Health Committee",
+    "title": "Men's mental health report \u2014 London",
+    "summary": "The London Assembly's inquiry into men's mental health in the capital, with recommendations to the Mayor.",
+    "means": "London-specific political recognition of men's mental health \u2014 leverage for London-based organisations.",
+    "url": "https://www.london.gov.uk/sites/default/files/2025-11/1726%20-%20Health%20Committee%20-%20Men%27s%20Mental%20Health%20Combined.pdf",
+    "topics": [
+      "Black men & masculinity",
+      "Policy & commissioning"
+    ],
+    "verdict": "supported",
+    "reason": "The source text confirms the London Assembly Health Committee's inquiry into men's mental health in London, the existence of a report with recommendations, and its relevance for London-based organizations.",
+    "corrected_summary": ""
+  },
+  {
+    "org": "GOV.UK",
+    "title": "Men's Health Strategy for England",
+    "summary": "The first national men's health strategy \u2014 the government's stated priorities for men's physical and mental health.",
+    "means": "A national strategy is a funding current: position your work as delivering it, and cite the sections that name racialised disparities.",
+    "url": "https://www.gov.uk/government/publications/mens-health-strategy-for-england",
+    "topics": [
+      "Black men & masculinity",
+      "Policy & commissioning"
+    ],
+    "verdict": "supported",
+    "reason": "The source text confirms the existence of the first national men's health strategy for England, detailing the government's vision and actions for men's health and wellbeing.",
+    "corrected_summary": ""
+  },
+  {
+    "org": "GOV.UK",
+    "title": "Men's health: a strategic vision for England (CP 1432)",
+    "summary": "The command paper setting out the strategic vision behind the Men's Health Strategy.",
+    "means": "The full policy document \u2014 quote the government's own commitments back to commissioners.",
+    "url": "https://assets.publishing.service.gov.uk/media/69400f3b5cc812f50aa421df/mens-health-a-strategic-vision-for-england.pdf",
+    "topics": [
+      "Black men & masculinity",
+      "Policy & commissioning"
+    ],
+    "verdict": "supported",
+    "reason": "The source text is a command paper from GOV.UK titled 'Men's health: a strategic vision for England (CP 1432)', which aligns with the entry's title, organization, and description as a strategic vision document.",
+    "corrected_summary": ""
+  },
+  {
+    "org": "Movember",
+    "title": "Turning England's Men's Health Strategy into action",
+    "summary": "Movember's analysis of what implementing the strategy would actually require.",
+    "means": "A large men's-health funder signalling where it thinks delivery should go \u2014 read before approaching them.",
+    "url": "https://movember.substack.com/p/turning-englands-mens-health-strategy",
+    "topics": [
+      "Black men & masculinity",
+      "Policy & commissioning"
+    ],
+    "verdict": "supported",
+    "reason": "The summary accurately describes Movember's analysis of implementing the strategy and the 'what this means' line correctly identifies Movember as a large men's-health funder signaling its delivery priorities.",
+    "corrected_summary": ""
+  },
+  {
+    "org": "Prevention Collaborative",
+    "title": "The Friendship Bench \u2014 evidence profile",
+    "summary": "Community grandmothers in Zimbabwe trained to deliver talking therapy on park benches \u2014 anxiety and depression significantly reduced in a randomised controlled trial, now adapted internationally.",
+    "means": "The strongest single rebuttal to 'community approaches lack evidence': an RCT, at scale, community-delivered.",
+    "url": "https://www.mhinnovation.net/innovations/friendship-bench",
+    "topics": [
+      "Community interventions",
+      "Research evidence"
+    ],
+    "verdict": "supported",
+    "reason": "The source text confirms that community grandmothers in Zimbabwe are trained to deliver talking therapy, that anxiety and depression are significantly reduced based on a randomized controlled trial, and that the model is being adapted internationally.",
+    "corrected_summary": ""
+  },
+  {
+    "org": "4WardEver UK",
+    "title": "The role of Black-led organisations in supporting Black communities",
+    "summary": "Documents what Black-led organisations actually do in mental health: trusted first contact, culturally grounded support, and advocacy the statutory system doesn't provide.",
+    "means": "Names your organisation as infrastructure, not anecdote.",
+    "url": "https://www.4wardeveruk.org/the-role-of-black-led-organisations-in-supporting-black-mental-health",
+    "topics": [
+      "Black-led organisations & funding"
+    ],
+    "verdict": "supported",
+    "reason": "The source text, specifically the 'Conclusions' section, directly supports the claims that Black-led organizations play multiple roles in supporting individual and collective mental health, mediate the effects of racism, and mitigate ethnic inequalities, which aligns with providing culturally grounded support and advocacy the statutory system doesn't provide. The article is published by 4WardEverUK, supporting the 'Names your organisation as infrastructure, not anecdote' claim.",
+    "corrected_summary": ""
+  },
+  {
+    "org": "Impact on Urban Health",
+    "title": "Culturally sensitive mental health support \u2014 partnership programme",
+    "summary": "A major place-based funder's live programme increasing access to culturally sensitive mental-health support in Lambeth and Southwark.",
+    "means": "Evidence that the culturally specific approach improves access \u2014 and a funder actively funding it in South London.",
+    "url": "https://urbanhealth.org.uk/partnerships/current-partnerships/culturally-sensitive-mental-health-support",
+    "topics": [
+      "Black-led organisations & funding",
+      "Community interventions"
+    ],
+    "verdict": "supported",
+    "reason": "The source text confirms Impact on Urban Health is funding Partisan to increase access to culturally sensitive mental health support in Lambeth and Southwark, and explicitly states the belief that this approach improves access.",
+    "corrected_summary": ""
+  },
+  {
+    "org": "Melanin Moods CIC",
+    "title": "Beyond The Fade \u2014 barbershop mental health",
+    "summary": "A Black-led community interest company training Black barbers and barbershop owners to hold mental-health conversations in their shops \u2014 building support into spaces where trust already exists.",
+    "means": "A working peer model: the meet-people-where-they-are approach being delivered through trusted community figures, not proposed in the abstract.",
+    "url": "https://www.centreformentalhealth.org.uk/wp-content/uploads/2025/06/CentreforMH_GrowingTheGrassroots.pdf",
+    "topics": [
+      "Black-led organisations & funding",
+      "Community interventions",
+      "Black men & masculinity"
+    ],
+    "verdict": "cut",
+    "reason": "The source text is an evaluation of South East London Mind's grant programs and does not mention 'Beyond The Fade', 'Melanin Moods CIC', barbershops, or training barbers for mental health conversations.",
+    "corrected_summary": ""
+  },
+  {
+    "org": "Birmingham City Council",
+    "title": "Mentally Healthy Communities grants scheme",
+    "summary": "A local-authority grants scheme funding community mental-health work in Birmingham.",
+    "means": "An example of the local-authority funding route \u2014 and a live scheme if you work in Birmingham.",
+    "url": "https://www.birmingham.gov.uk/info/50265/supporting_healthier_communities/3132/mentally_healthy_communities_grants_scheme",
+    "topics": [
+      "Black-led organisations & funding"
+    ],
+    "verdict": "supported",
+    "reason": "The source text confirms the Mentally Healthy Communities grants scheme is run by Birmingham City Council, funds community mental health work in Birmingham, and is an example of local-authority funding for a live scheme.",
+    "corrected_summary": ""
+  },
+  {
+    "org": "University of Birmingham",
+    "title": "\u00a311m project to improve mental health access in the Midlands",
+    "summary": "A major funded research programme on improving access to mental-health care in the Midlands, including for racialised communities.",
+    "means": "Large research money is moving on access inequality \u2014 a programme to engage with rather than duplicate.",
+    "url": "https://www.birmingham.ac.uk/news/2026/11m-research-funding-will-identify-key-barriers-to-mental-health-access",
+    "topics": [
+      "Access & therapy",
+      "Research evidence"
+    ],
+    "verdict": "supported",
+    "reason": "The source text confirms an \u00a311 million project led by Keele University with the University of Birmingham as a major partner, focused on improving mental health access in the Midlands, including for under-served groups which can encompass racialised communities, and highlights the significant funding for research into access inequality.",
+    "corrected_summary": ""
+  },
+  {
+    "org": "Synergi Collaborative Centre",
+    "title": "Synergi Collaborative Centre",
+    "summary": "The national initiative on ethnic inequalities in severe mental illness, led by Prof Kamaldeep Bhui \u2014 evidence briefings, creative practice and systems-change work. Its first phase ended in January 2022; its evidence base is the inheritance this platform builds on.",
+    "means": "The evidence inheritance this platform builds on. Start here for the foundational UK work on ethnicity and severe mental illness.",
+    "url": "https://synergicollaborativecentre.co.uk/",
+    "topics": [
+      "Synergi legacy",
+      "Research evidence"
+    ],
+    "verdict": "corrected",
+    "reason": "The source text does not mention Prof Kamaldeep Bhui leading the initiative or that its evidence base is the inheritance this platform builds on, only that a knowledge hub was created in the first phase.",
+    "corrected_summary": "The national initiative on ethnic inequalities in severe mental illness, which created a knowledge hub in its first phase (ending January 2022) to reframe, rethink and transform the realities of ethnic inequalities in severe mental illness and multiple disadvantage. Its first phase ended in January 2022; its knowledge hub is available on the Synergi legacy website. Start here for the foundational UK work on ethnicity and severe mental illness."
+  },
+  {
+    "org": "Synergi Collaborative Centre",
+    "title": "The importance of cultural adaptation of psychological interventions (IAPT/CBT)",
+    "summary": "Synergi briefing on why talking therapies need cultural adaptation to work equitably \u2014 and what adaptation means in practice.",
+    "means": "The evidence for insisting that 'access to therapy' means therapy adapted to the people accessing it.",
+    "url": "https://legacy.synergicollaborativecentre.co.uk/wp-content/uploads/2020/12/The-importance-of-cultural-adaptation-IAPT-and-CBT.pdf",
+    "topics": [
+      "Synergi legacy",
+      "Access & therapy"
+    ],
+    "verdict": "supported",
+    "reason": "The source text, a briefing paper from Synergi Collaborative Centre, directly discusses the importance of cultural adaptation for psychological interventions like IAPT/CBT to address ethnic inequalities and improve outcomes, aligning with all claims in the entry.",
+    "corrected_summary": ""
+  },
+  {
+    "org": "University of Strathclyde",
+    "title": "Queer and the Cost of Living Crisis \u2014 illustrated summary",
+    "summary": "Research on how the cost-of-living crisis hits LGBTQ+ people, published as an illustrated plain-language summary as well as a paper.",
+    "means": "Both evidence and a model: research outputs made for the community that provided the data. Set this as your accessibility bar for research partnerships.",
+    "url": "https://www.aru.ac.uk/news/cost-of-living-crisis-impacted-black-health-study",
+    "topics": [
+      "LGBTQ+ & queer men"
+    ],
+    "verdict": "cut",
+    "reason": "The source text discusses a study on the cost-of-living crisis impacting Black health, not LGBTQ+ people, and does not mention the University of Strathclyde or an illustrated summary.",
+    "corrected_summary": ""
+  },
+  {
+    "org": "LGBT Foundation",
+    "title": "ONS findings make it clear: urgent action needed",
+    "summary": "LGBT Foundation's analysis of what the census and ONS data show about LGBTQ+ inequality, and its call for action.",
+    "means": "Community-sector interpretation of the official data \u2014 pairs with the ONS releases when you make the case.",
+    "url": "https://lgbt.foundation/ons-findings/",
+    "topics": [
+      "LGBTQ+ & queer men",
+      "Population data & census"
+    ],
+    "verdict": "corrected",
+    "reason": "The summary mentions 'census and ONS data' but the source text only refers to 'ONS data' and 'the incredible dataset that is the census' as a general reference, not as data directly analyzed in this specific ONS finding.",
+    "corrected_summary": "LGBT Foundation's analysis of what ONS data show about LGBTQ+ inequality, and its call for action."
+  },
+  {
+    "org": "Terrence Higgins Trust",
+    "title": "The State of the Nation",
+    "summary": "THT's stocktake of HIV and sexual health in the UK, including the inequalities faced by Black communities and gay and bisexual men.",
+    "means": "Sexual health and mental health travel together for Black queer men \u2014 this is the sexual-health half of that case.",
+    "url": "https://tht.org.uk/sites/default/files/2020-02/State%20of%20the%20nation%20report%20v2.pdf",
+    "topics": [
+      "LGBTQ+ & queer men",
+      "Health inequalities"
+    ],
+    "verdict": "cut",
+    "reason": "The source text is about STIs in England and mentions 'inequalities' and 'communities who are disproportionately affected by STIs' but does not specifically mention 'Black communities' or 'gay and bisexual men' as claimed in the entry's summary and 'what this means' line.",
+    "corrected_summary": ""
+  },
+  {
+    "org": "NAZ Project London",
+    "title": "No More Silence",
+    "summary": "NAZ's programme confronting silence around HIV and sexual health in racialised communities.",
+    "means": "A Black and racialised-communities sexual-health organisation with decades of trust \u2014 a natural partner, not a competitor.",
+    "url": "https://www.naz.org.uk/nomoresilence",
+    "topics": [
+      "LGBTQ+ & queer men",
+      "Black-led organisations & funding"
+    ],
+    "verdict": "corrected",
+    "reason": "The summary claims the program confronts silence around HIV and sexual health in racialised communities, but the source specifies it's a peer support group for Black/mixed heritage GBTQ+ men of African and Caribbean heritage, with sexual health being one of several objectives, not the sole focus.",
+    "corrected_summary": "NAZ's programme is a peer support group for Black/mixed heritage GBTQ+ men of African and Caribbean heritage, aiming to improve health and well-being, including increased knowledge around sexual health."
+  },
+  {
+    "org": "Qalliance",
+    "title": "National LGBTQ+ mental health resources",
+    "summary": "A directory of national mental-health resources, including LGBTQ+-specific services.",
+    "means": "The referral map \u2014 where to signpost people while your own service is at capacity.",
+    "url": "https://mentalhealth.cityofnewyork.us/resource-guides-toolkits/resource-guides/2025-black-mental-health-resources",
+    "topics": [
+      "LGBTQ+ & queer men"
+    ],
+    "verdict": "cut",
+    "reason": "The source text is from the Mayor's Office of Community Mental Health in NYC, not an organization called Qalliance, and it provides NYC-specific resources, not a national directory.",
+    "corrected_summary": null
+  },
+  {
+    "org": "TransActual",
+    "title": "Sources of support",
+    "summary": "TransActual's directory of support for trans people in the UK.",
+    "means": "The trans support map \u2014 part of building a service that meets people in full.",
+    "url": "https://transactual.org.uk/transorgs/",
+    "topics": [
+      "LGBTQ+ & queer men"
+    ],
+    "verdict": "corrected",
+    "reason": "The source text lists 'Sources of support' and mentions 'TranzWiki' and 'Trans Unite' as having searchable directories for local support groups, but it does not explicitly state that TransActual itself has a 'directory of support' or a 'trans support map'.",
+    "corrected_summary": "TransActual provides a list of trans-inclusive organizations offering support for trans people in the UK, and directs users to TranzWiki and Trans Unite for searchable directories of local support groups."
+  }
+]

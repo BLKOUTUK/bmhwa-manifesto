@@ -46,6 +46,8 @@ This is the "data invisibility as political problem" reframe: communities aren't
 
 **Is:** curated, provenance-first (every claim traceable to a cited source), plain-language alongside the original, community-stewarded, built within our means on infrastructure the Alliance can own.
 
+**Design is not an afterthought.** Academic databases greet users with the register of the institutions that excluded them; this platform greets them in the Alliance's own voice. It inherits the manifesto's design system in full — BC Empire Windrush display type doing the political work, the warm ochre/demand-red/brown-black palette, no clinical blue, no pure white, WCAG AA throughout. The interface is part of the argument: evidence belongs to the community, and should look like it. A clickable user walkthrough (three scenarios, real corpus sources, the manifesto's type and palette) exists as the reference for this register.
+
 **Is not:** a chatbot performing clinical expertise; a substitute for services or advice; a scraper of paywalled content; an "AI product" whose answers can't be checked. If a feature can't show its sources, it doesn't ship.
 
 ## 6. A phased path
@@ -71,6 +73,18 @@ Question-answering over the Phase 1 corpus (retrieval with citations — the IVO
 
 **Phase 3 — close the loop with Assess & Align.**
 An organisation evaluating a research request can pull the existing evidence on that topic ("has this already been studied? what did the community get last time?"); researchers receiving feedback can be pointed to the evidence standard expected. One politics, two directions.
+
+## 6a. Operating model (Rob's questions, 6 Jul — proposed answers)
+
+**Freshness.** The library rides the cadence that already exists rather than inventing one. Monthly, on the newsletter deadline (the same forcing function agreed for the data dashboard): automated link-check of every entry; triage of new sources the NotebookLM watching briefs have gathered that month (deep research runs continuously — the intake pipe never stops); each pass yields a newsletter factoid, so freshness is a job with a date, not an aspiration. Every entry displays its "last verified" date — visible staleness is itself a freshness mechanism. Big policy moments (Mental Health Act commencement, census releases) trigger off-cycle updates to the affected cluster. Interim owner: BLKOUT (Rob + Claude, monthly); the funded editorial steward inherits it.
+
+**The council — named lenses, named owners.** Verification is not one anonymous "check" but three defined lenses, each with an owner, each shown on the entry:
+1. **Accuracy** — is every claim in the source? Cross-vendor AI against the fetched source text, every entry, automated.
+2. **Usefulness** — does the "what this means" line serve a real job (bid, commissioning, service design)? Editorial steward, human.
+3. **Values** — Alliance-name-worthy? Intersectional, creation-framed, nothing that damages community trust? An Alliance-named reviewer, human. (This lens is what caught the LGB Alliance source — it is the lens only the community can hold.)
+This makes the human-in-the-loop legible to users (each entry shows what it passed) and gives the AI-alignment discussion concrete roles to assign instead of abstract "oversight": AI does volume, humans do judgment and politics.
+
+**Usage.** Free at the point of use, no login, no cookies, no personal tracking — the platform exists to remove gates, not build new ones. BMHWA's legitimate need to know (funder evidence, learning what the community looks for) is met with anonymous aggregate counts only — entry viewed, citation copied, topic filtered — insert-only storage, no identifiers, and the statistics **published openly** so the community that owns the library sees how it's used. Never store free-text searches (a crisis query is sensitive data); aggregate to topic level. Final call sits with the Alliance — on the alignment-discussion agenda. Nothing ships in Spec 01.
 
 ## 7. Questions for the Alliance discussion
 
