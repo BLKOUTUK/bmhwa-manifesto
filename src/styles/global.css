@@ -73,6 +73,17 @@ h1, h2 {
   line-height: 1.05;
 }
 
+/* Windrush register (see docs/round-2/03_design-system.md).
+   Default is uppercase — the manifesto's demand voice. The Learning surfaces
+   (evidence library, Learning hub, Assess & Align) opt into sentence case via
+   Base's register="learning" prop: same face, warmer voice — invitation, not
+   demand. Eyebrow labels (.section-label) stay uppercase in both registers. */
+.register-learning h1,
+.register-learning h2 {
+  text-transform: none;
+  letter-spacing: 0;
+}
+
 /* Sub-headings — Work Sans for readability at smaller sizes */
 h3, h4 {
   font-family: var(--font-heading);

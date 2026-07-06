@@ -63,6 +63,24 @@ Yorùbá, Twi, Soomaali, Igbo, አማርኛ, العربية, Patois, Français, 
 > **community / steering verification** before going live — translation errors here are
 > costly (cf. the earlier Somali/Amharic mix-up). Route any phrase content through Ariel.
 
+## Windrush register — casing sets the voice (added 6 Jul 2026)
+
+BC Empire Windrush carries both cases, and the casing is a deliberate register lever:
+
+| Register | Casing | Voice | Where |
+|----------|--------|-------|-------|
+| **Authority** (default) | ALL-CAPS (`text-transform: uppercase`) | Demand. The manifesto's political weight — Emory Douglas / hull-lettering force. | Home, manifesto, case-for-change, take-action, about, news, press |
+| **Learning** | Sentence case | Invitation. Warm, approachable — "come and use this," not "we demand." | Evidence library, Learning hub, Assess & Align |
+
+Same face, two voices. The demand pages shout in caps; the tools that help
+organisations *do the work* speak in sentence case. Do not mix them within a page.
+
+**Mechanism.** `h1/h2` are uppercase by default in `global.css`. Learning pages opt
+into sentence case with `<Base register="learning">`, which stamps `body.register-learning`
+and lifts the transform. Eyebrow labels (`.section-label`) stay uppercase in **both**
+registers — they're labels, not headings. Assess & Align (separate Next.js app) achieves
+the same by simply not applying an uppercase transform to its Windrush headings.
+
 ## Type scale
 
 Root `17.5px`. Headings: `h1` `clamp(3rem, 8vw, 6rem)`, `h2` `clamp(2.1rem, 5vw, 3.6rem)`,
