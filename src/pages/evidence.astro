@@ -62,7 +62,7 @@ const startHere = entries.filter((e) => e.start_here);
                   <p class="entry-org">{e.org}</p>
                   <h3 class="entry-title"><a href={e.url} target="_blank" rel="noopener">{e.title}</a></h3>
                   <p class="entry-summary">{e.summary}</p>
-                  <p class="entry-means"><span class="means-label">What this means for you:</span> {e.means}</p>
+                  <p class="entry-means"><span class="means-label">What this means for you</span>{e.means}</p>
                   <div class="entry-foot">
                     {e.status === 'verified'
                       ? <span class="badge badge-verified" title="Summary checked against the source by an independent AI, reviewed by an editor">Source-checked</span>
@@ -87,7 +87,7 @@ const startHere = entries.filter((e) => e.start_here);
                   <p class="entry-org">{e.org}</p>
                   <h3 class="entry-title"><a href={e.url} target="_blank" rel="noopener">{e.title}</a></h3>
                   <p class="entry-summary">{e.summary}</p>
-                  <p class="entry-means"><span class="means-label">What this means for you:</span> {e.means}</p>
+                  <p class="entry-means"><span class="means-label">What this means for you</span>{e.means}</p>
                   <div class="entry-foot">
                     {e.status === 'verified'
                       ? <span class="badge badge-verified" title="Summary checked against the source by an independent AI, reviewed by an editor">Source-checked</span>
@@ -230,7 +230,17 @@ const startHere = entries.filter((e) => e.start_here);
     background: var(--card-bg);
   }
   .topic-group.start-here {
-    border: 2px solid var(--accent);
+    border: 1px solid rgba(216, 154, 45, 0.5);
+    background:
+      linear-gradient(180deg, rgba(216, 154, 45, 0.09), rgba(216, 154, 45, 0.02));
+    box-shadow: 0 4px 18px rgba(43, 33, 28, 0.07);
+  }
+  .topic-group.start-here > .topic-summary {
+    padding-top: 1.15rem;
+    padding-bottom: 0.4rem;
+  }
+  .topic-group.start-here .topic-name {
+    font-size: 1.15rem;
   }
   .topic-group.start-here .topic-name::before {
     content: '\2605\00a0';
@@ -238,7 +248,8 @@ const startHere = entries.filter((e) => e.start_here);
   }
   .start-here-intro {
     margin: 0;
-    padding: 0 1.25rem 0.5rem;
+    padding: 0 1.25rem 0.9rem;
+    max-width: 60ch;
   }
   .topic-summary {
     display: flex;
@@ -249,6 +260,8 @@ const startHere = entries.filter((e) => e.start_here);
     list-style: none;
   }
   .topic-summary::-webkit-details-marker { display: none; }
+  .topic-summary { border-radius: 8px; transition: background 0.15s; }
+  .topic-summary:hover { background: rgba(43, 33, 28, 0.025); }
   .topic-summary::before {
     content: '+';
     font-family: var(--font-data);
@@ -276,7 +289,16 @@ const startHere = entries.filter((e) => e.start_here);
     padding: 0 1.25rem 1.25rem;
   }
 
-  .entry { padding: 1.5rem; border-left: 4px solid var(--accent); }
+  .entry {
+    padding: 1.5rem;
+    border-left: 4px solid var(--accent);
+    transition: box-shadow 0.2s ease, border-left-width 0.15s ease, border-left-color 0.2s ease;
+  }
+  .entry:hover {
+    box-shadow: 0 4px 16px rgba(43, 33, 28, 0.08);
+    border-left-width: 6px;
+    border-left-color: var(--urgent);
+  }
   .entry-org {
     font-family: var(--font-data);
     font-size: 0.75rem;
@@ -299,11 +321,21 @@ const startHere = entries.filter((e) => e.start_here);
     font-size: 0.93rem;
     line-height: 1.6;
     background: var(--light-bg);
-    padding: 0.7rem 0.9rem;
+    padding: 0.7rem 0.95rem;
     border-radius: 6px;
+    border-left: 3px solid rgba(216, 154, 45, 0.55);
     margin-bottom: 0.8rem;
   }
-  .means-label { font-weight: 700; color: var(--primary); }
+  .means-label {
+    font-family: var(--font-data);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--urgent);
+    display: block;
+    margin-bottom: 0.2rem;
+  }
 
   .entry-foot {
     display: flex;
