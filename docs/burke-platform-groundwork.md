@@ -53,7 +53,15 @@ This is the "data invisibility as political problem" reframe: communities aren't
 **Phase 0 — alignment and audit (now).**
 The Alliance discussion this note anchors, plus a corpus audit: what is actually available to build on — Synergi's open outputs (rights status to confirm; legacy site material), the manifesto's own evidence base, open-access literature, members' grey literature (evaluations, reports that never got published). No build until this is done.
 
-*Audit started 6 Jul 2026:* **329 unique sources** already exist across four BLKOUT NotebookLM notebooks (Black Men's Mental Health brief, Critical Frequency, UK Men/Black/LGBTQ+ MH brief, CF Fundraising) — inventory at `docs/burke-corpus-inventory.csv` (title, type, URL, notebook provenance). Composition: 214 web pages, 47 PDFs, 68 unlinked working documents (Google Docs/markdown — mostly internal; the screening pass separates library sources from working papers). Remaining audit work: screening (real, relevant, Alliance-name-worthy), tagging against manifesto recommendations, and the Synergi rights question.
+*Audit and first screening done 6 Jul 2026:* **329 unique sources** exist across four BLKOUT NotebookLM notebooks (Black Men's Mental Health brief, Critical Frequency, UK Men/Black/LGBTQ+ MH brief, CF Fundraising). Every URL link-checked; every source categorised and topic-tagged — screened inventory at `docs/burke-corpus-screened.csv`. Results:
+
+- **176 library candidates** — live, relevant external evidence. Strongest clusters: LGBTQ+/queer men's health (43), academic research evidence (19), policy & commissioning (14), population data & census (11), Black-led orgs & funding (10+), race equity in services / PCREF (8), Synergi legacy, sector reports, community interventions.
+- **68 internal working documents** (Google Docs/markdown) and **6 own outputs** — not library material.
+- **38 excluded** — deep-research drift (US health-financing vendors, off-topic news, listicles). Machine-gathered corpora need this pass.
+- **31 dead links** to re-find or drop; **9 US-context sources** for an editorial call.
+- **1 flagged**: an LGB Alliance page — an organisation whose anti-trans positioning conflicts with the Alliance's intersectionality stance; recommend removal from the source notebooks, not just exclusion here.
+
+Remaining audit work: editorial confirmation of the screen, tagging against manifesto recommendations, and the Synergi rights question.
 
 **Phase 1 — the library (no AI required to launch).**
 A curated evidence library on the manifesto site: each entry a source + a plain-language summary + "what this means for your organisation". Human-stewarded, refreshed on the newsletter cadence, sharing the dashboard's monthly data pattern. This is genuinely useful on day one and is the corpus Phase 2 needs anyway.
