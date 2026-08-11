@@ -5,6 +5,7 @@ From: rob@blkoutuk.com
 Thread: fresh thread (or reply on 19f38acfba9009ec "Where the site's landed")
 
 Subject: The site, ready for the group — and in use before October
+Attachment: docs/BMHWA-site-editing-and-handover-guide.pdf
 
 ---
 
@@ -27,7 +28,7 @@ Which brings me to timing. I would love the site to be in use — not just finis
 - Go-live in September: pointing the public domain at the new site. Do you know who holds the Wix account and the domain settings? That is the one practical fact I am missing. Once the domain points here, the Wix subscription can be cancelled — the new site's hosting costs nothing.
 - A successor: who picks up content sign-off when you go? One name is enough.
 
-One reassurance on that last point: the site now publishes itself when content changes. Keeping it current is an editing job, not a developer job — so whoever follows you needs judgement, not code.
+One reassurance on that last point: the site now publishes itself when content changes. Keeping it current is an editing job, not a developer job — so whoever follows you needs judgement, not code. I have attached the guide that proves it: how to edit every part of the site from a web browser, and the steps by which the Alliance takes ownership of the accounts — GitHub, the domain, the signups database — with the Wix subscription cancelled at the end of it.
 
 None of this needs a meeting — though I am happy to walk you through it on a call if that is easier.
 
