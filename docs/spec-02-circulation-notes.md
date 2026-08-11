@@ -6,7 +6,7 @@ Two pieces. The covering note goes from Rob to Ariel on their thread. The forwar
 
 ## 1. Covering note to Ariel
 
-**To:** Ariel Breaux (dracbreaux@gmail.com)
+**To:** Ariel Breaux
 **Subject:** Manifesto site — ready for the group's eyes, and a favour to ask
 
 Hi Ariel,
