@@ -27,6 +27,8 @@ Which brings me to timing. I would love the site to be in use — not just finis
 - Go-live in September: pointing the public domain at the new site. Do you know who holds the Wix account and the domain settings? That is the one practical fact I am missing.
 - A successor: who picks up content sign-off when you go? One name is enough.
 
+One reassurance on that last point: the site now publishes itself when content changes. Keeping it current is an editing job, not a developer job — so whoever follows you needs judgement, not code.
+
 None of this needs a meeting — though I am happy to walk you through it on a call if that is easier.
 
 It has been a genuine pleasure building this with your eye on it.
