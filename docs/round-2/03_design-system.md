@@ -63,23 +63,32 @@ Yorùbá, Twi, Soomaali, Igbo, አማርኛ, العربية, Patois, Français, 
 > **community / steering verification** before going live — translation errors here are
 > costly (cf. the earlier Somali/Amharic mix-up). Route any phrase content through Ariel.
 
-## Windrush register — casing sets the voice (added 6 Jul 2026)
+## Register — colour roles set the voice (revised 11 Aug 2026)
 
-BC Empire Windrush carries both cases, and the casing is a deliberate register lever:
+> ⛔ **SUPERSEDED (11 Aug 2026): the casing register.** From 6 Jul to 11 Aug the two
+> registers were distinguished by heading *casing* (ALL-CAPS authority vs sentence-case
+> learning). Steering feedback found the casing shift read as inconsistency rather than
+> voice (Ariel, 10 Jul: "So it's supposed to have each letter in alternating upper and
+> lower case?"). Headings are now Windrush ALL-CAPS **site-wide**; the register is
+> carried by **colour roles** instead.
 
-| Register | Casing | Voice | Where |
-|----------|--------|-------|-------|
-| **Authority** (default) | ALL-CAPS (`text-transform: uppercase`) | Demand. The manifesto's political weight — Emory Douglas / hull-lettering force. | Home, manifesto, case-for-change, take-action, about, news, press |
-| **Learning** | Sentence case | Invitation. Warm, approachable — "come and use this," not "we demand." | Evidence library, Learning hub, Assess & Align |
+Same palette on both sides of the site — what swaps is which colour *leads*:
 
-Same face, two voices. The demand pages shout in caps; the tools that help
-organisations *do the work* speak in sentence case. Do not mix them within a page.
+| Register | Ground | Accent | Voice | Where |
+|----------|--------|--------|-------|-------|
+| **Campaign** (default) | Brown-black `#2B211C` heroes/bands | Ochre `#D89A2D` | Demand. The manifesto's political weight. | Home, manifesto, case-for-change, take-action, about, news, press |
+| **Movement** | Ochre `#D89A2D` heroes/bands | Brown-black `#2B211C` | Invitation. Warm — "come and use this." | Evidence library, Learning hub, Assess & Align |
 
-**Mechanism.** `h1/h2` are uppercase by default in `global.css`. Learning pages opt
-into sentence case with `<Base register="learning">`, which stamps `body.register-learning`
-and lifts the transform. Eyebrow labels (`.section-label`) stay uppercase in **both**
-registers — they're labels, not headings. Assess & Align (separate Next.js app) achieves
-the same by simply not applying an uppercase transform to its Windrush headings.
+**Mechanism.** `<Base register="learning">` stamps `body.register-learning` (prop name
+kept for stability). `global.css` swaps `.btn-primary` roles under that class (site
+chrome — header/footer — is exempt and keeps the campaign voice); each movement page's
+scoped styles carry the swap in its hero and CTA bands (ochre gradient over the duotone
+image, brown-black type). Card accent bars and badges swap too (brown-black bar, ochre
+fill flashes).
+
+**Contrast rule.** Brown-black on ochre = 6.4:1 — passes AA both ways. **Never white
+text on ochre** (fails). Eyebrow labels (`.section-label`) stay uppercase in both
+registers; on ochre grounds they go brown-black (demand-red stays for light grounds).
 
 ## Type scale
 

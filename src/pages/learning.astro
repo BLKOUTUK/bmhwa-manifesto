@@ -24,17 +24,19 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
         <span class="feature-badge">Live tool</span>
         <p class="feature-desc">A tool built by the Alliance to help Black voluntary sector leaders evaluate research requests for equity, collaboration, and cultural sensitivity.</p>
         <p>Born from the manifesto&rsquo;s demand for equitable research practices (<a href={`${base}manifesto#rec-12`}>Recommendation 12</a>), Assess &amp; Align provides a structured framework for community organisations to assess whether a proposed research partnership genuinely serves their community &mdash; or simply extracts from it.</p>
-        <p>The tool helps organisations ask the right questions before committing to research relationships:</p>
+        <p>The tool asks thirteen structured questions across six dimensions of equitable research:</p>
         <ul class="feature-list">
-          <li>Is the research question shaped by the community it affects?</li>
-          <li>Is funding and ownership shared equitably?</li>
-          <li>Are findings accessible to participants, not just academics?</li>
-          <li>Does the methodology respect cultural context?</li>
-          <li>Is there accountability for how findings are used?</li>
+          <li><strong>Community Voice</strong> &mdash; is the research question shaped by the community it affects?</li>
+          <li><strong>Power &amp; Ownership</strong> &mdash; is funding, control and ownership shared equitably?</li>
+          <li><strong>Cultural Sensitivity</strong> &mdash; does the methodology respect cultural context?</li>
+          <li><strong>Benefit &amp; Access</strong> &mdash; are findings accessible to participants, not just academics?</li>
+          <li><strong>Track Record &amp; Accountability</strong> &mdash; is there accountability for how findings are used?</li>
+          <li><strong>Safeguarding &amp; Aftercare</strong> &mdash; does the study safeguard the community it recruits from, with a named accountable lead and funded, culturally safe support if participants experience distress?</li>
         </ul>
+        <p class="safeguarding-note">The safeguarding dimension was added in July 2026, shaped by Alliance members&rsquo; lived experience of research participation. It asks every study to show a trauma-informed framework and aftercare that is owned &mdash; a named lead and deputy &mdash; not &ldquo;shared&rdquo; across partners until no one holds it.</p>
         <div class="feature-status">
           <a href="https://blkoutuk.github.io/align/" class="btn btn-primary" target="_blank" rel="noopener">Open Assess &amp; Align</a>
-          <p class="muted small">Built by Alliance members with lived experience of navigating inequitable research partnerships. Ten questions, five dimensions, and a feedback letter you can send &mdash; nothing you enter leaves your browser.</p>
+          <p class="muted small">Built by Alliance members with lived experience of navigating inequitable research partnerships. Thirteen questions, six dimensions, and a feedback letter you can send &mdash; nothing you enter leaves your browser.</p>
         </div>
       </div>
     </div>
@@ -117,27 +119,27 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 </Base>
 
 <style>
-  /* ── Page Hero ── */
+  /* ── Page Hero — movement register: ochre leads, brown-black accents ── */
   .page-hero {
     background:
-      linear-gradient(rgba(43, 33, 28, 0.82), rgba(43, 33, 28, 0.9)),
+      linear-gradient(rgba(216, 154, 45, 0.88), rgba(216, 154, 45, 0.93)),
       url('/bmhwa-manifesto/images/family-kitchen.jpg') center / cover no-repeat;
-    color: #FFFFFF;
+    color: var(--primary);
     padding: 5rem 0 4rem;
     text-align: center;
   }
 
   .page-hero .section-label {
-    color: var(--accent);
+    color: var(--primary);
   }
 
   .page-hero h1 {
-    color: #FFFFFF;
+    color: var(--primary);
     margin-bottom: 1rem;
   }
 
   .page-hero-desc {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(43, 33, 28, 0.85);
     font-size: 1.15rem;
     max-width: 620px;
     margin: 0 auto;
@@ -147,7 +149,7 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
   /* ── Feature card (Assess & Align) ── */
   .feature-card {
     padding: 2rem;
-    border-left: 4px solid var(--accent);
+    border-left: 4px solid var(--primary);
     position: relative;
   }
 
@@ -158,11 +160,20 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.06em;
-    background: var(--accent);
-    color: var(--primary);
+    background: var(--primary);
+    color: var(--accent);
     padding: 0.25rem 0.75rem;
     border-radius: 4px;
     margin-bottom: 1rem;
+  }
+
+  .safeguarding-note {
+    background: rgba(216, 154, 45, 0.12);
+    border-left: 3px solid var(--accent);
+    padding: 0.85rem 1.15rem;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    margin-bottom: 1.5rem;
   }
 
   .feature-desc {
@@ -241,7 +252,7 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
   /* ── Evidence platform card ── */
   .evidence-card {
     padding: 2rem;
-    border-left: 4px solid var(--primary);
+    border-left: 4px solid var(--accent);
   }
 
   .evidence-card p {
@@ -253,21 +264,21 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
     color: var(--primary);
   }
 
-  /* ── CTA ── */
+  /* ── CTA — movement register: ochre band, brown-black accents ── */
   .learning-cta {
-    background: var(--primary);
-    color: #FFFFFF;
+    background: var(--accent);
+    color: var(--primary);
     padding: 4rem 0;
     text-align: center;
   }
 
   .learning-cta h2 {
-    color: #FFFFFF;
+    color: var(--primary);
     margin-bottom: 1rem;
   }
 
   .learning-cta p {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(43, 33, 28, 0.85);
     max-width: 550px;
     margin: 0 auto 2rem;
     font-size: 1.05rem;
@@ -282,13 +293,13 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
   }
 
   .cta-btn-outline {
-    color: #FFFFFF;
-    border-color: #FFFFFF;
+    color: var(--primary);
+    border-color: var(--primary);
   }
 
   .cta-btn-outline:hover {
-    background: #FFFFFF;
-    color: var(--primary);
+    background: var(--primary);
+    color: var(--accent);
   }
 
   /* ── Responsive ── */

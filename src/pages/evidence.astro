@@ -114,7 +114,7 @@ const startHere = entries.filter((e) => e.start_here);
       <div class="card pair-card">
         <p class="section-label">The other half</p>
         <h2 id="pair-heading">Evaluating a research request?</h2>
-        <p>This library helps evidence flow <em>to</em> your organisation. <strong>Assess &amp; Align</strong> governs what flows <em>out</em>: ten questions to evaluate whether a research partnership serves your community &mdash; and a feedback letter to send, whatever you decide.</p>
+        <p>This library helps evidence flow <em>to</em> your organisation. <strong>Assess &amp; Align</strong> governs what flows <em>out</em>: thirteen questions across six dimensions &mdash; including safeguarding and aftercare &mdash; to evaluate whether a research partnership serves your community, and a feedback letter to send, whatever you decide.</p>
         <a href="https://blkoutuk.github.io/align/" class="btn btn-primary" target="_blank" rel="noopener">Open Assess &amp; Align</a>
       </div>
     </div>
@@ -150,18 +150,19 @@ const startHere = entries.filter((e) => e.start_here);
 </Base>
 
 <style>
+  /* Movement register: ochre leads, brown-black accents */
   .page-hero {
     background:
-      linear-gradient(rgba(43, 33, 28, 0.82), rgba(43, 33, 28, 0.9)),
+      linear-gradient(rgba(216, 154, 45, 0.88), rgba(216, 154, 45, 0.93)),
       url('/bmhwa-manifesto/images/conversation.jpg') center / cover no-repeat;
-    color: #FFFFFF;
+    color: var(--primary);
     padding: 5rem 0 4rem;
     text-align: center;
   }
-  .page-hero .section-label { color: var(--accent); }
-  .page-hero h1 { color: #FFFFFF; margin-bottom: 1rem; }
+  .page-hero .section-label { color: var(--primary); }
+  .page-hero h1 { color: var(--primary); margin-bottom: 1rem; }
   .page-hero-desc {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(43, 33, 28, 0.85);
     font-size: 1.15rem;
     max-width: 620px;
     margin: 0 auto;
