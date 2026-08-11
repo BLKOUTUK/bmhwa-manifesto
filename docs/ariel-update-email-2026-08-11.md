@@ -24,7 +24,7 @@ Which brings me to timing. I would love the site to be in use — not just finis
 
 - Your sign-off on the changes above, as content lead. Any amendments, I will turn them around within the week.
 - The group feedback round. You cleared me to make that share in July — I will send it this week unless you would rather it come from you. If the round closes end of August, amendments land in the first week of September.
-- Go-live in September: pointing the public domain at the new site. Do you know who holds the Wix account and the domain settings? That is the one practical fact I am missing.
+- Go-live in September: pointing the public domain at the new site. Do you know who holds the Wix account and the domain settings? That is the one practical fact I am missing. Once the domain points here, the Wix subscription can be cancelled — the new site's hosting costs nothing.
 - A successor: who picks up content sign-off when you go? One name is enough.
 
 One reassurance on that last point: the site now publishes itself when content changes. Keeping it current is an editing job, not a developer job — so whoever follows you needs judgement, not code.
