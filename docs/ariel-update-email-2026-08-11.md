@@ -1,6 +1,6 @@
 # Ariel delivery update — drafted 11 Aug 2026 (NOT YET SENT)
 
-To: dracbreaux@gmail.com
+To: Ariel Breaux
 From: rob@blkoutuk.com
 Thread: fresh thread (or reply on 19f38acfba9009ec "Where the site's landed")
 
