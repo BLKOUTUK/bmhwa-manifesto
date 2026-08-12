@@ -19,10 +19,11 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
     <div class="container narrow">
       <p class="section-label">Media Kit</p>
       <h2 id="kit-heading">Download our media kit</h2>
-      <p>The media kit includes logos, key statistics, and press-ready materials for coverage of the Black Mental Health Manifesto.</p>
-      <div class="kit-placeholder">
-        <p class="muted">Media kit download coming soon.</p>
-        <p class="muted small">In the meantime, contact <a href="mailto:BlackMHManifesto@gmail.com">BlackMHManifesto@gmail.com</a> for press materials.</p>
+      <p>The media kit includes the logo, key statistics, brand colours, the endorsement badge, and the full manifesto &mdash; everything needed for coverage of the Black Mental Health Manifesto.</p>
+      <div class="kit-downloads">
+        <a class="btn btn-primary" href={`${base}press-kit/bmhwa-media-kit.zip`} download>Download the media kit (zip, 1.4&nbsp;MB)</a>
+        <a class="btn btn-outline" href={`${base}press-kit/bmhwa-key-facts.pdf`} target="_blank" rel="noopener">Key facts one-pager (PDF)</a>
+        <p class="muted small">For interviews or anything not in the kit, contact <a href="mailto:BlackMHManifesto@gmail.com">BlackMHManifesto@gmail.com</a>.</p>
       </div>
     </div>
   </section>
@@ -111,11 +112,14 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
     <div class="container narrow">
       <p class="section-label">Brand Assets</p>
       <h2 id="brand-heading">Brand assets</h2>
-      <p>Official logos, approved imagery, and colour codes for use in coverage and partner materials.</p>
+      <p>Official logo, endorsement badge, and colour codes for use in coverage and partner materials.</p>
 
-      <div class="brand-placeholder">
-        <p class="muted">Logo downloads and brand guidelines coming soon.</p>
+      <div class="brand-downloads">
+        <a class="btn btn-outline" href={`${base}press-kit/bmhwa-logo.png`} download>Logo (PNG)</a>
+        <a class="btn btn-outline" href={`${base}images/endorsement-badge.png`} download>Endorsement badge (PNG)</a>
+        <a class="btn btn-outline" href={`${base}press-kit/endorsement-badge.svg`} download>Endorsement badge (SVG)</a>
       </div>
+      <p class="muted small">The logo above is the highest resolution currently held &mdash; email us for anything larger. Display typeface (BC Empire Windrush) is licensed for this website only; for print and partner materials use Work Sans in capitals.</p>
 
       <div class="colour-codes">
         <h3>Colour palette</h3>
@@ -180,16 +184,16 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
   }
 
   /* ── Media Kit placeholder ── */
-  .kit-placeholder {
-    padding: 2.5rem 2rem;
-    border: 2px dashed var(--border);
-    border-radius: 8px;
-    text-align: center;
+  .kit-downloads {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
     margin-top: 1.5rem;
   }
 
-  .kit-placeholder p:first-child {
-    margin-bottom: 0.5rem;
+  .kit-downloads .muted {
+    flex-basis: 100%;
   }
 
   /* ── Facts list ── */
@@ -288,13 +292,12 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
   }
 
   /* ── Brand Assets ── */
-  .brand-placeholder {
-    padding: 2.5rem 2rem;
-    border: 2px dashed var(--border);
-    border-radius: 8px;
-    text-align: center;
+  .brand-downloads {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
     margin-top: 1.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 0.75rem;
   }
 
   .colour-codes h3 {

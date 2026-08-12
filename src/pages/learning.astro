@@ -47,28 +47,28 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
     <div class="container narrow">
       <p class="section-label">Resources &amp; Toolkits</p>
       <h2 id="resources-heading">Practical guides</h2>
-      <p>The Alliance is developing downloadable guides for organisations and individuals at every level of the system. These resources translate manifesto recommendations into actionable steps.</p>
+      <p>Whatever your place in the system, the evidence library is the place to start &mdash; every entry summarised in plain language, verified against its source, and tagged with what you can do with it.</p>
 
       <div class="grid-2 resource-grid">
         <div class="card resource-card">
           <h3>For Black voluntary sector organisations</h3>
           <p>Navigating research partnerships, securing equitable funding, and building organisational resilience.</p>
-          <span class="resource-status muted small">Coming soon</span>
+          <a class="resource-status small" href={`${base}evidence?topic=${encodeURIComponent('Black-led organisations & funding')}`}>Start in the evidence library &rarr;</a>
         </div>
         <div class="card resource-card">
           <h3>For researchers</h3>
           <p>Doing better &mdash; equitable methodologies, community co-design, power-sharing in research partnerships.</p>
-          <span class="resource-status muted small">Coming soon</span>
+          <a class="resource-status small" href={`${base}evidence?topic=${encodeURIComponent('Research evidence')}`}>Start in the evidence library &rarr;</a>
         </div>
         <div class="card resource-card">
           <h3>For commissioners &amp; funders</h3>
           <p>Embedding equity in commissioning, funding Black-led organisations sustainably, and measuring what matters.</p>
-          <span class="resource-status muted small">Coming soon</span>
+          <a class="resource-status small" href={`${base}evidence?topic=${encodeURIComponent('Policy & commissioning')}`}>Start in the evidence library &rarr;</a>
         </div>
         <div class="card resource-card">
           <h3>For practitioners</h3>
           <p>Implementing manifesto recommendations in clinical and community settings. Anti-racist practice frameworks.</p>
-          <span class="resource-status muted small">Coming soon</span>
+          <a class="resource-status small" href={`${base}evidence?topic=${encodeURIComponent('Race equity in services (PCREF)')}`}>Start in the evidence library &rarr;</a>
         </div>
       </div>
     </div>
@@ -82,8 +82,7 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
       <p>A space for blog-style posts, workshop summaries, and curated resources from across the sector. The Alliance believes in sharing knowledge openly &mdash; capacity-building starts with access to information.</p>
 
       <div class="learning-placeholder">
-        <p class="muted">Posts and resources will appear here as the Alliance publishes them.</p>
-        <p class="muted small">If you have a resource to share, <a href="mailto:BlackMHManifesto@gmail.com">get in touch</a>.</p>
+        <p>Have a workshop summary, a piece of writing, or a resource the sector should see? <a href="mailto:BlackMHManifesto@gmail.com">Get in touch</a> &mdash; this is where the Alliance publishes what its members and allies share.</p>
       </div>
     </div>
   </section>
@@ -233,7 +232,13 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 
   .resource-status {
     margin-top: 1rem;
-    font-style: italic;
+    font-weight: 600;
+    color: var(--urgent);
+    text-decoration: none;
+  }
+
+  .resource-status:hover {
+    text-decoration: underline;
   }
 
   /* ── Learning placeholder ── */

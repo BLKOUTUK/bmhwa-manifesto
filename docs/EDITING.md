@@ -100,6 +100,15 @@ Three fields to treat with care:
   curated front door. That list is an editorial decision — change it deliberately,
   not casually.
 
+## Adding a news item
+
+News lives in **src/pages/news.astro**. Each item is one block starting
+`<li class="card news-item">` and ending `</li>`. To add one: copy an existing
+block from `<li` to `</li>`, paste it **above** the current top item (newest goes
+first), and change three things — the date inside `news-date`, the headline inside
+`<h3>`, and the paragraph inside `<p>`. Leave the tags themselves alone, commit,
+and it's live in two minutes, same as any page edit.
+
 ## Images
 
 Add images to **public/images**. Keep filenames lowercase with hyphens

@@ -440,6 +440,22 @@ const startHere = entries.filter((e) => e.start_here);
       });
     });
 
+    // Deep links: /evidence?topic=… pre-selects a topic chip, ?q=… prefills search.
+    var params = new URLSearchParams(location.search);
+    var linkedTopic = params.get('topic');
+    var linkedQ = params.get('q');
+    if (linkedTopic) {
+      chips.forEach(function (chip) {
+        if (chip.dataset.topic === linkedTopic) {
+          chips.forEach(function (c) { c.classList.remove('active'); });
+          chip.classList.add('active');
+          topic = linkedTopic;
+        }
+      });
+    }
+    if (linkedQ) search.value = linkedQ;
+    if (linkedTopic || linkedQ) apply();
+
     document.querySelectorAll('.copy-cite').forEach(function (btn) {
       btn.addEventListener('click', function () {
         navigator.clipboard.writeText(btn.dataset.cite).then(function () {

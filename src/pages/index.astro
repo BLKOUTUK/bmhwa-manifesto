@@ -111,9 +111,10 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
   <section class="section endorsements-section" aria-labelledby="endorsements-heading">
     <div class="container">
       <p class="section-label">Endorsements</p>
-      <h2 id="endorsements-heading">Supported by organisations across the UK</h2>
+      <h2 id="endorsements-heading">Endorsing organisations are listed here</h2>
       <div class="endorsements-placeholder">
-        <p class="muted">Organisation logos coming soon.</p>
+        <p class="muted">Does your organisation back the manifesto&rsquo;s demands? Be among the first listed.</p>
+        <a href={`${base}take-action#organisations`} class="btn btn-primary">Endorse the manifesto</a>
       </div>
     </div>
   </section>
@@ -362,6 +363,11 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
     border: 2px dashed var(--border);
     border-radius: 8px;
     margin-top: 1.5rem;
+    text-align: center;
+  }
+
+  .endorsements-placeholder .btn {
+    margin-top: 1.25rem;
   }
 
   /* ── Newsletter signup ── */
