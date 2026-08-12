@@ -137,11 +137,14 @@ itself the same way. Its question wording sits in `lib/questions.js` — but a c
 the question list also lives inside the AI second-reader service and the two must
 change together, so treat question changes as a support conversation the first time.
 
-## Newsletter signups
+## Signups, pledges and endorsements
 
-The footer signup form currently stores addresses in a database held by BLKOUT.
-Until this moves to an Alliance-controlled home (part of the handover plan), email
-rob@blkoutuk.com for an export at any time.
+The footer signup form, the Take Action pledge form, and the endorsement form all
+store their entries in the Alliance's own Supabase project (called BMHManifesto).
+The public site can add an entry but can never read the lists back; reading them
+is done in the Supabase dashboard (Table Editor → export CSV). Until handover the
+dashboard login is held by BLKOUT — email rob@blkoutuk.com for an export at any
+time.
 
 ## Taking ownership — the handover setup
 
@@ -179,26 +182,26 @@ name. At go-live:
    year). If the domain is registered *through* Wix, transfer it out to a plain
    registrar first so cancelling Wix can't touch it.
 
-### Supabase (where signups live)
+### Supabase (where signups, pledges and endorsements live)
 
-Supabase is the free database service behind the footer's newsletter signup form.
-Today, signups land in a BLKOUT-held database — that must move.
+Supabase is the free database service where the site's forms store what people
+submit. Everything already lives in the Alliance's own project (BMHManifesto),
+stewarded by BLKOUT until handover — so moving it is one step, and no data moves.
 
 1. **The Alliance sets up its own free Supabase account** — again with credentials
-   held by two people, on an Alliance email. (An Alliance project already exists
-   from the 2026 feasibility work; it can be revived, or a fresh one created —
-   whichever is cleaner on the day.)
-2. **Together with Rob**: create the signups table with the same safety rule the
-   current one has — the public form can *add* an address but can never *read* the
-   list — then point the site's form at the new database, and copy across every
-   address collected so far.
-3. **Verify with a real test**: submit a signup on the live site, watch it arrive
+   held by two people, on an Alliance email.
+2. **Rob transfers the BMHManifesto project into that account** — a single action
+   in the project's settings. The site keeps working; nothing changes for
+   visitors.
+3. **Verify with a real test**: sign the pledge on the live site, watch it arrive
    in the Alliance's own dashboard.
 4. **Know the one free-tier catch**: free Supabase projects pause themselves after
-   long inactivity, and a paused project silently stops collecting signups. Signup
-   traffic itself keeps it awake, but put a monthly calendar note in someone's
-   diary: open the dashboard, confirm the project is active, export the latest
-   addresses. Reading the list is the same dashboard — Table Editor → export CSV.
+   long inactivity, and a paused project silently stops collecting. A BLKOUT
+   server sends a small daily keep-awake request (one of the documented
+   BLKOUT-supported services below), but still put a monthly calendar note in
+   someone's diary: open the dashboard, confirm the project is active, export the
+   latest entries. Reading the lists is the same dashboard — Table Editor →
+   export CSV.
 
 ### What stays with BLKOUT, by agreement
 

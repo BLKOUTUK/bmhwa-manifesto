@@ -465,8 +465,8 @@ Read it at www.bmhwa.co.uk. If it speaks to you: sign the pledge, share it with 
   });
 
   // Pledge + endorsement forms -> Supabase (insert-only tables, publishable anon key).
-  const SB_URL = '__BMHWA_SUPABASE_URL__';
-  const SB_KEY = '__BMHWA_SUPABASE_KEY__';
+  const SB_URL = 'https://ppinqszzvtuxrzbbgxtg.supabase.co';
+  const SB_KEY = 'sb_publishable_lgeC2AYpoZ8wgj_voIBS6A_zzYPdqcI';
 
   function wireForm(formId: string, table: string, buildRow: (form: HTMLFormElement) => Record<string, unknown> | null, busyLabel: string, idleLabel: string) {
     const form = document.getElementById(formId) as HTMLFormElement | null;
