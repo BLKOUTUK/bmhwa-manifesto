@@ -6,9 +6,9 @@ Each page hero uses a distinct image. Replace with BMHWA's own photography when 
 
 | File | Hero | Pexels |
 |------|------|--------|
-| community-joy.jpg | home | https://www.pexels.com/photo/7149169/ |
+| community-joy.jpg | manifesto | https://www.pexels.com/photo/7149169/ |
 | conversation.jpg | home quote band | https://www.pexels.com/photo/16582974/ |
-| young-man.jpg | manifesto | https://www.pexels.com/photo/4437655/ |
+| young-man.jpg | home, link-preview image | https://www.pexels.com/photo/4437655/ |
 | fila-portrait.jpg | case-for-change | https://www.pexels.com/photo/34435728/ |
 | woman-afro.jpg | take-action | https://www.pexels.com/photo/15766838/ |
 | family-kitchen.jpg | learning | https://www.pexels.com/photo/5082868/ |
