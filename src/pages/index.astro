@@ -159,11 +159,10 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
   /* ── Hero ── */
   .hero {
     background:
-      linear-gradient(rgba(43, 33, 28, 0.82), rgba(43, 33, 28, 0.9)),
-      url('/bmhwa-manifesto/images/community-joy.jpg') center / cover no-repeat;
+      linear-gradient(rgba(43, 33, 28, 0.55), rgba(43, 33, 28, 0.72)),
+      url('/bmhwa-manifesto/images/community-joy.jpg') center 65% / cover no-repeat;
     color: #FFFFFF;
-    padding: 6rem 0 5rem;
-    min-height: 100vh;
+    padding: 4rem 0 4rem;
     display: flex;
     align-items: center;
     text-align: center;
@@ -174,9 +173,10 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
   }
 
   .hero-stat {
-    font-size: clamp(1.5rem, 3.2vw, 2.1rem);
+    font-size: clamp(1.4rem, 2.6vw, 1.85rem);
     line-height: 1.4;
-    color: rgba(255, 255, 255, 0.9);
+    color: #FFFFFF;
+    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.45);
     max-width: 820px;
     margin: 0 auto 1.25rem;
   }
@@ -188,17 +188,19 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 
   .hero h1 {
     color: #FFFFFF;
-    font-size: clamp(3.5rem, 13vw, 10rem);
+    font-size: clamp(3.5rem, 10vw, 7.5rem);
     line-height: 0.92;
     letter-spacing: 0.005em;
-    margin-bottom: 1.75rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 24px rgba(0, 0, 0, 0.4);
   }
 
   .hero-sub {
     font-size: clamp(1.15rem, 2vw, 1.45rem);
-    color: rgba(255, 255, 255, 0.75);
+    color: rgba(255, 255, 255, 0.92);
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
     max-width: 640px;
-    margin: 0 auto 2.5rem;
+    margin: 0 auto 2rem;
     line-height: 1.7;
   }
 
@@ -287,6 +289,11 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
     margin-top: 2rem;
+  }
+
+  /* The grid's gap does the spacing; the shared card margin would double it. */
+  .stats-grid .stat-callout {
+    margin: 0;
   }
 
   /* ── Area cards ── */
@@ -473,8 +480,23 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
       padding: 4rem 0 3.5rem;
     }
 
+    /* Two-by-two on phones so all four figures fit on about one screen. */
     .stats-grid {
-      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+
+    .stats-grid .stat-callout {
+      padding: 1rem;
+      border-left-width: 3px;
+    }
+
+    .stats-grid .stat-number {
+      font-size: 2rem;
+    }
+
+    .stats-grid .stat-context {
+      font-size: 0.9rem;
+      line-height: 1.4;
     }
   }
 </style>
